@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+  <rect width="800" height="200" rx="16" fill="#0d1117"/>
+  <rect x="0.5" y="0.5" width="799" height="199" rx="16" fill="none" stroke="#30363d"/>
+  <!-- centered lockup: badge + wordmark, tagline centered beneath -->
+  <g transform="translate(213,38)">
+    <rect width="96" height="96" rx="24" fill="#da3633"/>
+    <g transform="translate(48,48) scale(0.58)" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <!-- ECG trace: baseline, QRS complex, return to baseline -->
+      <path d="M-62 0 H-32 L-23 -13 L-12 27 L0 -36 L11 13 L19 0 H62"/>
+    </g>
+  </g>
+  <text x="339" y="120" fill="#e6edf3" font-size="92" font-weight="800" letter-spacing="-3">vitals</text>
+  <text x="400" y="154" text-anchor="middle" fill="#8b949e" font-size="16" font-weight="500">local-first health archive and baseline-deviation detector</text>
+</svg>

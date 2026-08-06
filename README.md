@@ -1,4 +1,27 @@
-# vitals
+<div align="center">
+  <img src="docs/assets/logo.svg" alt="vitals — local-first health archive and baseline-deviation detector" width="720">
+</div>
+
+<p align="center"><strong>Your wearable data, archived locally before Google drops it — and checked against your own baseline.</strong></p>
+
+<p align="center">
+  <a href="https://github.com/mstuart/vitals/actions/workflows/ci.yml"><img src="https://github.com/mstuart/vitals/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/node-%E2%89%A522-339933.svg" alt="Node 22+">
+  <img src="https://img.shields.io/badge/MCP-server-8b5cf6.svg" alt="MCP server">
+</p>
+
+<p align="center">
+  <a href="#why">Why</a> ·
+  <a href="#install">Install</a> ·
+  <a href="#connect">Connect</a> ·
+  <a href="#commands">Commands</a> ·
+  <a href="#running-it-daily">Scheduling</a> ·
+  <a href="#what-it-flags">What it flags</a> ·
+  <a href="#mcp">MCP</a>
+</p>
+
+---
 
 A local-first CLI and MCP server that archives your Google Health API data
 (Fitbit, Pixel Watch) into SQLite and tells you when you have drifted off your
@@ -250,7 +273,7 @@ writes to it — the owning tool may refresh the same credential concurrently.
 ## Development
 
 ```bash
-npm test          # 222 tests
+npm test
 npm run typecheck
 ```
 
