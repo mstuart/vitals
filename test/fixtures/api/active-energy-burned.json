@@ -1,0 +1,1145 @@
+{
+  "dataPoints": [
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:59:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T12:00:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 59
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 0
+            }
+          }
+        },
+        "kcal": 1.52
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:58:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:59:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 58
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 59
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:57:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:58:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 57
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 58
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:56:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:57:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 56
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 57
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:52:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:53:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 52
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 53
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:51:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:52:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 51
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 52
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:46:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:47:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 46
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 47
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:45:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:46:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 45
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 46
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:43:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:44:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 43
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 44
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:34:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:35:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 34
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 35
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:29:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:30:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 29
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 30
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:28:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:29:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 28
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 29
+            }
+          }
+        },
+        "kcal": 5.378
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:24:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:25:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 24
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 25
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:23:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:24:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 23
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 24
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:20:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:21:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 20
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 21
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:18:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:19:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 18
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 19
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:17:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:18:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 17
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 18
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:12:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:13:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 12
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 13
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:11:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:12:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 11
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 12
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:05:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:06:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 5
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 6
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:04:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:05:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 4
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 5
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:03:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:04:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 3
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 4
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:02:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:03:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 2
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 3
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:01:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:02:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 1
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 2
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T11:00:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:01:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 0
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 1
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T10:59:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:00:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 59
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 0
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T10:57:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T10:58:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 57
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 58
+            }
+          }
+        },
+        "kcal": 5.747
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T10:56:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T10:57:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 56
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 57
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T10:55:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T10:56:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 55
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 56
+            }
+          }
+        },
+        "kcal": 0
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeEnergyBurned": {
+        "interval": {
+          "startTime": "2024-06-15T10:46:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T10:47:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 46
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 47
+            }
+          }
+        },
+        "kcal": 0
+      }
+    }
+  ],
+  "nextPageToken": "Xm5h06OnoCZxZ1RuWjx5bmvy98zj85uG34tuMn16mu2pntsnZI32iqhq"
+}

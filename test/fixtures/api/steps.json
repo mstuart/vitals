@@ -1,0 +1,207 @@
+{
+  "dataPoints": [
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "steps": {
+        "interval": {
+          "startTime": "2024-06-15T11:59:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T12:00:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 59
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 0
+            }
+          }
+        },
+        "count": "170"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "steps": {
+        "interval": {
+          "startTime": "2024-06-15T11:28:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:29:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 28
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 29
+            }
+          }
+        },
+        "count": "74"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple Inc."
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "steps": {
+        "interval": {
+          "startTime": "2024-06-15T11:16:14.190Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T11:16:16.750Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 16
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 16
+            }
+          }
+        },
+        "count": "4"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "steps": {
+        "interval": {
+          "startTime": "2024-06-15T10:57:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T10:58:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 57
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 58
+            }
+          }
+        },
+        "count": "38"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple Inc."
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "steps": {
+        "interval": {
+          "startTime": "2024-06-15T10:55:30.361Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-15T10:55:40.599Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 55
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 5,
+              "minutes": 55
+            }
+          }
+        },
+        "count": "16"
+      }
+    }
+  ],
+  "nextPageToken": "XmRhqaenoCZx0O_P3CFjZ0NzT2gqYG35ssysuI6NmolkfHkoi-mpkdtufpizm71k"
+}

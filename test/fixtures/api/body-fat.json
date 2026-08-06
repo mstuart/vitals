@@ -1,0 +1,306 @@
+{
+  "dataPoints": [
+    {
+      "name": "users/FIXTURE_USER/dataTypes/body-fat/dataPoints/2210817407921262440",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "bodyFat": {
+        "sampleTime": {
+          "physicalTime": "2024-05-20T06:29:29.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 20
+            },
+            "time": {
+              "hours": 1,
+              "minutes": 29
+            }
+          }
+        },
+        "percentage": 19.5
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/body-fat/dataPoints/3750579182030183208",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "bodyFat": {
+        "sampleTime": {
+          "physicalTime": "2024-05-18T06:35:21.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 18
+            },
+            "time": {
+              "hours": 1,
+              "minutes": 35
+            }
+          }
+        },
+        "percentage": 19.2
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/body-fat/dataPoints/8438607990454638504",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "bodyFat": {
+        "sampleTime": {
+          "physicalTime": "2024-05-11T07:14:50.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 11
+            },
+            "time": {
+              "hours": 2,
+              "minutes": 14
+            }
+          }
+        },
+        "percentage": 18.9
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/body-fat/dataPoints/5474644035654254328",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "bodyFat": {
+        "sampleTime": {
+          "physicalTime": "2024-05-10T11:20:05.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 10
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 20
+            }
+          }
+        },
+        "percentage": 20.5
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/body-fat/dataPoints/7619134030868645120",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "bodyFat": {
+        "sampleTime": {
+          "physicalTime": "2024-05-09T08:01:42.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 3,
+              "minutes": 1
+            }
+          }
+        },
+        "percentage": 25.3
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/body-fat/dataPoints/6384043056785934728",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "bodyFat": {
+        "sampleTime": {
+          "physicalTime": "2024-05-09T08:01:15.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 3,
+              "minutes": 1
+            }
+          }
+        },
+        "percentage": 13.1
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/body-fat/dataPoints/4397555171170919560",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "bodyFat": {
+        "sampleTime": {
+          "physicalTime": "2024-04-22T06:42:54.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 22
+            },
+            "time": {
+              "hours": 1,
+              "minutes": 42
+            }
+          }
+        },
+        "percentage": 13.8
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/body-fat/dataPoints/2021729779179044080",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "bodyFat": {
+        "sampleTime": {
+          "physicalTime": "2024-04-14T07:07:56.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 14
+            },
+            "time": {
+              "hours": 2,
+              "minutes": 7
+            }
+          }
+        },
+        "percentage": 13.8
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/body-fat/dataPoints/8892163009105398936",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "bodyFat": {
+        "sampleTime": {
+          "physicalTime": "2024-02-10T07:34:16.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 2,
+              "day": 10
+            },
+            "time": {
+              "hours": 2,
+              "minutes": 34
+            }
+          }
+        },
+        "percentage": 22.7
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/body-fat/dataPoints/1484438399000",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "bodyFat": {
+        "sampleTime": {
+          "physicalTime": "2014-11-26T00:13:59.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 25
+            },
+            "time": {
+              "hours": 19,
+              "minutes": 13
+            }
+          }
+        },
+        "percentage": 16.2
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/body-fat/dataPoints/1484092799000",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "bodyFat": {
+        "sampleTime": {
+          "physicalTime": "2014-11-22T00:13:59.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 21
+            },
+            "time": {
+              "hours": 19,
+              "minutes": 13
+            }
+          }
+        },
+        "percentage": 29.2
+      }
+    }
+  ]
+}

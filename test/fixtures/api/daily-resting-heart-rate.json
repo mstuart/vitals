@@ -1,0 +1,545 @@
+{
+  "dataPoints": [
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 14
+        },
+        "beatsPerMinute": "63",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 13
+        },
+        "beatsPerMinute": "65",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 12
+        },
+        "beatsPerMinute": "65",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 11
+        },
+        "beatsPerMinute": "72",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 10
+        },
+        "beatsPerMinute": "69",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 9
+        },
+        "beatsPerMinute": "60",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 8
+        },
+        "beatsPerMinute": "68",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 7
+        },
+        "beatsPerMinute": "69",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 6
+        },
+        "beatsPerMinute": "77",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 5
+        },
+        "beatsPerMinute": "64",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 4
+        },
+        "beatsPerMinute": "60",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 3
+        },
+        "beatsPerMinute": "62",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 2
+        },
+        "beatsPerMinute": "60",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 1
+        },
+        "beatsPerMinute": "75",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 31
+        },
+        "beatsPerMinute": "71",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 30
+        },
+        "beatsPerMinute": "75",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 29
+        },
+        "beatsPerMinute": "75",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 28
+        },
+        "beatsPerMinute": "74",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 27
+        },
+        "beatsPerMinute": "68",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 26
+        },
+        "beatsPerMinute": "78",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 25
+        },
+        "beatsPerMinute": "57",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 24
+        },
+        "beatsPerMinute": "78",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 23
+        },
+        "beatsPerMinute": "63",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 22
+        },
+        "beatsPerMinute": "66",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 21
+        },
+        "beatsPerMinute": "60",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 20
+        },
+        "beatsPerMinute": "57",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 19
+        },
+        "beatsPerMinute": "71",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 18
+        },
+        "beatsPerMinute": "65",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 17
+        },
+        "beatsPerMinute": "68",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRestingHeartRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 16
+        },
+        "beatsPerMinute": "61",
+        "dailyRestingHeartRateMetadata": {
+          "calculationMethod": "WITH_SLEEP"
+        }
+      }
+    }
+  ],
+  "nextPageToken": "Xm5h86PYoSZxF1RuQjl5b2l0bXUwan14MnR9K3p1bfkrfnU4dWBl"
+}

@@ -1,0 +1,1175 @@
+{
+  "dataPoints": [
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T14:05:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T14:06:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 5
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 6
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T14:04:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T14:05:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 4
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 5
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T14:03:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T14:04:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 3
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 4
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "3"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T14:02:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T14:03:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 2
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 3
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T14:01:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T14:02:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 1
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 2
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T14:00:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T14:01:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 0
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 1
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "3"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:59:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T14:00:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 59
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 0
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:58:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:59:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 58
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 59
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:57:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:58:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 57
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 58
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:56:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:57:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 56
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 57
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:55:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:56:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 55
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 56
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "3"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:54:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:55:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 54
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 55
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "3"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:53:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:54:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 53
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 54
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "1"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:50:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:51:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 50
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 51
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "3"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:49:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:50:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 49
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 50
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "3"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:48:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:49:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 48
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 49
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "3"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:47:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:48:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 47
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 48
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "3"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:46:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:47:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 46
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 47
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:45:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:46:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 45
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 46
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:41:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:42:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 41
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 42
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "1"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:40:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:41:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 40
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 41
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:39:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:40:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 39
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 40
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "1"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:38:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:39:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 38
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 39
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:37:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:38:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 37
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 38
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:36:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:37:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 36
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 37
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:32:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:33:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 32
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 33
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "3"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:31:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:32:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 31
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 32
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:30:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:31:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 30
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 31
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-13T13:29:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T13:30:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 29
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 13
+            },
+            "time": {
+              "hours": 8,
+              "minutes": 30
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "2"
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "activeZoneMinutes": {
+        "interval": {
+          "startTime": "2024-06-11T18:53:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-11T18:54:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 11
+            },
+            "time": {
+              "hours": 13,
+              "minutes": 53
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 11
+            },
+            "time": {
+              "hours": 13,
+              "minutes": 54
+            }
+          }
+        },
+        "heartRateZone": "FAT_BURN",
+        "activeZoneMinutes": "1"
+      }
+    }
+  ],
+  "nextPageToken": "Xm5ht_vToCZxM1RuWjx5bmvy98zj85uG34tuMn16mu2pntsnZI32iqhq"
+}

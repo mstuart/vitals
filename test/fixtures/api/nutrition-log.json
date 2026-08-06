@@ -1,0 +1,2004 @@
+{
+  "dataPoints": [
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/9178149995759995600",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-10T08:49:20.424Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-10T08:50:20.424Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 10
+            },
+            "time": {
+              "hours": 3,
+              "minutes": 49
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 10
+            },
+            "time": {
+              "hours": 3,
+              "minutes": 50
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 40.8
+            },
+            "nutrient": "CARBOHYDRATES"
+          },
+          {
+            "quantity": {
+              "grams": 8.2
+            },
+            "nutrient": "PROTEIN"
+          }
+        ],
+        "energy": {
+          "kcal": 1.638
+        },
+        "energyFromFat": {
+          "kcal": 0
+        },
+        "totalCarbohydrate": {
+          "grams": 31.8
+        },
+        "totalFat": {
+          "grams": 0.8
+        },
+        "mealType": "ANYTIME",
+        "serving": {
+          "amount": 34.7,
+          "foodMeasurementUnitDisplayName": "pod"
+        },
+        "food": "users/FIXTURE_USER/dataTypes/food/dataPoints/790113424",
+        "foodDisplayName": "Oatmeal"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/38984325961",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "webClientId": "229HT3"
+        },
+        "platform": "FITBIT_WEB_API"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-09T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 10.5,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "POTASSIUM"
+          },
+          {
+            "quantity": {
+              "grams": 22.5,
+              "userProvidedUnit": "GRAM"
+            },
+            "nutrient": "CALCIUM"
+          }
+        ],
+        "energy": {
+          "kcal": 2.799,
+          "userProvidedUnit": "KILOCALORIE"
+        },
+        "totalCarbohydrate": {
+          "grams": 39.4,
+          "userProvidedUnit": "GRAM"
+        },
+        "mealType": "ANYTIME",
+        "serving": {
+          "amount": 98.78,
+          "foodMeasurementUnit": "users/me/dataTypes/food-measurement-unit/dataPoints/1"
+        },
+        "foodDisplayName": "Vegetable Soup"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/6547024452170891736",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-09T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 44.7
+            },
+            "nutrient": "CARBOHYDRATES"
+          }
+        ],
+        "totalCarbohydrate": {
+          "grams": 5
+        },
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/8743190095470637024",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-09T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "energy": {
+          "kcal": 2.139
+        },
+        "mealType": "ANYTIME",
+        "foodDisplayName": "Black Coffee"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/7932847411770594168",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-09T17:10:40.985Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T17:11:40.985Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 12,
+              "minutes": 10
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 12,
+              "minutes": 11
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 22.4
+            },
+            "nutrient": "CARBOHYDRATES"
+          },
+          {
+            "quantity": {
+              "grams": 7.6
+            },
+            "nutrient": "SODIUM"
+          }
+        ],
+        "energy": {
+          "kcal": 1.739
+        },
+        "energyFromFat": {
+          "kcal": 0
+        },
+        "totalCarbohydrate": {
+          "grams": 27
+        },
+        "totalFat": {
+          "grams": 42.3
+        },
+        "mealType": "ANYTIME",
+        "serving": {
+          "amount": 37.8,
+          "foodMeasurementUnitDisplayName": "bottle"
+        },
+        "food": "users/FIXTURE_USER/dataTypes/food/dataPoints/809509849",
+        "foodDisplayName": "Turkey Sandwich"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/6424334504061723448",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-09T17:10:37.853Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T17:11:37.853Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 12,
+              "minutes": 10
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 12,
+              "minutes": 11
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 24.8
+            },
+            "nutrient": "CARBOHYDRATES"
+          },
+          {
+            "quantity": {
+              "grams": 27.2
+            },
+            "nutrient": "SODIUM"
+          }
+        ],
+        "energy": {
+          "kcal": 5.557
+        },
+        "energyFromFat": {
+          "kcal": 0
+        },
+        "totalCarbohydrate": {
+          "grams": 4.1
+        },
+        "totalFat": {
+          "grams": 30
+        },
+        "mealType": "ANYTIME",
+        "serving": {
+          "amount": 78.89,
+          "foodMeasurementUnitDisplayName": "bottle"
+        },
+        "food": "users/FIXTURE_USER/dataTypes/food/dataPoints/809509849",
+        "foodDisplayName": "Vegetable Soup"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/4947390800861775768",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-09T12:56:59.779Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T12:57:59.779Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 56
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 57
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 19.8
+            },
+            "nutrient": "SODIUM"
+          }
+        ],
+        "energy": {
+          "kcal": 2.484
+        },
+        "energyFromFat": {
+          "kcal": 0
+        },
+        "totalCarbohydrate": {
+          "grams": 15.1
+        },
+        "totalFat": {
+          "grams": 33.9
+        },
+        "mealType": "ANYTIME",
+        "serving": {
+          "amount": 16.77,
+          "foodMeasurementUnitDisplayName": "fl oz"
+        },
+        "food": "users/FIXTURE_USER/dataTypes/food/dataPoints/789582825",
+        "foodDisplayName": "Turkey Sandwich"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/8952205156590857232",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-09T12:55:55.723Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T12:56:55.723Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 55
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 56
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 37.3
+            },
+            "nutrient": "PROTEIN"
+          },
+          {
+            "quantity": {
+              "grams": 35.6
+            },
+            "nutrient": "IRON"
+          },
+          {
+            "quantity": {
+              "grams": 32.9
+            },
+            "nutrient": "DIETARY_FIBER"
+          },
+          {
+            "quantity": {
+              "grams": 51.6
+            },
+            "nutrient": "SUGAR"
+          },
+          {
+            "quantity": {
+              "grams": 38.3
+            },
+            "nutrient": "CARBOHYDRATES"
+          }
+        ],
+        "energy": {
+          "kcal": 3.621
+        },
+        "energyFromFat": {
+          "kcal": 1.645
+        },
+        "totalCarbohydrate": {
+          "grams": 33.3
+        },
+        "totalFat": {
+          "grams": 6.3
+        },
+        "mealType": "ANYTIME",
+        "serving": {
+          "amount": 7.2,
+          "foodMeasurementUnitDisplayName": "cup"
+        },
+        "food": "users/FIXTURE_USER/dataTypes/food/dataPoints/14625906",
+        "foodDisplayName": "Mixed Salad"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/4050932539607823440",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-09T12:55:53.057Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T12:56:53.057Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 55
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 56
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 42.5
+            },
+            "nutrient": "PROTEIN"
+          },
+          {
+            "quantity": {
+              "grams": 51.5
+            },
+            "nutrient": "IRON"
+          },
+          {
+            "quantity": {
+              "grams": 2.8
+            },
+            "nutrient": "DIETARY_FIBER"
+          },
+          {
+            "quantity": {
+              "grams": 8.8
+            },
+            "nutrient": "SUGAR"
+          },
+          {
+            "quantity": {
+              "grams": 20.1
+            },
+            "nutrient": "CARBOHYDRATES"
+          }
+        ],
+        "energy": {
+          "kcal": 0.224
+        },
+        "energyFromFat": {
+          "kcal": 1.452
+        },
+        "totalCarbohydrate": {
+          "grams": 48.1
+        },
+        "totalFat": {
+          "grams": 2.9
+        },
+        "mealType": "ANYTIME",
+        "serving": {
+          "amount": 68.11,
+          "foodMeasurementUnitDisplayName": "cup"
+        },
+        "food": "users/FIXTURE_USER/dataTypes/food/dataPoints/14625906",
+        "foodDisplayName": "Turkey Sandwich"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/6265632963826462344",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-09T12:55:19.637Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T12:56:19.637Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 55
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 56
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 2.4
+            },
+            "nutrient": "SATURATED_FAT"
+          },
+          {
+            "quantity": {
+              "grams": 16.5
+            },
+            "nutrient": "SODIUM"
+          },
+          {
+            "quantity": {
+              "grams": 16.6
+            },
+            "nutrient": "CHOLESTEROL"
+          },
+          {
+            "quantity": {
+              "grams": 10.3
+            },
+            "nutrient": "CARBOHYDRATES"
+          },
+          {
+            "quantity": {
+              "grams": 3.7
+            },
+            "nutrient": "PROTEIN"
+          }
+        ],
+        "energy": {
+          "kcal": 0.492
+        },
+        "energyFromFat": {
+          "kcal": 3.294
+        },
+        "totalCarbohydrate": {
+          "grams": 23.5
+        },
+        "totalFat": {
+          "grams": 26.3
+        },
+        "mealType": "ANYTIME",
+        "serving": {
+          "amount": 7.02,
+          "foodMeasurementUnitDisplayName": "oz"
+        },
+        "food": "users/FIXTURE_USER/dataTypes/food/dataPoints/13972530",
+        "foodDisplayName": "Turkey Sandwich"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/1250867223056120488",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-09T12:55:17.391Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T12:56:17.391Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 55
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 56
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 24
+            },
+            "nutrient": "SODIUM"
+          },
+          {
+            "quantity": {
+              "grams": 50.7
+            },
+            "nutrient": "PROTEIN"
+          },
+          {
+            "quantity": {
+              "grams": 45.5
+            },
+            "nutrient": "SATURATED_FAT"
+          },
+          {
+            "quantity": {
+              "grams": 51
+            },
+            "nutrient": "CHOLESTEROL"
+          },
+          {
+            "quantity": {
+              "grams": 42.7
+            },
+            "nutrient": "CARBOHYDRATES"
+          }
+        ],
+        "energy": {
+          "kcal": 4.126
+        },
+        "energyFromFat": {
+          "kcal": 2.647
+        },
+        "totalCarbohydrate": {
+          "grams": 32.6
+        },
+        "totalFat": {
+          "grams": 24.8
+        },
+        "mealType": "ANYTIME",
+        "serving": {
+          "amount": 46.75,
+          "foodMeasurementUnitDisplayName": "oz"
+        },
+        "food": "users/FIXTURE_USER/dataTypes/food/dataPoints/13972530",
+        "foodDisplayName": "Brown Rice"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/973428734231895152",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-09T08:44:00.012Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T08:45:00.012Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 3,
+              "minutes": 44
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 3,
+              "minutes": 45
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 41.5
+            },
+            "nutrient": "SUGAR"
+          },
+          {
+            "quantity": {
+              "grams": 3.9
+            },
+            "nutrient": "CARBOHYDRATES"
+          },
+          {
+            "quantity": {
+              "grams": 7.8
+            },
+            "nutrient": "VITAMIN_C"
+          },
+          {
+            "quantity": {
+              "grams": 7.5
+            },
+            "nutrient": "VITAMIN_A"
+          },
+          {
+            "quantity": {
+              "grams": 36
+            },
+            "nutrient": "DIETARY_FIBER"
+          },
+          {
+            "quantity": {
+              "grams": 29.5
+            },
+            "nutrient": "CALCIUM"
+          }
+        ],
+        "energy": {
+          "kcal": 3.801
+        },
+        "energyFromFat": {
+          "kcal": 0
+        },
+        "totalCarbohydrate": {
+          "grams": 53.6
+        },
+        "totalFat": {
+          "grams": 2.1
+        },
+        "mealType": "ANYTIME",
+        "serving": {
+          "amount": 75.67,
+          "foodMeasurementUnitDisplayName": "medium"
+        },
+        "food": "users/FIXTURE_USER/dataTypes/food/dataPoints/81409",
+        "foodDisplayName": "Oatmeal"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/38978515790",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "webClientId": "229HT3"
+        },
+        "platform": "FITBIT_WEB_API"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 52.8,
+              "userProvidedUnit": "GRAM"
+            },
+            "nutrient": "TRANS_FAT"
+          },
+          {
+            "quantity": {
+              "grams": 17.4,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "CHOLESTEROL"
+          },
+          {
+            "quantity": {
+              "grams": 43.3,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "SODIUM"
+          },
+          {
+            "quantity": {
+              "grams": 48.1,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "POTASSIUM"
+          },
+          {
+            "quantity": {
+              "grams": 50.2,
+              "userProvidedUnit": "GRAM"
+            },
+            "nutrient": "DIETARY_FIBER"
+          },
+          {
+            "quantity": {
+              "grams": 35.8,
+              "userProvidedUnit": "GRAM"
+            },
+            "nutrient": "SUGAR"
+          },
+          {
+            "quantity": {
+              "grams": 12.2,
+              "userProvidedUnit": "GRAM"
+            },
+            "nutrient": "PROTEIN"
+          },
+          {
+            "quantity": {
+              "grams": 21.7,
+              "userProvidedUnit": "MICROGRAM"
+            },
+            "nutrient": "VITAMIN_A"
+          },
+          {
+            "quantity": {
+              "grams": 14.5,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "VITAMIN_B6"
+          },
+          {
+            "quantity": {
+              "grams": 54.1,
+              "userProvidedUnit": "MICROGRAM"
+            },
+            "nutrient": "VITAMIN_B12"
+          },
+          {
+            "quantity": {
+              "grams": 36.4,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "VITAMIN_C"
+          },
+          {
+            "quantity": {
+              "grams": 8.1,
+              "userProvidedUnit": "MICROGRAM"
+            },
+            "nutrient": "VITAMIN_D"
+          },
+          {
+            "quantity": {
+              "grams": 14.7,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "VITAMIN_E"
+          },
+          {
+            "quantity": {
+              "grams": 24.9,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "BIOTIN"
+          },
+          {
+            "quantity": {
+              "grams": 54.1,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "FOLIC_ACID"
+          },
+          {
+            "quantity": {
+              "grams": 2.9,
+              "userProvidedUnit": "GRAM"
+            },
+            "nutrient": "CALCIUM"
+          },
+          {
+            "quantity": {
+              "grams": 9.8,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "COPPER"
+          },
+          {
+            "quantity": {
+              "grams": 6.4,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "IRON"
+          },
+          {
+            "quantity": {
+              "grams": 23,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "MAGNESIUM"
+          },
+          {
+            "quantity": {
+              "grams": 35.3,
+              "userProvidedUnit": "GRAM"
+            },
+            "nutrient": "PHOSPHORUS"
+          },
+          {
+            "quantity": {
+              "grams": 8.6,
+              "userProvidedUnit": "MICROGRAM"
+            },
+            "nutrient": "IODINE"
+          },
+          {
+            "quantity": {
+              "grams": 26.3,
+              "userProvidedUnit": "MILLIGRAM"
+            },
+            "nutrient": "ZINC"
+          }
+        ],
+        "energy": {
+          "kcal": 1.499,
+          "userProvidedUnit": "KILOCALORIE"
+        },
+        "energyFromFat": {
+          "kcal": 5.946,
+          "userProvidedUnit": "KILOCALORIE"
+        },
+        "totalCarbohydrate": {
+          "grams": 30.1,
+          "userProvidedUnit": "GRAM"
+        },
+        "totalFat": {
+          "grams": 22.9,
+          "userProvidedUnit": "GRAM"
+        },
+        "mealType": "ANYTIME",
+        "serving": {
+          "amount": 35.65,
+          "foodMeasurementUnit": "users/me/dataTypes/food-measurement-unit/dataPoints/1"
+        },
+        "foodDisplayName": "Vegetable Soup"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/1605612865583728576",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 8.9
+            },
+            "nutrient": "CARBOHYDRATES"
+          }
+        ],
+        "totalCarbohydrate": {
+          "grams": 45.8
+        },
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/2189472735944643768",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 19.6
+            },
+            "nutrient": "DIETARY_FIBER"
+          }
+        ],
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/2236276411643896240",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 25.5
+            },
+            "nutrient": "DIETARY_FIBER"
+          }
+        ],
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/2253213018649552000",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 32.2
+            },
+            "nutrient": "SATURATED_FAT"
+          }
+        ],
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/2574575354957040992",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 9.9
+            },
+            "nutrient": "SODIUM"
+          }
+        ],
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/2642197390326965416",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "energy": {
+          "kcal": 2.877
+        },
+        "mealType": "ANYTIME",
+        "foodDisplayName": "Almonds"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/3777232580498232640",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 16.8
+            },
+            "nutrient": "DIETARY_FIBER"
+          }
+        ],
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/394322401363723592",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 42.3
+            },
+            "nutrient": "SATURATED_FAT"
+          }
+        ],
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/45229895322360264",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "totalFat": {
+          "grams": 35.7
+        },
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/4549751305520067984",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 30.3
+            },
+            "nutrient": "SODIUM"
+          }
+        ],
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/4764410917351163808",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "energy": {
+          "kcal": 4.409
+        },
+        "mealType": "ANYTIME",
+        "foodDisplayName": "Grilled Chicken"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/5003646282735299488",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "energy": {
+          "kcal": 1.828
+        },
+        "mealType": "ANYTIME",
+        "foodDisplayName": "Greek Yogurt"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/5205583826654289672",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 53.9
+            },
+            "nutrient": "PROTEIN"
+          }
+        ],
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/534379855035114528",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 42.6
+            },
+            "nutrient": "SODIUM"
+          }
+        ],
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/5570800093041855832",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 10.4
+            },
+            "nutrient": "SODIUM"
+          }
+        ],
+        "mealType": "ANYTIME"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/644293014878322088",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "energy": {
+          "kcal": 4.286
+        },
+        "mealType": "ANYTIME",
+        "foodDisplayName": "Vegetable Soup"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/nutrition-log/dataPoints/6507184527396520032",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "nutritionLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "nutrients": [
+          {
+            "quantity": {
+              "grams": 28.7
+            },
+            "nutrient": "CARBOHYDRATES"
+          }
+        ],
+        "totalCarbohydrate": {
+          "grams": 51.9
+        },
+        "mealType": "ANYTIME"
+      }
+    }
+  ],
+  "nextPageToken": "Xm5hg4_hoSZxclRuQjl5b2l0bXUwan14MnR9K3p1bfkrfnU4dWBl"
+}

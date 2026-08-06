@@ -1,0 +1,515 @@
+{
+  "dataPoints": [
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 14
+        },
+        "nightlyTemperatureCelsius": 32.429247,
+        "baselineTemperatureCelsius": 34.34489,
+        "relativeNightlyStddev30dCelsius": 0.943298
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 13
+        },
+        "nightlyTemperatureCelsius": 34.038093,
+        "baselineTemperatureCelsius": 32.582775,
+        "relativeNightlyStddev30dCelsius": 0.227809
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 12
+        },
+        "nightlyTemperatureCelsius": 34.536595,
+        "baselineTemperatureCelsius": 34.573635,
+        "relativeNightlyStddev30dCelsius": 0.779961
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 11
+        },
+        "nightlyTemperatureCelsius": 32.288668,
+        "baselineTemperatureCelsius": 32.88073,
+        "relativeNightlyStddev30dCelsius": 0.806019
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 10
+        },
+        "nightlyTemperatureCelsius": 32.930806,
+        "baselineTemperatureCelsius": 32.169477,
+        "relativeNightlyStddev30dCelsius": 0.932443
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 9
+        },
+        "nightlyTemperatureCelsius": 33.039175,
+        "baselineTemperatureCelsius": 32.025042,
+        "relativeNightlyStddev30dCelsius": 0.501467
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 8
+        },
+        "nightlyTemperatureCelsius": 33.48976,
+        "baselineTemperatureCelsius": 34.198365,
+        "relativeNightlyStddev30dCelsius": 0.568255
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 7
+        },
+        "nightlyTemperatureCelsius": 32.396373,
+        "baselineTemperatureCelsius": 33.021865,
+        "relativeNightlyStddev30dCelsius": 1.042425
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 6
+        },
+        "nightlyTemperatureCelsius": 32.82953,
+        "baselineTemperatureCelsius": 32.607338,
+        "relativeNightlyStddev30dCelsius": 0.252871
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 5
+        },
+        "nightlyTemperatureCelsius": 32.00644,
+        "baselineTemperatureCelsius": 32.659088,
+        "relativeNightlyStddev30dCelsius": 0.659883
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 4
+        },
+        "nightlyTemperatureCelsius": 33.998956,
+        "baselineTemperatureCelsius": 33.863982,
+        "relativeNightlyStddev30dCelsius": 0.99269
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 3
+        },
+        "nightlyTemperatureCelsius": 34.484505,
+        "baselineTemperatureCelsius": 32.977404,
+        "relativeNightlyStddev30dCelsius": 1.061173
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 2
+        },
+        "nightlyTemperatureCelsius": 33.06323,
+        "baselineTemperatureCelsius": 32.201134,
+        "relativeNightlyStddev30dCelsius": 0.202256
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 1
+        },
+        "nightlyTemperatureCelsius": 32.433213,
+        "baselineTemperatureCelsius": 34.513312,
+        "relativeNightlyStddev30dCelsius": 1.086802
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 31
+        },
+        "nightlyTemperatureCelsius": 32.208747,
+        "baselineTemperatureCelsius": 34.760349,
+        "relativeNightlyStddev30dCelsius": 0.342328
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 30
+        },
+        "nightlyTemperatureCelsius": 33.804037,
+        "baselineTemperatureCelsius": 34.826854,
+        "relativeNightlyStddev30dCelsius": 0.996172
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 29
+        },
+        "nightlyTemperatureCelsius": 32.125608,
+        "baselineTemperatureCelsius": 33.96412,
+        "relativeNightlyStddev30dCelsius": 0.507557
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 28
+        },
+        "nightlyTemperatureCelsius": 32.69494,
+        "baselineTemperatureCelsius": 32.276116,
+        "relativeNightlyStddev30dCelsius": 0.283799
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 26
+        },
+        "nightlyTemperatureCelsius": 34.29531,
+        "baselineTemperatureCelsius": 34.377991,
+        "relativeNightlyStddev30dCelsius": 1.177086
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 25
+        },
+        "nightlyTemperatureCelsius": 34.850919,
+        "baselineTemperatureCelsius": 33.392267,
+        "relativeNightlyStddev30dCelsius": 0.602924
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 24
+        },
+        "nightlyTemperatureCelsius": 34.031869,
+        "baselineTemperatureCelsius": 33.693653,
+        "relativeNightlyStddev30dCelsius": 0.803934
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 23
+        },
+        "nightlyTemperatureCelsius": 32.646692,
+        "baselineTemperatureCelsius": 33.353967,
+        "relativeNightlyStddev30dCelsius": 0.806316
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 22
+        },
+        "nightlyTemperatureCelsius": 32.576107,
+        "baselineTemperatureCelsius": 33.856058,
+        "relativeNightlyStddev30dCelsius": 0.634187
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 21
+        },
+        "nightlyTemperatureCelsius": 32.230918,
+        "baselineTemperatureCelsius": 32.256655,
+        "relativeNightlyStddev30dCelsius": 1.118653
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 20
+        },
+        "nightlyTemperatureCelsius": 32.922114,
+        "baselineTemperatureCelsius": 34.673659,
+        "relativeNightlyStddev30dCelsius": 0.973377
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 19
+        },
+        "nightlyTemperatureCelsius": 32.732157,
+        "baselineTemperatureCelsius": 32.581048,
+        "relativeNightlyStddev30dCelsius": 1.104274
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 18
+        },
+        "nightlyTemperatureCelsius": 32.086812,
+        "baselineTemperatureCelsius": 33.147655,
+        "relativeNightlyStddev30dCelsius": 0.418245
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 17
+        },
+        "nightlyTemperatureCelsius": 34.529978,
+        "baselineTemperatureCelsius": 34.917684,
+        "relativeNightlyStddev30dCelsius": 0.786966
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 16
+        },
+        "nightlyTemperatureCelsius": 33.276546,
+        "baselineTemperatureCelsius": 33.76981,
+        "relativeNightlyStddev30dCelsius": 1.061292
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailySleepTemperatureDerivations": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 15
+        },
+        "nightlyTemperatureCelsius": 34.716269,
+        "baselineTemperatureCelsius": 33.789613,
+        "relativeNightlyStddev30dCelsius": 1.103917
+      }
+    }
+  ],
+  "nextPageToken": "Xm5h88DCoSZxYFRuQjl5b2l0bXUwan14MnR9K3p1bfkrfnU4dWBl"
+}

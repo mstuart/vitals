@@ -1,0 +1,545 @@
+{
+  "dataPoints": [
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 14
+        },
+        "averagePercentage": 95.7,
+        "lowerBoundPercentage": 93,
+        "upperBoundPercentage": 99.8,
+        "standardDeviationPercentage": 39.99
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 13
+        },
+        "averagePercentage": 99,
+        "lowerBoundPercentage": 92.1,
+        "upperBoundPercentage": 99.8,
+        "standardDeviationPercentage": 69.42
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 12
+        },
+        "averagePercentage": 97.8,
+        "lowerBoundPercentage": 92.5,
+        "upperBoundPercentage": 99.1,
+        "standardDeviationPercentage": 98.77
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 11
+        },
+        "averagePercentage": 96.1,
+        "lowerBoundPercentage": 92.2,
+        "upperBoundPercentage": 99.4,
+        "standardDeviationPercentage": 54.62
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 10
+        },
+        "averagePercentage": 97.5,
+        "lowerBoundPercentage": 92.3,
+        "upperBoundPercentage": 99.8,
+        "standardDeviationPercentage": 79.94
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 9
+        },
+        "averagePercentage": 95.1,
+        "lowerBoundPercentage": 93.6,
+        "upperBoundPercentage": 99.3,
+        "standardDeviationPercentage": 43.8
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 8
+        },
+        "averagePercentage": 98.9,
+        "lowerBoundPercentage": 93.1,
+        "upperBoundPercentage": 99.3,
+        "standardDeviationPercentage": 36.52
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 7
+        },
+        "averagePercentage": 96.1,
+        "lowerBoundPercentage": 92.3,
+        "upperBoundPercentage": 99.7,
+        "standardDeviationPercentage": 97.41
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 6
+        },
+        "averagePercentage": 97.2,
+        "lowerBoundPercentage": 92.9,
+        "upperBoundPercentage": 99.2,
+        "standardDeviationPercentage": 99.31
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 5
+        },
+        "averagePercentage": 94.4,
+        "lowerBoundPercentage": 92.4,
+        "upperBoundPercentage": 99.7,
+        "standardDeviationPercentage": 88.99
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 4
+        },
+        "averagePercentage": 94.5,
+        "lowerBoundPercentage": 92.2,
+        "upperBoundPercentage": 99.2,
+        "standardDeviationPercentage": 96.7
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 3
+        },
+        "averagePercentage": 96,
+        "lowerBoundPercentage": 93.4,
+        "upperBoundPercentage": 99.5,
+        "standardDeviationPercentage": 90.2
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 2
+        },
+        "averagePercentage": 94.1,
+        "lowerBoundPercentage": 93.1,
+        "upperBoundPercentage": 99.3,
+        "standardDeviationPercentage": 32.73
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 1
+        },
+        "averagePercentage": 97.8,
+        "lowerBoundPercentage": 92.9,
+        "upperBoundPercentage": 99.9,
+        "standardDeviationPercentage": 96.38
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 31
+        },
+        "averagePercentage": 97.7,
+        "lowerBoundPercentage": 92.9,
+        "upperBoundPercentage": 99,
+        "standardDeviationPercentage": 11.15
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 30
+        },
+        "averagePercentage": 94.7,
+        "lowerBoundPercentage": 92.7,
+        "upperBoundPercentage": 99.6,
+        "standardDeviationPercentage": 59.49
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 29
+        },
+        "averagePercentage": 94.7,
+        "lowerBoundPercentage": 93.4,
+        "upperBoundPercentage": 99.7,
+        "standardDeviationPercentage": 93.77
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 28
+        },
+        "averagePercentage": 96.2,
+        "lowerBoundPercentage": 93.3,
+        "upperBoundPercentage": 99.1,
+        "standardDeviationPercentage": 21.93
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 27
+        },
+        "averagePercentage": 95.4,
+        "lowerBoundPercentage": 93.4,
+        "upperBoundPercentage": 99.6,
+        "standardDeviationPercentage": 59.59
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 26
+        },
+        "averagePercentage": 96.8,
+        "lowerBoundPercentage": 92.7,
+        "upperBoundPercentage": 99.9,
+        "standardDeviationPercentage": 80.57
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 25
+        },
+        "averagePercentage": 98.2,
+        "lowerBoundPercentage": 93.7,
+        "upperBoundPercentage": 99.1,
+        "standardDeviationPercentage": 24.11
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 24
+        },
+        "averagePercentage": 98.6,
+        "lowerBoundPercentage": 93.5,
+        "upperBoundPercentage": 99.6,
+        "standardDeviationPercentage": 54.19
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 23
+        },
+        "averagePercentage": 98.3,
+        "lowerBoundPercentage": 92.9,
+        "upperBoundPercentage": 99.5,
+        "standardDeviationPercentage": 34.83
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 22
+        },
+        "averagePercentage": 95.4,
+        "lowerBoundPercentage": 92.1,
+        "upperBoundPercentage": 99.9,
+        "standardDeviationPercentage": 56.76
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 21
+        },
+        "averagePercentage": 98,
+        "lowerBoundPercentage": 93.3,
+        "upperBoundPercentage": 99.5,
+        "standardDeviationPercentage": 11.9
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 20
+        },
+        "averagePercentage": 99,
+        "lowerBoundPercentage": 93.4,
+        "upperBoundPercentage": 99.6,
+        "standardDeviationPercentage": 94.71
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 19
+        },
+        "averagePercentage": 94.4,
+        "lowerBoundPercentage": 93.4,
+        "upperBoundPercentage": 99.3,
+        "standardDeviationPercentage": 38.08
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 18
+        },
+        "averagePercentage": 97.8,
+        "lowerBoundPercentage": 93.2,
+        "upperBoundPercentage": 99.2,
+        "standardDeviationPercentage": 41.26
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 17
+        },
+        "averagePercentage": 95.4,
+        "lowerBoundPercentage": 93.9,
+        "upperBoundPercentage": 100,
+        "standardDeviationPercentage": 57.91
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyOxygenSaturation": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 16
+        },
+        "averagePercentage": 98.8,
+        "lowerBoundPercentage": 92.8,
+        "upperBoundPercentage": 99.3,
+        "standardDeviationPercentage": 51.35
+      }
+    }
+  ],
+  "nextPageToken": "Xm5h86PYoSZxHFRuQjl5b2l0bXUwan14MnR9K3p1bfkrfnU4dWBl"
+}

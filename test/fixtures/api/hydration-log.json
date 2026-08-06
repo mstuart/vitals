@@ -1,0 +1,1182 @@
+{
+  "dataPoints": [
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/10983274656",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "webClientId": "229HT3"
+        },
+        "platform": "FITBIT_WEB_API"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-05-09T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 721,
+          "userProvidedUnit": "CUP_US"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/1114885528943084216",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-05-09T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-09T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 271
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/10982001908",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "webClientId": "229HT3"
+        },
+        "platform": "FITBIT_WEB_API"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 789,
+          "userProvidedUnit": "CUP_US"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/395448843962845560",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 325
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/4702621431031512728",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 747
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/5135663007070255472",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "PHONE",
+          "manufacturer": "Apple"
+        },
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-05-08T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-08T23:14:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 8
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 667
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/5531850699596780104",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-05-02T12:20:59.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-02T12:21:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 2
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 20
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 2
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 21
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 664,
+          "userProvidedUnit": "FLUID_OUNCE_US"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/1820491178242659456",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-04-27T18:14:51.046Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-04-27T18:14:52.046Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 27
+            },
+            "time": {
+              "hours": 13,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 27
+            },
+            "time": {
+              "hours": 13,
+              "minutes": 14
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 233,
+          "userProvidedUnit": "FLUID_OUNCE_US"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3318194421748724864",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-04-27T14:10:03.469Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-04-27T14:10:04.469Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 27
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 10
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 27
+            },
+            "time": {
+              "hours": 9,
+              "minutes": 10
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 734,
+          "userProvidedUnit": "FLUID_OUNCE_US"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/9090657646154785032",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-04-26T12:11:59.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-04-26T12:12:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 26
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 11
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 26
+            },
+            "time": {
+              "hours": 7,
+              "minutes": 12
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 868,
+          "userProvidedUnit": "FLUID_OUNCE_US"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/5732144213112070288",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-04-25T20:46:39.725Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-04-25T20:46:40.725Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 25
+            },
+            "time": {
+              "hours": 15,
+              "minutes": 46
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 25
+            },
+            "time": {
+              "hours": 15,
+              "minutes": 46
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 702,
+          "userProvidedUnit": "FLUID_OUNCE_US"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/5016486507251154680",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-04-24T16:23:10.696Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-04-24T16:23:11.696Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 24
+            },
+            "time": {
+              "hours": 11,
+              "minutes": 23
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 24
+            },
+            "time": {
+              "hours": 11,
+              "minutes": 23
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 264,
+          "userProvidedUnit": "FLUID_OUNCE_US"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3083667117748518496",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-04-24T15:21:59.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-04-24T15:22:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 24
+            },
+            "time": {
+              "hours": 10,
+              "minutes": 21
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 24
+            },
+            "time": {
+              "hours": 10,
+              "minutes": 22
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 342,
+          "userProvidedUnit": "FLUID_OUNCE_US"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/6568051686620693328",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2024-04-17T11:48:26.152Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-04-17T11:48:27.152Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 17
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 48
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 17
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 48
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 735,
+          "userProvidedUnit": "FLUID_OUNCE_US"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3792676953",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-21T00:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-21T00:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 20
+            },
+            "time": {
+              "hours": 19,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 20
+            },
+            "time": {
+              "hours": 19,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 409,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3763263942",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-13T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-13T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 13
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 13
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 565,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3761973318",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-12T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-12T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 12
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 12
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 930,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3762161400",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-12T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-12T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 12
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 12
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 598,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3757337417",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-11T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-11T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 292,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3758073664",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-11T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-11T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 941,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3758173218",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-11T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-11T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 445,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3758561346",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-11T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-11T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 540,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3758620513",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-11T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-11T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 239,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3758783184",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-11T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-11T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 713,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3759155547",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-11T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-11T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 438,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3759162359",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-11T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-11T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 268,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3759251210",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-11T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-11T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 292,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/hydration-log/dataPoints/3759385116",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "hydrationLog": {
+        "interval": {
+          "startTime": "2014-11-11T23:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2014-11-11T23:15:00.000Z",
+          "endUtcOffset": "-18000s",
+          "civilStartTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          },
+          "civilEndTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 11
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "amountConsumed": {
+          "milliliters": 553,
+          "userProvidedUnit": "MILLILITER"
+        }
+      }
+    }
+  ]
+}

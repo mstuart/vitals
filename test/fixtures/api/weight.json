@@ -1,0 +1,437 @@
+{
+  "dataPoints": [
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/8195315017900763000",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-05-20T06:29:29.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 20
+            },
+            "time": {
+              "hours": 1,
+              "minutes": 29
+            }
+          }
+        },
+        "weightGrams": 76912
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/4107526019665074560",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-05-18T06:35:21.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 18
+            },
+            "time": {
+              "hours": 1,
+              "minutes": 35
+            }
+          }
+        },
+        "weightGrams": 92420
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/1895731492719739232",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-05-11T07:14:50.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 11
+            },
+            "time": {
+              "hours": 2,
+              "minutes": 14
+            }
+          }
+        },
+        "weightGrams": 70794
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/242443161381884968",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-05-10T11:20:05.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 10
+            },
+            "time": {
+              "hours": 6,
+              "minutes": 20
+            }
+          }
+        },
+        "weightGrams": 78639
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/7666910847060822032",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-05-09T08:01:42.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 3,
+              "minutes": 1
+            }
+          }
+        },
+        "weightGrams": 67944
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/1536586261806588088",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-05-09T08:01:15.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 5,
+              "day": 9
+            },
+            "time": {
+              "hours": 3,
+              "minutes": 1
+            }
+          }
+        },
+        "weightGrams": 94531
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/8110902917532047384",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-04-22T06:42:54.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 22
+            },
+            "time": {
+              "hours": 1,
+              "minutes": 42
+            }
+          }
+        },
+        "weightGrams": 59638
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/1780790399000",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-04-16T23:13:59.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 16
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 13
+            }
+          }
+        },
+        "weightGrams": 93759
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/1780704000000",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-04-15T23:14:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 15
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 14
+            }
+          }
+        },
+        "weightGrams": 60712
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/9030013439595526896",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-04-14T07:07:56.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 14
+            },
+            "time": {
+              "hours": 2,
+              "minutes": 7
+            }
+          }
+        },
+        "weightGrams": 71814
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/3543254474819189352",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-04-05T18:01:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 5
+            },
+            "time": {
+              "hours": 13,
+              "minutes": 1
+            }
+          }
+        },
+        "weightGrams": 88165
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/5729187823506070256",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-04-04T23:15:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 4,
+              "day": 4
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 15
+            }
+          }
+        },
+        "weightGrams": 85587
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/4705121639275147632",
+      "dataSource": {
+        "recordingMethod": "UNKNOWN",
+        "application": {
+          "packageName": "com.example.health"
+        },
+        "platform": "HEALTH_KIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2024-02-10T07:34:16.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 2,
+              "day": 10
+            },
+            "time": {
+              "hours": 2,
+              "minutes": 34
+            }
+          }
+        },
+        "weightGrams": 65573
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/1484438399000",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2014-11-26T00:13:59.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 25
+            },
+            "time": {
+              "hours": 19,
+              "minutes": 13
+            }
+          }
+        },
+        "weightGrams": 90875
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/1484092799000",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2014-11-22T00:13:59.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 21
+            },
+            "time": {
+              "hours": 19,
+              "minutes": 13
+            }
+          }
+        },
+        "weightGrams": 87929
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/weight/dataPoints/1483315199000",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "platform": "FITBIT"
+      },
+      "weight": {
+        "sampleTime": {
+          "physicalTime": "2014-11-12T23:13:59.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2014,
+              "month": 11,
+              "day": 12
+            },
+            "time": {
+              "hours": 18,
+              "minutes": 13
+            }
+          }
+        },
+        "weightGrams": 72671
+      }
+    }
+  ]
+}
