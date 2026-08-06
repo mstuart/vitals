@@ -74,13 +74,123 @@ vitals pull --since 30d
 
 Every read command accepts `--json`.
 
-### Cron
+## Running it daily
 
-`vitals --quiet` prints nothing when you are within your baselines, so silence
-is good news and a cron entry stays quiet until something is worth reading.
+`vitals` is a plain command, so use your operating system's scheduler rather
+than leaving a daemon running. There is deliberately no `vitals daemon`
+subcommand: it would reimplement process supervision, restart-on-crash, and
+boot persistence that the OS already provides.
+
+`vitals --quiet` prints nothing while you are within your baselines, so a
+scheduled job stays silent until something is worth reading.
+
+### macOS (launchd)
+
+Preferred over cron on a laptop: **launchd runs a missed job when the machine
+wakes, cron does not.** A cron entry scheduled for 09:00 silently skips every
+day the lid is shut, and the gaps appear in your archive with no error.
+
+Save as `~/Library/LaunchAgents/com.mstuart.vitals-pull.plist`, changing the
+label to your own reverse-DNS prefix and the paths to match your install:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTD/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.mstuart.vitals-pull</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/you/.local/share/vitals/daily-pull.sh</string>
+    </array>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key><integer>9</integer>
+        <key>Minute</key><integer>15</integer>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>/Users/you/.local/share/vitals/logs/pull.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/you/.local/share/vitals/logs/pull.err.log</string>
+</dict>
+</plist>
+```
+
+Point it at a small wrapper rather than the binary directly, because **launchd
+does not source your shell profile** — environment set in `~/.zshrc` is not
+present, and a version-managed `node` will not be on `PATH`:
+
+```sh
+#!/bin/zsh
+# ~/.local/share/vitals/daily-pull.sh
+NODE="$(ls -d "$HOME"/.nvm/versions/node/*/bin/node 2>/dev/null | sort -V | tail -1)"
+[ -x "$NODE" ] || NODE="$(command -v node)"
+
+echo "$(date -Iseconds) pull starting"
+"$NODE" "$HOME/path/to/vitals/dist/cli/index.js" pull --since 7d
+rc=$?          # NOT `status` — that is a read-only special variable in zsh,
+               # and assigning to it makes the script exit non-zero on success
+echo "$(date -Iseconds) pull finished with status $rc"
+exit $rc
+```
+
+A 7-day window means a week away from the machine still backfills. Sync is
+idempotent, so the overlap costs nothing.
+
+```bash
+chmod +x ~/.local/share/vitals/daily-pull.sh
+launchctl bootstrap gui/$UID ~/Library/LaunchAgents/com.mstuart.vitals-pull.plist
+
+launchctl list | grep vitals                        # status; second column is last exit code
+launchctl kickstart -p gui/$UID/com.mstuart.vitals-pull   # run now
+tail -f ~/.local/share/vitals/logs/pull.log         # logs
+launchctl bootout gui/$UID/com.mstuart.vitals-pull  # stop
+```
+
+Run it once with `kickstart` and check the exit code before trusting it.
+
+### Linux (systemd)
+
+`~/.config/systemd/user/vitals-pull.service`:
+
+```ini
+[Unit]
+Description=vitals daily pull
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/vitals pull --since 7d
+```
+
+`~/.config/systemd/user/vitals-pull.timer`:
+
+```ini
+[Unit]
+Description=vitals daily pull
+
+[Timer]
+OnCalendar=*-*-* 09:15:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+`Persistent=true` is the equivalent of launchd's catch-up behaviour — without
+it, missed runs are skipped rather than run at next boot.
+
+```bash
+systemctl --user enable --now vitals-pull.timer
+journalctl --user -u vitals-pull -f
+```
+
+### cron
+
+Works, but skips missed runs entirely. Prefer the above where available.
 
 ```cron
-0 8 * * *  vitals pull --since 3d && vitals --quiet
+15 9 * * *  vitals pull --since 7d && vitals --quiet
 ```
 
 ## What it flags
