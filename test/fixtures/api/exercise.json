@@ -1,0 +1,916 @@
+{
+  "dataPoints": [
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/8542862757817636064",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-06-13T13:24:15.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-13T14:04:23.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "GOLF",
+        "metricsSummary": {
+          "caloriesKcal": 73.66,
+          "distanceMillimeters": 5.95,
+          "steps": "181",
+          "averageHeartRateBeatsPerMinute": "72",
+          "activeZoneMinutes": "3",
+          "heartRateZoneDurations": {
+            "lightTime": "660s",
+            "moderateTime": "1740s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Golf",
+        "activeDuration": "2408s",
+        "updateTime": "2026-08-03T22:22:57.674559Z",
+        "createTime": "2026-08-03T22:11:12.114197Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/3811465802456712616",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-06-06T10:24:36.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-06T10:49:01.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "WALKING",
+        "metricsSummary": {
+          "caloriesKcal": 89.92,
+          "distanceMillimeters": 50.05,
+          "steps": "6",
+          "averagePaceSecondsPerMeter": 17.29,
+          "averageHeartRateBeatsPerMinute": "62",
+          "activeZoneMinutes": "1",
+          "heartRateZoneDurations": {
+            "lightTime": "420s",
+            "moderateTime": "1080s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Walk",
+        "activeDuration": "1465s",
+        "updateTime": "2026-07-28T06:31:17.644847Z",
+        "createTime": "2026-07-27T18:54:26.578486Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/5454922711629786424",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-06-02T13:52:16.400Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-06-02T14:18:03.200Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "WALKING",
+        "metricsSummary": {
+          "caloriesKcal": 5.26,
+          "distanceMillimeters": 86.17,
+          "steps": "2056",
+          "averagePaceSecondsPerMeter": 59.73,
+          "averageHeartRateBeatsPerMinute": "65",
+          "heartRateZoneDurations": {
+            "lightTime": "1560s",
+            "moderateTime": "0s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Walk",
+        "activeDuration": "1546.800s",
+        "updateTime": "2026-07-23T22:30:59.645729Z",
+        "createTime": "2026-07-23T22:30:59.645729Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/744860735612310280",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-27T09:05:20.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-27T09:23:23.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "CARDIO_WORKOUT",
+        "metricsSummary": {
+          "caloriesKcal": 93.04,
+          "averageHeartRateBeatsPerMinute": "67",
+          "activeZoneMinutes": "2",
+          "heartRateZoneDurations": {
+            "lightTime": "120s",
+            "moderateTime": "960s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Activity",
+        "activeDuration": "1083s",
+        "updateTime": "2026-07-17T17:28:22.673524Z",
+        "createTime": "2026-07-17T17:28:22.673524Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/7511844942114731152",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-25T09:56:16.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-25T11:23:38.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "CARDIO_WORKOUT",
+        "metricsSummary": {
+          "caloriesKcal": 62.39,
+          "averageHeartRateBeatsPerMinute": "60",
+          "activeZoneMinutes": "2",
+          "heartRateZoneDurations": {
+            "lightTime": "120s",
+            "moderateTime": "5100s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Activity",
+        "activeDuration": "5242s",
+        "updateTime": "2026-07-15T19:25:43.438371Z",
+        "createTime": "2026-07-15T19:25:43.438371Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/8868261311000096904",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-20T15:18:48.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-20T15:52:56.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "SPORT",
+        "metricsSummary": {
+          "caloriesKcal": 15.63,
+          "distanceMillimeters": 29.48,
+          "steps": "214",
+          "averageHeartRateBeatsPerMinute": "70",
+          "activeZoneMinutes": "2",
+          "heartRateZoneDurations": {
+            "lightTime": "60s",
+            "moderateTime": "1200s",
+            "vigorousTime": "780s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Sport",
+        "activeDuration": "2048s",
+        "updateTime": "2026-07-11T00:15:10.971035Z",
+        "createTime": "2026-07-11T00:15:10.971035Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/1176553011329424024",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-19T09:58:39.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-19T10:23:59.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "CARDIO_WORKOUT",
+        "metricsSummary": {
+          "caloriesKcal": 41.09,
+          "averageHeartRateBeatsPerMinute": "66",
+          "activeZoneMinutes": "2",
+          "heartRateZoneDurations": {
+            "lightTime": "60s",
+            "moderateTime": "1380s",
+            "vigorousTime": "60s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Activity",
+        "activeDuration": "1520s",
+        "updateTime": "2026-07-09T18:41:11.607680Z",
+        "createTime": "2026-07-09T18:41:11.607680Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/88183548690656008",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-16T15:29:03.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-16T16:15:09.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "GOLF",
+        "metricsSummary": {
+          "caloriesKcal": 27.51,
+          "distanceMillimeters": 39.49,
+          "steps": "230",
+          "averageHeartRateBeatsPerMinute": "69",
+          "activeZoneMinutes": "1",
+          "heartRateZoneDurations": {
+            "lightTime": "1080s",
+            "moderateTime": "1680s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Golf",
+        "activeDuration": "2766s",
+        "updateTime": "2026-07-07T00:25:18.589839Z",
+        "createTime": "2026-07-07T00:22:59.112393Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/2368565594196678176",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-14T10:22:44.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-14T10:38:00.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "CARDIO_WORKOUT",
+        "metricsSummary": {
+          "caloriesKcal": 71.1,
+          "averageHeartRateBeatsPerMinute": "61",
+          "activeZoneMinutes": "3",
+          "heartRateZoneDurations": {
+            "lightTime": "480s",
+            "moderateTime": "420s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Activity",
+        "activeDuration": "916s",
+        "updateTime": "2026-07-04T18:46:56.975498Z",
+        "createTime": "2026-07-04T18:46:56.975498Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/7566261849827889288",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-14T07:35:31.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-14T08:30:58.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "SPORT",
+        "metricsSummary": {
+          "caloriesKcal": 93.38,
+          "distanceMillimeters": 69.54,
+          "steps": "2251",
+          "averageHeartRateBeatsPerMinute": "62",
+          "activeZoneMinutes": "2",
+          "heartRateZoneDurations": {
+            "lightTime": "2580s",
+            "moderateTime": "720s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Sport",
+        "activeDuration": "3327s",
+        "updateTime": "2026-07-04T17:00:23.900130Z",
+        "createTime": "2026-07-04T17:00:23.900130Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/7940627543307070104",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "device": {
+          "formFactor": "PHONE"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-12T16:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-12T17:14:00.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "CARDIO_WORKOUT",
+        "metricsSummary": {
+          "caloriesKcal": 39.8,
+          "averageHeartRateBeatsPerMinute": "59",
+          "heartRateZoneDurations": {
+            "lightTime": "3600s",
+            "moderateTime": "0s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Activity",
+        "activeDuration": "3600s",
+        "updateTime": "2026-07-03T02:05:50.528614Z",
+        "createTime": "2026-07-03T02:05:50.528614Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/1251103016829389864",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-12T13:15:08.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-12T14:11:28.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "SPORT",
+        "metricsSummary": {
+          "caloriesKcal": 56.39,
+          "distanceMillimeters": 10.5,
+          "steps": "197",
+          "averageHeartRateBeatsPerMinute": "64",
+          "activeZoneMinutes": "2",
+          "heartRateZoneDurations": {
+            "lightTime": "2460s",
+            "moderateTime": "780s",
+            "vigorousTime": "120s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Sport",
+        "activeDuration": "3380s",
+        "updateTime": "2026-07-02T22:10:31.636586Z",
+        "createTime": "2026-07-02T22:10:31.636586Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/2110552878765883192",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-11T13:32:39.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-11T14:11:03.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "SPORT",
+        "metricsSummary": {
+          "caloriesKcal": 2.27,
+          "distanceMillimeters": 65.64,
+          "steps": "61",
+          "averageHeartRateBeatsPerMinute": "61",
+          "activeZoneMinutes": "3",
+          "heartRateZoneDurations": {
+            "lightTime": "540s",
+            "moderateTime": "1680s",
+            "vigorousTime": "120s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Sport",
+        "activeDuration": "2304s",
+        "updateTime": "2026-07-01T22:17:53.339710Z",
+        "createTime": "2026-07-01T22:17:53.339710Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/5039589568503613560",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-10T14:22:35.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-10T15:03:33.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "SPORT",
+        "metricsSummary": {
+          "caloriesKcal": 51.47,
+          "distanceMillimeters": 85.4,
+          "steps": "131",
+          "averageHeartRateBeatsPerMinute": "77",
+          "activeZoneMinutes": "1",
+          "heartRateZoneDurations": {
+            "lightTime": "0s",
+            "moderateTime": "1800s",
+            "vigorousTime": "660s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Sport",
+        "activeDuration": "2458s",
+        "updateTime": "2026-06-30T23:27:23.620445Z",
+        "createTime": "2026-06-30T23:27:23.620445Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/824418221371739728",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-07T18:44:42.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-07T19:14:32.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "CARDIO_WORKOUT",
+        "metricsSummary": {
+          "caloriesKcal": 23.15,
+          "averageHeartRateBeatsPerMinute": "63",
+          "activeZoneMinutes": "3",
+          "heartRateZoneDurations": {
+            "lightTime": "60s",
+            "moderateTime": "1740s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Activity",
+        "activeDuration": "1790s",
+        "updateTime": "2026-06-28T03:31:40.340657Z",
+        "createTime": "2026-06-28T03:31:40.340657Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/4364582710577768312",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-07T18:14:14.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-07T18:29:20.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "CARDIO_WORKOUT",
+        "metricsSummary": {
+          "caloriesKcal": 42.96,
+          "averageHeartRateBeatsPerMinute": "63",
+          "activeZoneMinutes": "2",
+          "heartRateZoneDurations": {
+            "lightTime": "0s",
+            "moderateTime": "720s",
+            "vigorousTime": "180s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Activity",
+        "activeDuration": "906s",
+        "updateTime": "2026-06-28T02:46:03.602989Z",
+        "createTime": "2026-06-28T02:46:03.602989Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/7675027857496486208",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-07T16:55:48.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-07T17:12:51.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "SPORT",
+        "metricsSummary": {
+          "caloriesKcal": 74.46,
+          "distanceMillimeters": 23.94,
+          "steps": "1172",
+          "averageHeartRateBeatsPerMinute": "74",
+          "activeZoneMinutes": "2",
+          "heartRateZoneDurations": {
+            "lightTime": "0s",
+            "moderateTime": "480s",
+            "vigorousTime": "540s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Sport",
+        "activeDuration": "1023s",
+        "updateTime": "2026-06-28T01:45:15.667142Z",
+        "createTime": "2026-06-28T01:45:15.667142Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/4200098969642150064",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-07T09:54:50.317Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-07T10:25:29.280Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "WALKING",
+        "metricsSummary": {
+          "caloriesKcal": 85.02,
+          "distanceMillimeters": 47.52,
+          "steps": "2246",
+          "averagePaceSecondsPerMeter": 44.83,
+          "averageHeartRateBeatsPerMinute": "68",
+          "heartRateZoneDurations": {
+            "lightTime": "1860s",
+            "moderateTime": "0s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Walk",
+        "activeDuration": "1838.963s",
+        "updateTime": "2026-06-27T18:27:37.776254Z",
+        "createTime": "2026-06-27T18:27:37.776254Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/5408841102173432592",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-07T08:31:04.888Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-07T09:32:38.950Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "WALKING",
+        "metricsSummary": {
+          "caloriesKcal": 43.5,
+          "distanceMillimeters": 91.72,
+          "steps": "4022",
+          "averagePaceSecondsPerMeter": 16.48,
+          "averageHeartRateBeatsPerMinute": "64",
+          "heartRateZoneDurations": {
+            "lightTime": "3660s",
+            "moderateTime": "0s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Walk",
+        "activeDuration": "3694.062s",
+        "updateTime": "2026-06-27T17:41:58.431556Z",
+        "createTime": "2026-06-27T17:41:58.431556Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/6656584002713899896",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-06T13:23:26.369Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-06T13:43:15.638Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "WALKING",
+        "metricsSummary": {
+          "caloriesKcal": 49.82,
+          "distanceMillimeters": 31.2,
+          "steps": "1809",
+          "averagePaceSecondsPerMeter": 41.88,
+          "averageHeartRateBeatsPerMinute": "70",
+          "heartRateZoneDurations": {
+            "lightTime": "1200s",
+            "moderateTime": "0s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Walk",
+        "activeDuration": "1189.269s",
+        "updateTime": "2026-06-26T21:48:13.801934Z",
+        "createTime": "2026-06-26T21:48:13.801934Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/4554316707914611456",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-05-01T13:25:27.147Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-05-01T13:58:24.166Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "WALKING",
+        "metricsSummary": {
+          "caloriesKcal": 76.53,
+          "distanceMillimeters": 32.34,
+          "steps": "1654",
+          "averagePaceSecondsPerMeter": 12.34,
+          "averageHeartRateBeatsPerMinute": "77",
+          "heartRateZoneDurations": {
+            "lightTime": "1980s",
+            "moderateTime": "0s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Walk",
+        "activeDuration": "1977.019s",
+        "updateTime": "2026-06-21T22:11:31.929188Z",
+        "createTime": "2026-06-21T22:11:31.929188Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/6891912759095846416",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "device": {
+          "formFactor": "PHONE"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-04-30T12:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-04-30T16:44:00.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "GOLF",
+        "metricsSummary": {
+          "caloriesKcal": 98.94,
+          "distanceMillimeters": 58.61,
+          "steps": "8607",
+          "averageHeartRateBeatsPerMinute": "64",
+          "activeZoneMinutes": "2",
+          "heartRateZoneDurations": {
+            "lightTime": "3360s",
+            "moderateTime": "11760s",
+            "vigorousTime": "1080s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Golf",
+        "activeDuration": "16200s",
+        "updateTime": "2026-06-21T15:56:11.744245Z",
+        "createTime": "2026-06-21T15:56:11.744245Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/8610690824827961464",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "device": {
+          "formFactor": "PHONE"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-04-28T16:41:36.194Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-04-28T17:41:36.194Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "GOLF",
+        "metricsSummary": {
+          "caloriesKcal": 58.39,
+          "distanceMillimeters": 9.5,
+          "steps": "667",
+          "averageHeartRateBeatsPerMinute": "61",
+          "activeZoneMinutes": "2",
+          "heartRateZoneDurations": {
+            "lightTime": "2940s",
+            "moderateTime": "660s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Golf",
+        "activeDuration": "3600s",
+        "updateTime": "2026-06-19T01:57:45.116089Z",
+        "createTime": "2026-06-19T01:57:45.116089Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/5640465223039665072",
+      "dataSource": {
+        "recordingMethod": "MANUAL",
+        "device": {
+          "formFactor": "PHONE"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-04-28T13:14:00.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-04-28T14:14:00.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "GOLF",
+        "metricsSummary": {
+          "caloriesKcal": 42.84,
+          "distanceMillimeters": 73.67,
+          "steps": "453",
+          "averageHeartRateBeatsPerMinute": "73",
+          "activeZoneMinutes": "2",
+          "heartRateZoneDurations": {
+            "lightTime": "3540s",
+            "moderateTime": "60s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Golf",
+        "activeDuration": "3600s",
+        "updateTime": "2026-06-19T02:22:44.423050Z",
+        "createTime": "2026-06-19T02:22:44.423050Z"
+      }
+    },
+    {
+      "name": "users/FIXTURE_USER/dataTypes/exercise/dataPoints/5934311884538201112",
+      "dataSource": {
+        "recordingMethod": "PASSIVELY_MEASURED",
+        "device": {
+          "formFactor": "FITNESS_BAND"
+        },
+        "platform": "FITBIT"
+      },
+      "exercise": {
+        "interval": {
+          "startTime": "2024-04-27T13:27:41.000Z",
+          "startUtcOffset": "-18000s",
+          "endTime": "2024-04-27T13:57:32.000Z",
+          "endUtcOffset": "-18000s"
+        },
+        "exerciseType": "SPORT",
+        "metricsSummary": {
+          "caloriesKcal": 46.85,
+          "distanceMillimeters": 84.36,
+          "steps": "86",
+          "averageHeartRateBeatsPerMinute": "62",
+          "activeZoneMinutes": "2",
+          "heartRateZoneDurations": {
+            "lightTime": "480s",
+            "moderateTime": "1320s",
+            "vigorousTime": "0s",
+            "peakTime": "0s"
+          }
+        },
+        "exerciseMetadata": {},
+        "displayName": "Sport",
+        "activeDuration": "1791s",
+        "updateTime": "2026-06-17T21:54:31.583522Z",
+        "createTime": "2026-06-17T21:54:31.583522Z"
+      }
+    }
+  ],
+  "nextPageToken": "25"
+}

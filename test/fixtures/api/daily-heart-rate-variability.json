@@ -1,0 +1,545 @@
+{
+  "dataPoints": [
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 14
+        },
+        "averageHeartRateVariabilityMilliseconds": 26.83,
+        "nonRemHeartRateBeatsPerMinute": "58",
+        "entropy": 2.967,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 32.8
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 13
+        },
+        "averageHeartRateVariabilityMilliseconds": 29.26,
+        "nonRemHeartRateBeatsPerMinute": "66",
+        "entropy": 2.427,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 18
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 12
+        },
+        "averageHeartRateVariabilityMilliseconds": 34.57,
+        "nonRemHeartRateBeatsPerMinute": "72",
+        "entropy": 2.178,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 28
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 11
+        },
+        "averageHeartRateVariabilityMilliseconds": 41.53,
+        "nonRemHeartRateBeatsPerMinute": "72",
+        "entropy": 2.03,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 24.2
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 10
+        },
+        "averageHeartRateVariabilityMilliseconds": 38.44,
+        "nonRemHeartRateBeatsPerMinute": "61",
+        "entropy": 2.985,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 27
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 9
+        },
+        "averageHeartRateVariabilityMilliseconds": 18.17,
+        "nonRemHeartRateBeatsPerMinute": "71",
+        "entropy": 2.59,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 32.2
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 8
+        },
+        "averageHeartRateVariabilityMilliseconds": 44.09,
+        "nonRemHeartRateBeatsPerMinute": "58",
+        "entropy": 2.045,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 33
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 7
+        },
+        "averageHeartRateVariabilityMilliseconds": 40.44,
+        "nonRemHeartRateBeatsPerMinute": "66",
+        "entropy": 2.908,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 25.6
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 6
+        },
+        "averageHeartRateVariabilityMilliseconds": 23.6,
+        "nonRemHeartRateBeatsPerMinute": "69",
+        "entropy": 3.056,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 14.9
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 5
+        },
+        "averageHeartRateVariabilityMilliseconds": 26.9,
+        "nonRemHeartRateBeatsPerMinute": "77",
+        "entropy": 2.478,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 31.2
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 4
+        },
+        "averageHeartRateVariabilityMilliseconds": 25.6,
+        "nonRemHeartRateBeatsPerMinute": "57",
+        "entropy": 2.258,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 19.6
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 3
+        },
+        "averageHeartRateVariabilityMilliseconds": 20.08,
+        "nonRemHeartRateBeatsPerMinute": "77",
+        "entropy": 2.584,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 25.9
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 2
+        },
+        "averageHeartRateVariabilityMilliseconds": 45.17,
+        "nonRemHeartRateBeatsPerMinute": "65",
+        "entropy": 2.957,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 28.1
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 1
+        },
+        "averageHeartRateVariabilityMilliseconds": 39.1,
+        "nonRemHeartRateBeatsPerMinute": "63",
+        "entropy": 3.006,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 22
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 31
+        },
+        "averageHeartRateVariabilityMilliseconds": 27.81,
+        "nonRemHeartRateBeatsPerMinute": "72",
+        "entropy": 2.761,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 21
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 30
+        },
+        "averageHeartRateVariabilityMilliseconds": 19.48,
+        "nonRemHeartRateBeatsPerMinute": "65",
+        "entropy": 2.865,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 25.4
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 29
+        },
+        "averageHeartRateVariabilityMilliseconds": 29.84,
+        "nonRemHeartRateBeatsPerMinute": "74",
+        "entropy": 2.738,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 18.6
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 28
+        },
+        "averageHeartRateVariabilityMilliseconds": 32.1,
+        "nonRemHeartRateBeatsPerMinute": "75",
+        "entropy": 2.799,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 19.3
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 27
+        },
+        "averageHeartRateVariabilityMilliseconds": 36.57,
+        "nonRemHeartRateBeatsPerMinute": "67",
+        "entropy": 2.207,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 18.2
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 26
+        },
+        "averageHeartRateVariabilityMilliseconds": 42.14,
+        "nonRemHeartRateBeatsPerMinute": "74",
+        "entropy": 3.138,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 32.8
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 25
+        },
+        "averageHeartRateVariabilityMilliseconds": 29.11,
+        "nonRemHeartRateBeatsPerMinute": "68",
+        "entropy": 2.672,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 25.5
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 24
+        },
+        "averageHeartRateVariabilityMilliseconds": 34.05,
+        "nonRemHeartRateBeatsPerMinute": "73",
+        "entropy": 2.916,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 13.7
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 23
+        },
+        "averageHeartRateVariabilityMilliseconds": 39.45,
+        "nonRemHeartRateBeatsPerMinute": "77",
+        "entropy": 2.345,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 24.6
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 22
+        },
+        "averageHeartRateVariabilityMilliseconds": 27.64,
+        "nonRemHeartRateBeatsPerMinute": "77",
+        "entropy": 2.517,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 22.8
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 21
+        },
+        "averageHeartRateVariabilityMilliseconds": 33.37,
+        "nonRemHeartRateBeatsPerMinute": "60",
+        "entropy": 2.557,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 20.9
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 20
+        },
+        "averageHeartRateVariabilityMilliseconds": 20.65,
+        "nonRemHeartRateBeatsPerMinute": "63",
+        "entropy": 2.467,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 32.4
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 19
+        },
+        "averageHeartRateVariabilityMilliseconds": 27.76,
+        "nonRemHeartRateBeatsPerMinute": "72",
+        "entropy": 2.361,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 30.5
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 18
+        },
+        "averageHeartRateVariabilityMilliseconds": 34.66,
+        "nonRemHeartRateBeatsPerMinute": "71",
+        "entropy": 3.166,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 30.7
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 17
+        },
+        "averageHeartRateVariabilityMilliseconds": 19.3,
+        "nonRemHeartRateBeatsPerMinute": "63",
+        "entropy": 2.331,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 16.2
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyHeartRateVariability": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 16
+        },
+        "averageHeartRateVariabilityMilliseconds": 43.74,
+        "nonRemHeartRateBeatsPerMinute": "64",
+        "entropy": 3.067,
+        "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds": 17.3
+      }
+    }
+  ],
+  "nextPageToken": "Xm5h86PYoSZxPlRuQjl5b2l0bXUwan14MnR9K3p1bfkrfnU4dWBl"
+}

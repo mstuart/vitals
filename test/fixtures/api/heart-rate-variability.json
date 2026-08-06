@@ -1,0 +1,505 @@
+{
+  "dataPoints": [
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T05:34:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 0,
+              "minutes": 34
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 29.66
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T05:29:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 0,
+              "minutes": 29
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 19.58
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T05:24:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 0,
+              "minutes": 24
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 44.31
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T05:19:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 0,
+              "minutes": 19
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 31.41
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T05:14:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 0,
+              "minutes": 14
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 39.92
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T05:09:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 0,
+              "minutes": 9
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 23.17
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T05:04:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 15
+            },
+            "time": {
+              "hours": 0,
+              "minutes": 4
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 26.3
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T04:59:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 23,
+              "minutes": 59
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 20.21
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T04:54:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 23,
+              "minutes": 54
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 35.38
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T04:49:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 23,
+              "minutes": 49
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 45.31
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T04:44:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 23,
+              "minutes": 44
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 30.78
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T04:39:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 23,
+              "minutes": 39
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 19.61
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T04:34:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 23,
+              "minutes": 34
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 20.77
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T04:29:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 23,
+              "minutes": 29
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 22.38
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T04:24:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 23,
+              "minutes": 24
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 34.47
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T04:19:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 23,
+              "minutes": 19
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 20.54
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T04:14:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 23,
+              "minutes": 14
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 24.57
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T04:09:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 23,
+              "minutes": 9
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 43.59
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T04:04:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 23,
+              "minutes": 4
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 41.14
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "heartRateVariability": {
+        "sampleTime": {
+          "physicalTime": "2024-06-15T03:59:00.000Z",
+          "utcOffset": "-18000s",
+          "civilTime": {
+            "date": {
+              "year": 2024,
+              "month": 6,
+              "day": 14
+            },
+            "time": {
+              "hours": 22,
+              "minutes": 59
+            }
+          }
+        },
+        "rootMeanSquareOfSuccessiveDifferencesMilliseconds": 20.96
+      }
+    }
+  ],
+  "nextPageToken": "Xm5hz-SloCZxElRuWjx5bmvy98zj85uG34tuMn16mu2pntsnZI32iqhq"
+}

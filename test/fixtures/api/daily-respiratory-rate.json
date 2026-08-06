@@ -1,0 +1,455 @@
+{
+  "dataPoints": [
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 14
+        },
+        "breathsPerMinute": 15.8
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 13
+        },
+        "breathsPerMinute": 12.5
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 12
+        },
+        "breathsPerMinute": 15.6
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 11
+        },
+        "breathsPerMinute": 14.1
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 10
+        },
+        "breathsPerMinute": 12.1
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 9
+        },
+        "breathsPerMinute": 14.4
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 8
+        },
+        "breathsPerMinute": 17.3
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 7
+        },
+        "breathsPerMinute": 13.9
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 6
+        },
+        "breathsPerMinute": 17.4
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 5
+        },
+        "breathsPerMinute": 15.8
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 4
+        },
+        "breathsPerMinute": 16.9
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 3
+        },
+        "breathsPerMinute": 13
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 2
+        },
+        "breathsPerMinute": 17.2
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 6,
+          "day": 1
+        },
+        "breathsPerMinute": 13.4
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 31
+        },
+        "breathsPerMinute": 15.5
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 30
+        },
+        "breathsPerMinute": 13.7
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 29
+        },
+        "breathsPerMinute": 12.6
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 28
+        },
+        "breathsPerMinute": 15.9
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 27
+        },
+        "breathsPerMinute": 13
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 26
+        },
+        "breathsPerMinute": 16.3
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 25
+        },
+        "breathsPerMinute": 15.7
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 24
+        },
+        "breathsPerMinute": 15.9
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 23
+        },
+        "breathsPerMinute": 16.5
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 22
+        },
+        "breathsPerMinute": 14.4
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 21
+        },
+        "breathsPerMinute": 16.8
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 20
+        },
+        "breathsPerMinute": 16.7
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 19
+        },
+        "breathsPerMinute": 16
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 18
+        },
+        "breathsPerMinute": 14.8
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 17
+        },
+        "breathsPerMinute": 14.8
+      }
+    },
+    {
+      "dataSource": {
+        "recordingMethod": "DERIVED",
+        "device": {},
+        "platform": "FITBIT"
+      },
+      "dailyRespiratoryRate": {
+        "date": {
+          "year": 2024,
+          "month": 5,
+          "day": 16
+        },
+        "breathsPerMinute": 15.2
+      }
+    }
+  ],
+  "nextPageToken": "Xm5h86PYoSZxYlRuQjl5b2l0bXUwan14MnR9K3p1bfkrfnU4dWBl"
+}
