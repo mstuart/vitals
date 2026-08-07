@@ -151,9 +151,20 @@ NODE="$(ls -d "$HOME"/.nvm/versions/node/*/bin/node 2>/dev/null | sort -V | tail
 [ -x "$NODE" ] || NODE="$(command -v node)"
 
 echo "$(date -Iseconds) pull starting"
-"$NODE" "$HOME/path/to/vitals/dist/cli/index.js" pull --since 7d
-rc=$?          # NOT `status` — that is a read-only special variable in zsh,
-               # and assigning to it makes the script exit non-zero on success
+
+# launchd runs a missed job as soon as the machine wakes, often before the
+# network is back, and every data type then fails with "fetch failed". Retrying
+# with backoff stops a wake-up race costing a day of history. Sync is
+# idempotent, so retrying after a partial success is free.
+rc=1
+for attempt in 1 2 3 4; do
+	"$NODE" "$HOME/path/to/vitals/dist/cli/index.js" pull --since 7d
+	rc=$?          # NOT `status` — that is a read-only special variable in zsh,
+	               # and assigning to it makes the script exit non-zero on success
+	[ $rc -eq 0 ] && break
+	[ $attempt -lt 4 ] && sleep $((attempt * 60))
+done
+
 echo "$(date -Iseconds) pull finished with status $rc"
 exit $rc
 ```
