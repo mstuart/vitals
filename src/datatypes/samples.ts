@@ -61,6 +61,16 @@ function newestSampleTimestamp(points: ApiDataPoint[], payloadKey: string): stri
   return newest;
 }
 
+/**
+ * Treat a 0 as "not measured" for quantities that cannot physiologically be
+ * zero in a living person — an RMSSD of 0ms means identical consecutive beats,
+ * a heart rate of 0 means no pulse, a weight or body-fat of 0 is nonsense.
+ * Stored as real values they silently corrupt averages and correlations.
+ */
+function nonZero(value: number | null): number | null {
+  return value === null || value === 0 ? null : value;
+}
+
 /** Build a simple point-sample -> single-Observation parser. */
 function makeSampleObservationParser(
   payloadKey: string,
@@ -75,7 +85,7 @@ function makeSampleObservationParser(
       if (!payload) continue;
       const sampleTime = asSampleTime(payload['sampleTime']);
       if (!sampleTime) continue;
-      const value = toNumber(payload[valueField]);
+      const value = nonZero(toNumber(payload[valueField]));
       if (value === null) continue;
       const ts = toIsoUtc(sampleTime.physicalTime);
       if (!ts) continue;
@@ -120,7 +130,7 @@ function parseHeartRate(points: ApiDataPoint[]): ParsedBatch {
     if (!payload) continue;
     const sampleTime = asSampleTime(payload['sampleTime']);
     if (!sampleTime) continue;
-    const bpm = toNumber(payload['beatsPerMinute']);
+    const bpm = nonZero(toNumber(payload['beatsPerMinute']));
     if (bpm === null) continue;
     const hourTs = truncateToHour(sampleTime.physicalTime);
     if (!hourTs) continue;
@@ -190,7 +200,7 @@ function parseWeight(points: ApiDataPoint[]): ParsedBatch {
     if (!payload) continue;
     const sampleTime = asSampleTime(payload['sampleTime']);
     if (!sampleTime) continue;
-    const grams = toNumber(payload['weightGrams']);
+    const grams = nonZero(toNumber(payload['weightGrams']));
     if (grams === null) continue;
     const ts = toIsoUtc(sampleTime.physicalTime);
     if (!ts) continue;
