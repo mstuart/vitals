@@ -171,3 +171,44 @@ describe('bodyFatSpec', () => {
     expect(bodyFatSpec.parse(malformed).observations).toHaveLength(0);
   });
 });
+
+describe('impossible zero readings are treated as missing', () => {
+  it('drops a zero RMSSD from heart-rate-variability', () => {
+    const point = {
+      dataSource: { platform: 'FITBIT' },
+      heartRateVariability: {
+        sampleTime: { physicalTime: '2026-08-06T09:00:00Z', utcOffset: '-25200s' },
+        rootMeanSquareOfSuccessiveDifferencesMilliseconds: 0,
+      },
+    } as unknown as ApiDataPoint;
+    expect(heartRateVariabilitySpec.parse([point]).observations).toEqual([]);
+  });
+
+  it('drops a zero bpm rather than dragging the hourly average down', () => {
+    const zero = {
+      heartRate: { sampleTime: { physicalTime: '2026-08-06T09:00:00Z' }, beatsPerMinute: '0' },
+    } as unknown as ApiDataPoint;
+    const real = {
+      heartRate: { sampleTime: { physicalTime: '2026-08-06T09:01:00Z' }, beatsPerMinute: '60' },
+    } as unknown as ApiDataPoint;
+    const buckets = heartRateSpec.parse([zero, real]).heartRateHourly;
+    expect(buckets).toHaveLength(1);
+    expect(buckets[0]!.sampleCount).toBe(1);
+    expect(buckets[0]!.avgBpm).toBe(60);
+    expect(buckets[0]!.minBpm).toBe(60);
+  });
+
+  it('drops a zero weight', () => {
+    const point = {
+      weight: { sampleTime: { physicalTime: '2026-08-06T09:00:00Z' }, weightGrams: 0 },
+    } as unknown as ApiDataPoint;
+    expect(weightSpec.parse([point]).observations).toEqual([]);
+  });
+
+  it('keeps genuine non-zero readings', () => {
+    const point = {
+      weight: { sampleTime: { physicalTime: '2026-08-06T09:00:00Z' }, weightGrams: 74500 },
+    } as unknown as ApiDataPoint;
+    expect(weightSpec.parse([point]).observations[0]?.value).toBe(74.5);
+  });
+});
