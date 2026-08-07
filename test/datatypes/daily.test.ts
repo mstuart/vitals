@@ -375,3 +375,35 @@ describe('respiratoryRateSleepSummarySpec', () => {
     return respiratoryRateSleepSummarySpec.parse(pts).observations;
   }
 });
+
+describe('dailyHeartRateVariabilitySpec zero handling', () => {
+  it('drops a zero deep-sleep HRV as "not measured", keeping the other metrics', () => {
+    const point: ApiDataPoint = {
+      dataSource: { platform: 'FITBIT' },
+      dailyHeartRateVariability: {
+        date: { year: 2026, month: 3, day: 17 },
+        averageHeartRateVariabilityMilliseconds: 34.9,
+        deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds: 0,
+        nonRemHeartRateBeatsPerMinute: '65',
+        entropy: 2.5,
+      },
+    };
+    const metrics = dailyHeartRateVariabilitySpec.parse([point]).observations.map((o) => o.metric);
+    expect(metrics).not.toContain(METRICS.hrvDeepSleep);
+    expect(metrics).toContain(METRICS.hrvDailyAvg);
+    expect(metrics).toContain(METRICS.nonRemHeartRate);
+  });
+
+  it('keeps a genuine non-zero deep-sleep HRV', () => {
+    const point: ApiDataPoint = {
+      dataSource: { platform: 'FITBIT' },
+      dailyHeartRateVariability: {
+        date: { year: 2026, month: 8, day: 6 },
+        averageHeartRateVariabilityMilliseconds: 22.1,
+        deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds: 17.2,
+      },
+    };
+    const obs = dailyHeartRateVariabilitySpec.parse([point]).observations;
+    expect(obs.find((o) => o.metric === METRICS.hrvDeepSleep)?.value).toBe(17.2);
+  });
+});

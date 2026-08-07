@@ -99,6 +99,11 @@ export const dailyRestingHeartRateSpec: DataTypeSpec = {
   },
 };
 
+/** Treat a 0 reading as "not measured" rather than a real value. */
+function nonZero(value: number | null): number | null {
+  return value === null || value === 0 ? null : value;
+}
+
 // ---------------------------------------------------------------------------
 // daily-heart-rate-variability
 // ---------------------------------------------------------------------------
@@ -116,7 +121,11 @@ export const dailyHeartRateVariabilitySpec: DataTypeSpec = {
       },
       {
         metric: METRICS.hrvDeepSleep,
-        value: toNumber(payload.deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds),
+        // A 0 here means deep-sleep HRV was not derived for that night, not
+        // that variability was zero — which is physiologically impossible in a
+        // living person. Stored as a real value it drags any correlation
+        // against it the wrong way, so drop it as missing.
+        value: nonZero(toNumber(payload.deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds)),
         unit: 'ms',
       },
       {
