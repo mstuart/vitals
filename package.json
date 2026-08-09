@@ -1,6 +1,6 @@
 {
   "name": "@mstuart/vitals",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Local-first archive and baseline-deviation detector for Google Health API v4 (Fitbit, Pixel Watch) data",
   "license": "MIT",
   "author": "Mark Stuart",
@@ -25,7 +25,7 @@
   ],
   "type": "module",
   "bin": {
-    "vitals": "./dist/cli/index.js"
+    "vitals": "dist/cli/index.js"
   },
   "files": [
     "dist",
