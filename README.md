@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/node-%E2%89%A522-339933.svg" alt="Node 22+">
   <img src="https://img.shields.io/badge/MCP-server-8b5cf6.svg" alt="MCP server">
   <a href="https://deepwiki.com/mstuart/vitals"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
-  <!-- Socket badge activates once socket.dev indexes @mstuart/vitals: <a href="https://socket.dev/npm/package/@mstuart/vitals"><img src="https://socket.dev/api/badge/npm/package/@mstuart/vitals" alt="Socket"></a> -->
+  <a href="https://socket.dev/npm/package/@mstuart/vitals"><img src="https://socket.dev/api/badge/npm/package/@mstuart/vitals" alt="Socket"></a>
 </p>
 
 <p align="center">
