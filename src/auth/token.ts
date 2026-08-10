@@ -1,9 +1,9 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { dirname } from 'node:path';
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { dirname } from "node:path";
 
-import { TOKEN_ENDPOINT } from '../config/paths.js';
-import type { AccessToken, Paths } from '../types.js';
-import { VitalsError } from '../types.js';
+import { TOKEN_ENDPOINT } from "../config/paths.js";
+import type { AccessToken, Paths } from "../types.js";
+import { VitalsError } from "../types.js";
 
 /**
  * OAuth credentials holding a long-lived refresh token.
@@ -17,46 +17,50 @@ import { VitalsError } from '../types.js';
 interface SourceCredentials {
   client_id: string;
   client_secret: string;
-  refresh_token: string;
-  token?: string;
   expiry?: string;
+  refresh_token: string;
   scopes?: string[];
+  token?: string;
 }
 
 interface TokenRefreshResponse {
   access_token?: string;
   expires_in?: number;
-  token_type?: string;
   scope?: string;
+  token_type?: string;
 }
 
 const EXPIRY_SKEW_MS = 60_000;
 
 function isSourceCredentials(v: unknown): v is SourceCredentials {
-  if (typeof v !== 'object' || v === null) return false;
+  if (typeof v !== "object" || v === null) {
+    return false;
+  }
   const o = v as Record<string, unknown>;
   return (
-    typeof o.client_id === 'string' &&
-    typeof o.client_secret === 'string' &&
-    typeof o.refresh_token === 'string'
+    typeof o.client_id === "string" &&
+    typeof o.client_secret === "string" &&
+    typeof o.refresh_token === "string"
   );
 }
 
-const RUN_AUTH = 'Run `vitals auth` to connect your Google account.';
+const RUN_AUTH = "Run `vitals auth` to connect your Google account.";
 
 /** Parse a credential file, or return null if it is absent or unusable. */
-async function tryReadCredentials(file: string): Promise<SourceCredentials | 'absent' | 'invalid'> {
+async function tryReadCredentials(
+  file: string
+): Promise<SourceCredentials | "absent" | "invalid"> {
   let raw: string;
   try {
-    raw = await readFile(file, 'utf-8');
+    raw = await readFile(file, "utf-8");
   } catch {
-    return 'absent';
+    return "absent";
   }
   try {
     const parsed: unknown = JSON.parse(raw);
-    return isSourceCredentials(parsed) ? parsed : 'invalid';
+    return isSourceCredentials(parsed) ? parsed : "invalid";
   } catch {
-    return 'invalid';
+    return "invalid";
   }
 }
 
@@ -71,38 +75,50 @@ async function tryReadCredentials(file: string): Promise<SourceCredentials | 'ab
  */
 async function readSourceCredentials(paths: Paths): Promise<SourceCredentials> {
   const own = await tryReadCredentials(paths.credentialsFile);
-  if (own !== 'absent' && own !== 'invalid') return own;
+  if (own !== "absent" && own !== "invalid") {
+    return own;
+  }
 
   const external = paths.externalCredentialsFile;
   if (external) {
     const found = await tryReadCredentials(external);
-    if (found !== 'absent' && found !== 'invalid') return found;
+    if (found !== "absent" && found !== "invalid") {
+      return found;
+    }
     throw new VitalsError(
-      'AUTH_MISSING',
-      found === 'absent'
+      "AUTH_MISSING",
+      found === "absent"
         ? `VITALS_GOOGLE_TOKEN points at ${external}, which could not be read.`
         : `Credential file at ${external} is not valid JSON, or lacks client_id, client_secret, and refresh_token.`,
-      { hint: `Fix that file, unset VITALS_GOOGLE_TOKEN, or ${RUN_AUTH.toLowerCase()}` },
+      {
+        hint: `Fix that file, unset VITALS_GOOGLE_TOKEN, or ${RUN_AUTH.toLowerCase()}`,
+      }
     );
   }
 
-  if (own === 'invalid') {
+  if (own === "invalid") {
     throw new VitalsError(
-      'AUTH_MISSING',
+      "AUTH_MISSING",
       `Credential file at ${paths.credentialsFile} is not valid JSON, or lacks client_id, client_secret, and refresh_token.`,
-      { hint: RUN_AUTH },
+      { hint: RUN_AUTH }
     );
   }
 
-  throw new VitalsError('AUTH_MISSING', 'vitals is not connected to a Google account yet.', {
-    hint: RUN_AUTH,
-  });
+  throw new VitalsError(
+    "AUTH_MISSING",
+    "vitals is not connected to a Google account yet.",
+    {
+      hint: RUN_AUTH,
+    }
+  );
 }
 
-async function readCachedToken(tokenCacheFile: string): Promise<AccessToken | null> {
+async function readCachedToken(
+  tokenCacheFile: string
+): Promise<AccessToken | null> {
   let raw: string;
   try {
-    raw = await readFile(tokenCacheFile, 'utf-8');
+    raw = await readFile(tokenCacheFile, "utf-8");
   } catch {
     return null;
   }
@@ -110,10 +126,10 @@ async function readCachedToken(tokenCacheFile: string): Promise<AccessToken | nu
   try {
     const parsed = JSON.parse(raw) as unknown;
     if (
-      typeof parsed === 'object' &&
+      typeof parsed === "object" &&
       parsed !== null &&
-      typeof (parsed as Record<string, unknown>).token === 'string' &&
-      typeof (parsed as Record<string, unknown>).expiresAt === 'string'
+      typeof (parsed as Record<string, unknown>).token === "string" &&
+      typeof (parsed as Record<string, unknown>).expiresAt === "string"
     ) {
       return parsed as AccessToken;
     }
@@ -123,47 +139,57 @@ async function readCachedToken(tokenCacheFile: string): Promise<AccessToken | nu
   }
 }
 
-async function writeCachedToken(tokenCacheFile: string, token: AccessToken): Promise<void> {
+async function writeCachedToken(
+  tokenCacheFile: string,
+  token: AccessToken
+): Promise<void> {
   await mkdir(dirname(tokenCacheFile), { recursive: true });
-  await writeFile(tokenCacheFile, JSON.stringify(token, null, 2), { mode: 0o600 });
+  await writeFile(tokenCacheFile, JSON.stringify(token, null, 2), {
+    mode: 0o600,
+  });
 }
 
 async function refreshAccessToken(
   creds: SourceCredentials,
   now: Date,
-  fetchImpl: typeof fetch,
+  fetchImpl: typeof fetch
 ): Promise<AccessToken> {
   const body = new URLSearchParams({
-    grant_type: 'refresh_token',
     client_id: creds.client_id,
     client_secret: creds.client_secret,
+    grant_type: "refresh_token",
     refresh_token: creds.refresh_token,
   });
 
   const response = await fetchImpl(TOKEN_ENDPOINT, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: body.toString(),
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    method: "POST",
   });
 
   if (!response.ok) {
-    const responseBody = await response.text().catch(() => '');
+    const responseBody = await response.text().catch(() => "");
     throw new VitalsError(
-      'AUTH_REFRESH_FAILED',
-      `Token refresh failed with HTTP ${response.status}: ${responseBody}`,
+      "AUTH_REFRESH_FAILED",
+      `Token refresh failed with HTTP ${response.status}: ${responseBody}`
     );
   }
 
   const parsed = (await response.json()) as TokenRefreshResponse;
-  if (typeof parsed.access_token !== 'string' || typeof parsed.expires_in !== 'number') {
+  if (
+    typeof parsed.access_token !== "string" ||
+    typeof parsed.expires_in !== "number"
+  ) {
     throw new VitalsError(
-      'AUTH_REFRESH_FAILED',
-      `Token refresh response is missing access_token or expires_in: ${JSON.stringify(parsed)}`,
+      "AUTH_REFRESH_FAILED",
+      `Token refresh response is missing access_token or expires_in: ${JSON.stringify(parsed)}`
     );
   }
 
-  const expiresAt = new Date(now.getTime() + parsed.expires_in * 1000).toISOString();
-  return { token: parsed.access_token, expiresAt };
+  const expiresAt = new Date(
+    now.getTime() + parsed.expires_in * 1000
+  ).toISOString();
+  return { expiresAt, token: parsed.access_token };
 }
 
 /**
@@ -176,7 +202,7 @@ async function refreshAccessToken(
  */
 export async function getAccessToken(
   paths: Paths,
-  opts?: { now?: Date; fetchImpl?: typeof fetch },
+  opts?: { now?: Date; fetchImpl?: typeof fetch }
 ): Promise<string> {
   const now = opts?.now ?? new Date();
   const fetchImpl = opts?.fetchImpl ?? fetch;
@@ -184,7 +210,10 @@ export async function getAccessToken(
   const cached = await readCachedToken(paths.tokenCacheFile);
   if (cached) {
     const expiresAtMs = Date.parse(cached.expiresAt);
-    if (Number.isFinite(expiresAtMs) && expiresAtMs - now.getTime() > EXPIRY_SKEW_MS) {
+    if (
+      Number.isFinite(expiresAtMs) &&
+      expiresAtMs - now.getTime() > EXPIRY_SKEW_MS
+    ) {
       return cached.token;
     }
   }

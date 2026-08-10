@@ -15,23 +15,34 @@ import type {
   HeartRateHourly,
   Observation,
   ParsedBatch,
-} from '../types.js';
-import { METRICS, emptyBatch } from '../types.js';
-import { localDateOfSample, toIsoUtc, toNumber, truncateToHour } from '../util/time.js';
+} from "../types.js";
+import { emptyBatch, METRICS } from "../types.js";
+import {
+  localDateOfSample,
+  toIsoUtc,
+  toNumber,
+  truncateToHour,
+} from "../util/time.js";
 
 function asRecord(v: unknown): Record<string, unknown> | undefined {
-  return typeof v === 'object' && v !== null ? (v as Record<string, unknown>) : undefined;
+  return typeof v === "object" && v !== null
+    ? (v as Record<string, unknown>)
+    : undefined;
 }
 
 /** Extract an `ApiSampleTime` from an unknown payload field, tolerating malformed input. */
 function asSampleTime(v: unknown): ApiSampleTime | undefined {
   const r = asRecord(v);
-  if (!r) return undefined;
-  const physicalTime = r['physicalTime'];
-  if (typeof physicalTime !== 'string') return undefined;
-  const utcOffset = typeof r['utcOffset'] === 'string' ? r['utcOffset'] : undefined;
-  const civilTime = r['civilTime'] as ApiCivilTime | undefined;
-  return { physicalTime, utcOffset, civilTime };
+  if (!r) {
+    return;
+  }
+  const { physicalTime } = r;
+  if (typeof physicalTime !== "string") {
+    return;
+  }
+  const utcOffset = typeof r.utcOffset === "string" ? r.utcOffset : undefined;
+  const civilTime = r.civilTime as ApiCivilTime | undefined;
+  return { civilTime, physicalTime, utcOffset };
 }
 
 function platformOf(point: ApiDataPoint): string | null {
@@ -43,15 +54,22 @@ function recordingMethodOf(point: ApiDataPoint): string | null {
 }
 
 /** Newest physicalTime among points whose `payloadKey` field carries a sampleTime. */
-function newestSampleTimestamp(points: ApiDataPoint[], payloadKey: string): string | null {
+function newestSampleTimestamp(
+  points: ApiDataPoint[],
+  payloadKey: string
+): string | null {
   let newest: string | null = null;
-  let newestMs = -Infinity;
+  let newestMs = Number.NEGATIVE_INFINITY;
   for (const p of points) {
     const payload = asRecord(p[payloadKey]);
-    const sampleTime = payload ? asSampleTime(payload['sampleTime']) : undefined;
-    if (!sampleTime) continue;
+    const sampleTime = payload ? asSampleTime(payload.sampleTime) : undefined;
+    if (!sampleTime) {
+      continue;
+    }
     const iso = toIsoUtc(sampleTime.physicalTime);
-    if (!iso) continue;
+    if (!iso) {
+      continue;
+    }
     const ms = Date.parse(iso);
     if (Number.isFinite(ms) && ms > newestMs) {
       newestMs = ms;
@@ -76,31 +94,41 @@ function makeSampleObservationParser(
   payloadKey: string,
   valueField: string,
   metric: (typeof METRICS)[keyof typeof METRICS],
-  unit: string,
+  unit: string
 ): (points: ApiDataPoint[]) => ParsedBatch {
   return (points) => {
     const batch = emptyBatch();
     for (const point of points) {
       const payload = asRecord(point[payloadKey]);
-      if (!payload) continue;
-      const sampleTime = asSampleTime(payload['sampleTime']);
-      if (!sampleTime) continue;
+      if (!payload) {
+        continue;
+      }
+      const sampleTime = asSampleTime(payload.sampleTime);
+      if (!sampleTime) {
+        continue;
+      }
       const value = nonZero(toNumber(payload[valueField]));
-      if (value === null) continue;
+      if (value === null) {
+        continue;
+      }
       const ts = toIsoUtc(sampleTime.physicalTime);
-      if (!ts) continue;
+      if (!ts) {
+        continue;
+      }
       const date = localDateOfSample(sampleTime);
-      if (!date) continue;
+      if (!date) {
+        continue;
+      }
 
       const observation: Observation = {
-        metric,
         date,
-        ts,
-        value,
-        unit,
+        metric,
         naturalKey: ts,
         platform: platformOf(point),
         recordingMethod: recordingMethodOf(point),
+        ts,
+        unit,
+        value,
       };
       batch.observations.push(observation);
     }
@@ -113,12 +141,12 @@ function makeSampleObservationParser(
 // ---------------------------------------------------------------------------
 
 interface HourlyAccumulator {
-  hourTs: string;
-  date: string;
-  min: number;
-  max: number;
-  sum: number;
   count: number;
+  date: string;
+  hourTs: string;
+  max: number;
+  min: number;
+  sum: number;
 }
 
 function parseHeartRate(points: ApiDataPoint[]): ParsedBatch {
@@ -126,16 +154,26 @@ function parseHeartRate(points: ApiDataPoint[]): ParsedBatch {
   const buckets = new Map<string, HourlyAccumulator>();
 
   for (const point of points) {
-    const payload = asRecord(point['heartRate']);
-    if (!payload) continue;
-    const sampleTime = asSampleTime(payload['sampleTime']);
-    if (!sampleTime) continue;
-    const bpm = nonZero(toNumber(payload['beatsPerMinute']));
-    if (bpm === null) continue;
+    const payload = asRecord(point.heartRate);
+    if (!payload) {
+      continue;
+    }
+    const sampleTime = asSampleTime(payload.sampleTime);
+    if (!sampleTime) {
+      continue;
+    }
+    const bpm = nonZero(toNumber(payload.beatsPerMinute));
+    if (bpm === null) {
+      continue;
+    }
     const hourTs = truncateToHour(sampleTime.physicalTime);
-    if (!hourTs) continue;
+    if (!hourTs) {
+      continue;
+    }
     const date = localDateOfSample(sampleTime);
-    if (!date) continue;
+    if (!date) {
+      continue;
+    }
 
     const existing = buckets.get(hourTs);
     if (existing) {
@@ -144,18 +182,25 @@ function parseHeartRate(points: ApiDataPoint[]): ParsedBatch {
       existing.sum += bpm;
       existing.count += 1;
     } else {
-      buckets.set(hourTs, { hourTs, date, min: bpm, max: bpm, sum: bpm, count: 1 });
+      buckets.set(hourTs, {
+        count: 1,
+        date,
+        hourTs,
+        max: bpm,
+        min: bpm,
+        sum: bpm,
+      });
     }
   }
 
   for (const acc of buckets.values()) {
     const hourly: HeartRateHourly = {
-      naturalKey: acc.hourTs,
+      avgBpm: acc.sum / acc.count,
       date: acc.date,
       hourTs: acc.hourTs,
-      minBpm: acc.min,
       maxBpm: acc.max,
-      avgBpm: acc.sum / acc.count,
+      minBpm: acc.min,
+      naturalKey: acc.hourTs,
       sampleCount: acc.count,
     };
     batch.heartRateHourly.push(hourly);
@@ -165,11 +210,11 @@ function parseHeartRate(points: ApiDataPoint[]): ParsedBatch {
 }
 
 export const heartRateSpec: DataTypeSpec = {
-  id: 'heart-rate',
+  id: "heart-rate",
+  newestTimestamp: (points) => newestSampleTimestamp(points, "heartRate"),
   pageSize: 2880,
-  supportsDateFilter: false,
   parse: parseHeartRate,
-  newestTimestamp: (points) => newestSampleTimestamp(points, 'heartRate'),
+  supportsDateFilter: false,
 };
 
 // ---------------------------------------------------------------------------
@@ -177,16 +222,17 @@ export const heartRateSpec: DataTypeSpec = {
 // ---------------------------------------------------------------------------
 
 export const heartRateVariabilitySpec: DataTypeSpec = {
-  id: 'heart-rate-variability',
+  id: "heart-rate-variability",
+  newestTimestamp: (points) =>
+    newestSampleTimestamp(points, "heartRateVariability"),
   pageSize: 500,
-  supportsDateFilter: false,
   parse: makeSampleObservationParser(
-    'heartRateVariability',
-    'rootMeanSquareOfSuccessiveDifferencesMilliseconds',
+    "heartRateVariability",
+    "rootMeanSquareOfSuccessiveDifferencesMilliseconds",
     METRICS.hrvSample,
-    'ms',
+    "ms"
   ),
-  newestTimestamp: (points) => newestSampleTimestamp(points, 'heartRateVariability'),
+  supportsDateFilter: false,
 };
 
 // ---------------------------------------------------------------------------
@@ -196,26 +242,36 @@ export const heartRateVariabilitySpec: DataTypeSpec = {
 function parseWeight(points: ApiDataPoint[]): ParsedBatch {
   const batch = emptyBatch();
   for (const point of points) {
-    const payload = asRecord(point['weight']);
-    if (!payload) continue;
-    const sampleTime = asSampleTime(payload['sampleTime']);
-    if (!sampleTime) continue;
-    const grams = nonZero(toNumber(payload['weightGrams']));
-    if (grams === null) continue;
+    const payload = asRecord(point.weight);
+    if (!payload) {
+      continue;
+    }
+    const sampleTime = asSampleTime(payload.sampleTime);
+    if (!sampleTime) {
+      continue;
+    }
+    const grams = nonZero(toNumber(payload.weightGrams));
+    if (grams === null) {
+      continue;
+    }
     const ts = toIsoUtc(sampleTime.physicalTime);
-    if (!ts) continue;
+    if (!ts) {
+      continue;
+    }
     const date = localDateOfSample(sampleTime);
-    if (!date) continue;
+    if (!date) {
+      continue;
+    }
 
     const observation: Observation = {
-      metric: METRICS.weightKg,
       date,
-      ts,
-      value: grams / 1000,
-      unit: 'kg',
+      metric: METRICS.weightKg,
       naturalKey: ts,
       platform: platformOf(point),
       recordingMethod: recordingMethodOf(point),
+      ts,
+      unit: "kg",
+      value: grams / 1000,
     };
     batch.observations.push(observation);
   }
@@ -223,12 +279,12 @@ function parseWeight(points: ApiDataPoint[]): ParsedBatch {
 }
 
 export const weightSpec: DataTypeSpec = {
-  id: 'weight',
+  filterField: "weight.sample_time.physical_time",
+  id: "weight",
+  newestTimestamp: (points) => newestSampleTimestamp(points, "weight"),
   pageSize: 100,
-  supportsDateFilter: true,
-  filterField: 'weight.sample_time.physical_time',
   parse: parseWeight,
-  newestTimestamp: (points) => newestSampleTimestamp(points, 'weight'),
+  supportsDateFilter: true,
 };
 
 // ---------------------------------------------------------------------------
@@ -236,10 +292,15 @@ export const weightSpec: DataTypeSpec = {
 // ---------------------------------------------------------------------------
 
 export const bodyFatSpec: DataTypeSpec = {
-  id: 'body-fat',
+  filterField: "body_fat.sample_time.physical_time",
+  id: "body-fat",
+  newestTimestamp: (points) => newestSampleTimestamp(points, "bodyFat"),
   pageSize: 100,
+  parse: makeSampleObservationParser(
+    "bodyFat",
+    "percentage",
+    METRICS.bodyFatPct,
+    "pct"
+  ),
   supportsDateFilter: true,
-  filterField: 'body_fat.sample_time.physical_time',
-  parse: makeSampleObservationParser('bodyFat', 'percentage', METRICS.bodyFatPct, 'pct'),
-  newestTimestamp: (points) => newestSampleTimestamp(points, 'bodyFat'),
 };

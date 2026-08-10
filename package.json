@@ -2,16 +2,6 @@
   "name": "@mstuart/vitals",
   "version": "0.1.1",
   "description": "Local-first archive and baseline-deviation detector for Google Health API v4 (Fitbit, Pixel Watch) data",
-  "license": "MIT",
-  "author": "Mark Stuart",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mstuart/vitals.git"
-  },
-  "homepage": "https://github.com/mstuart/vitals#readme",
-  "bugs": {
-    "url": "https://github.com/mstuart/vitals/issues"
-  },
   "keywords": [
     "fitbit",
     "google-health",
@@ -23,6 +13,16 @@
     "hrv",
     "sleep"
   ],
+  "homepage": "https://github.com/mstuart/vitals#readme",
+  "bugs": {
+    "url": "https://github.com/mstuart/vitals/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mstuart/vitals.git"
+  },
+  "license": "MIT",
+  "author": "Mark Stuart",
   "type": "module",
   "bin": {
     "vitals": "dist/cli/index.js"
@@ -32,18 +32,15 @@
     "README.md",
     "LICENSE"
   ],
-  "engines": {
-    "node": ">=22"
-  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "record-fixtures": "node scripts/record-fixtures.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
-    "vitals": "node --experimental-strip-types src/cli/index.ts",
-    "record-fixtures": "node scripts/record-fixtures.mjs",
-    "check": "ultracite check",
-    "fix": "ultracite fix"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "vitals": "node --experimental-strip-types src/cli/index.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
@@ -58,6 +55,9 @@
     "typescript": "^5.7.0",
     "ultracite": "7.10.2",
     "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=22"
   },
   "publishConfig": {
     "access": "public"

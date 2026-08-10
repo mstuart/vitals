@@ -7,163 +7,211 @@
  * instant; the natural key is derived from the (normalized) start instant so
  * re-syncs upsert cleanly instead of duplicating rows.
  */
-import type { ApiDataPoint, ApiInterval, DataTypeSpec, ParsedBatch } from '../types.js';
-import { METRICS, emptyBatch } from '../types.js';
-import { localDateOfIntervalStart, toIsoUtc, toNumber } from '../util/time.js';
+import type {
+  ApiDataPoint,
+  ApiInterval,
+  DataTypeSpec,
+  ParsedBatch,
+} from "../types.js";
+import { emptyBatch, METRICS } from "../types.js";
+import { localDateOfIntervalStart, toIsoUtc, toNumber } from "../util/time.js";
 
-function intervalOf(point: ApiDataPoint, payloadKey: string): ApiInterval | null {
+function intervalOf(
+  point: ApiDataPoint,
+  payloadKey: string
+): ApiInterval | null {
   const payload = point[payloadKey];
-  if (!payload || typeof payload !== 'object') return null;
-  const interval = (payload as Record<string, unknown>).interval;
-  if (!interval || typeof interval !== 'object') return null;
+  if (!payload || typeof payload !== "object") {
+    return null;
+  }
+  const { interval } = payload as Record<string, unknown>;
+  if (!interval || typeof interval !== "object") {
+    return null;
+  }
   return interval as ApiInterval;
 }
 
-function newestTimestampByPayload(points: ApiDataPoint[], payloadKey: string): string | null {
+function newestTimestampByPayload(
+  points: ApiDataPoint[],
+  payloadKey: string
+): string | null {
   let newest: string | null = null;
   for (const point of points) {
     const interval = intervalOf(point, payloadKey);
-    if (!interval?.startTime) continue;
+    if (!interval?.startTime) {
+      continue;
+    }
     const ts = toIsoUtc(interval.startTime);
-    if (!ts) continue;
-    if (newest === null || ts > newest) newest = ts;
+    if (!ts) {
+      continue;
+    }
+    if (newest === null || ts > newest) {
+      newest = ts;
+    }
   }
   return newest;
 }
 
 export const stepsSpec: DataTypeSpec = {
-  id: 'steps',
+  filterField: "steps.interval.start_time",
+  id: "steps",
+  newestTimestamp(points: ApiDataPoint[]): string | null {
+    return newestTimestampByPayload(points, "steps");
+  },
   pageSize: 1000,
-  supportsDateFilter: true,
-  filterField: 'steps.interval.start_time',
   parse(points: ApiDataPoint[]): ParsedBatch {
     const batch = emptyBatch();
     for (const point of points) {
-      const interval = intervalOf(point, 'steps');
-      if (!interval?.startTime) continue;
+      const interval = intervalOf(point, "steps");
+      if (!interval?.startTime) {
+        continue;
+      }
       const payload = point.steps as Record<string, unknown>;
       const count = toNumber(payload.count);
-      if (count === null) continue;
+      if (count === null) {
+        continue;
+      }
       const date = localDateOfIntervalStart(interval);
       const ts = toIsoUtc(interval.startTime);
-      if (!date || !ts) continue;
+      if (!(date && ts)) {
+        continue;
+      }
       batch.observations.push({
-        metric: METRICS.steps,
         date,
-        ts,
-        value: count,
-        unit: 'count',
+        metric: METRICS.steps,
         naturalKey: ts,
         platform: point.dataSource?.platform ?? null,
         recordingMethod: point.dataSource?.recordingMethod ?? null,
+        ts,
+        unit: "count",
+        value: count,
       });
     }
     return batch;
   },
-  newestTimestamp(points: ApiDataPoint[]): string | null {
-    return newestTimestampByPayload(points, 'steps');
-  },
+  supportsDateFilter: true,
 };
 
 export const distanceSpec: DataTypeSpec = {
-  id: 'distance',
+  filterField: "distance.interval.start_time",
+  id: "distance",
+  newestTimestamp(points: ApiDataPoint[]): string | null {
+    return newestTimestampByPayload(points, "distance");
+  },
   pageSize: 1000,
-  supportsDateFilter: true,
-  filterField: 'distance.interval.start_time',
   parse(points: ApiDataPoint[]): ParsedBatch {
     const batch = emptyBatch();
     for (const point of points) {
-      const interval = intervalOf(point, 'distance');
-      if (!interval?.startTime) continue;
+      const interval = intervalOf(point, "distance");
+      if (!interval?.startTime) {
+        continue;
+      }
       const payload = point.distance as Record<string, unknown>;
       const millimeters = toNumber(payload.millimeters);
-      if (millimeters === null) continue;
+      if (millimeters === null) {
+        continue;
+      }
       const date = localDateOfIntervalStart(interval);
       const ts = toIsoUtc(interval.startTime);
-      if (!date || !ts) continue;
+      if (!(date && ts)) {
+        continue;
+      }
       batch.observations.push({
-        metric: METRICS.distanceM,
         date,
-        ts,
-        value: millimeters / 1000,
-        unit: 'm',
+        metric: METRICS.distanceM,
         naturalKey: ts,
         platform: point.dataSource?.platform ?? null,
         recordingMethod: point.dataSource?.recordingMethod ?? null,
+        ts,
+        unit: "m",
+        value: millimeters / 1000,
       });
     }
     return batch;
   },
-  newestTimestamp(points: ApiDataPoint[]): string | null {
-    return newestTimestampByPayload(points, 'distance');
-  },
+  supportsDateFilter: true,
 };
 
 export const activeEnergyBurnedSpec: DataTypeSpec = {
-  id: 'active-energy-burned',
+  filterField: "activeEnergyBurned.interval.start_time",
+  id: "active-energy-burned",
+  newestTimestamp(points: ApiDataPoint[]): string | null {
+    return newestTimestampByPayload(points, "activeEnergyBurned");
+  },
   pageSize: 1000,
-  supportsDateFilter: true,
-  filterField: 'activeEnergyBurned.interval.start_time',
   parse(points: ApiDataPoint[]): ParsedBatch {
     const batch = emptyBatch();
     for (const point of points) {
-      const interval = intervalOf(point, 'activeEnergyBurned');
-      if (!interval?.startTime) continue;
+      const interval = intervalOf(point, "activeEnergyBurned");
+      if (!interval?.startTime) {
+        continue;
+      }
       const payload = point.activeEnergyBurned as Record<string, unknown>;
       const kcal = toNumber(payload.kcal);
-      if (kcal === null) continue;
+      if (kcal === null) {
+        continue;
+      }
       const date = localDateOfIntervalStart(interval);
       const ts = toIsoUtc(interval.startTime);
-      if (!date || !ts) continue;
+      if (!(date && ts)) {
+        continue;
+      }
       batch.observations.push({
-        metric: METRICS.activeEnergyKcal,
         date,
-        ts,
-        value: kcal,
-        unit: 'kcal',
+        metric: METRICS.activeEnergyKcal,
         naturalKey: ts,
         platform: point.dataSource?.platform ?? null,
         recordingMethod: point.dataSource?.recordingMethod ?? null,
+        ts,
+        unit: "kcal",
+        value: kcal,
       });
     }
     return batch;
   },
-  newestTimestamp(points: ApiDataPoint[]): string | null {
-    return newestTimestampByPayload(points, 'activeEnergyBurned');
-  },
+  supportsDateFilter: true,
 };
 
 export const activeZoneMinutesSpec: DataTypeSpec = {
-  id: 'active-zone-minutes',
+  filterField: "activeZoneMinutes.interval.start_time",
+  id: "active-zone-minutes",
+  newestTimestamp(points: ApiDataPoint[]): string | null {
+    return newestTimestampByPayload(points, "activeZoneMinutes");
+  },
   pageSize: 1000,
-  supportsDateFilter: true,
-  filterField: 'activeZoneMinutes.interval.start_time',
   parse(points: ApiDataPoint[]): ParsedBatch {
     const batch = emptyBatch();
     for (const point of points) {
-      const interval = intervalOf(point, 'activeZoneMinutes');
-      if (!interval?.startTime) continue;
+      const interval = intervalOf(point, "activeZoneMinutes");
+      if (!interval?.startTime) {
+        continue;
+      }
       const payload = point.activeZoneMinutes as Record<string, unknown>;
       const minutes = toNumber(payload.activeZoneMinutes);
-      if (minutes === null) continue;
-      const zone = typeof payload.heartRateZone === 'string' ? payload.heartRateZone : 'UNKNOWN';
+      if (minutes === null) {
+        continue;
+      }
+      const zone =
+        typeof payload.heartRateZone === "string"
+          ? payload.heartRateZone
+          : "UNKNOWN";
       const date = localDateOfIntervalStart(interval);
       const ts = toIsoUtc(interval.startTime);
-      if (!date || !ts) continue;
+      if (!(date && ts)) {
+        continue;
+      }
       batch.observations.push({
-        metric: METRICS.activeZoneMinutes,
         date,
-        ts,
-        value: minutes,
-        unit: 'min',
+        metric: METRICS.activeZoneMinutes,
         naturalKey: `${ts}|${zone}`,
         platform: point.dataSource?.platform ?? null,
         recordingMethod: point.dataSource?.recordingMethod ?? null,
+        ts,
+        unit: "min",
+        value: minutes,
       });
     }
     return batch;
   },
-  newestTimestamp(points: ApiDataPoint[]): string | null {
-    return newestTimestampByPayload(points, 'activeZoneMinutes');
-  },
+  supportsDateFilter: true,
 };
