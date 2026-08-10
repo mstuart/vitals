@@ -5,16 +5,18 @@
  * below) so a flag never reads as an arbitrary number. Pure function of the
  * snapshots passed in — no Store access, no network.
  */
-import type { Flag, FlagLevel, MetricSnapshot } from '../types.js';
-import { METRICS } from '../types.js';
-import { addDays } from '../util/time.js';
+import type { Flag, FlagLevel, MetricSnapshot } from "../types.js";
+import { METRICS } from "../types.js";
+import { addDays } from "../util/time.js";
 
 const RHR_BASIS =
-  'Li et al. 2020 (Stanford): RHR +3bpm precedes symptom onset 24-48h, 80% sensitivity';
-const HRV_BASIS = 'HRV4Training red-day protocol; WHOOP recovery model: >20% below baseline';
-const SKIN_TEMP_BASIS = 'Oura illness prediction: >1.0C deviation, ~80% sensitivity 24-48h ahead';
+  "Li et al. 2020 (Stanford): RHR +3bpm precedes symptom onset 24-48h, 80% sensitivity";
+const HRV_BASIS =
+  "HRV4Training red-day protocol; WHOOP recovery model: >20% below baseline";
+const SKIN_TEMP_BASIS =
+  "Oura illness prediction: >1.0C deviation, ~80% sensitivity 24-48h ahead";
 const RESP_RATE_BASIS =
-  'Visible Health: +2 breaths/min for 2 consecutive nights predicts flare 1-2 days out';
+  "Visible Health: +2 breaths/min for 2 consecutive nights predicts flare 1-2 days out";
 
 /** Skin temp baseline is meaningless before this many days of local history. */
 const SKIN_TEMP_MIN_HISTORY_DAYS = 30;
@@ -24,39 +26,41 @@ function makeFlag(
   level: FlagLevel,
   baselineMean: number,
   basis: string,
-  message: string,
+  message: string
 ): Flag {
   return {
-    metric: s.metric,
-    level,
-    message,
-    // Guaranteed non-null by every call site (checked before invoking makeFlag).
-    value: s.value as number,
     baselineMean,
     basis,
+    level,
+    message,
+    metric: s.metric,
+    // Guaranteed non-null by every call site (checked before invoking makeFlag).
+    value: s.value as number,
   };
 }
 
 function evaluateRhr(s: MetricSnapshot): Flag | null {
   const { value, baseline } = s;
-  if (value === null || baseline === null) return null;
-  const mean = baseline.mean;
+  if (value === null || baseline === null) {
+    return null;
+  }
+  const { mean } = baseline;
   if (value > mean + 3) {
     return makeFlag(
       s,
-      'red',
+      "red",
       mean,
       RHR_BASIS,
-      `Resting heart rate ${value.toFixed(1)} bpm is ${(value - mean).toFixed(1)} bpm above the ${mean.toFixed(1)} bpm baseline (>3 bpm).`,
+      `Resting heart rate ${value.toFixed(1)} bpm is ${(value - mean).toFixed(1)} bpm above the ${mean.toFixed(1)} bpm baseline (>3 bpm).`
     );
   }
   if (value > mean + 2) {
     return makeFlag(
       s,
-      'yellow',
+      "yellow",
       mean,
       RHR_BASIS,
-      `Resting heart rate ${value.toFixed(1)} bpm is ${(value - mean).toFixed(1)} bpm above the ${mean.toFixed(1)} bpm baseline (>2 bpm).`,
+      `Resting heart rate ${value.toFixed(1)} bpm is ${(value - mean).toFixed(1)} bpm above the ${mean.toFixed(1)} bpm baseline (>2 bpm).`
     );
   }
   return null;
@@ -64,24 +68,26 @@ function evaluateRhr(s: MetricSnapshot): Flag | null {
 
 function evaluateHrv(s: MetricSnapshot): Flag | null {
   const { value, baseline } = s;
-  if (value === null || baseline === null) return null;
-  const mean = baseline.mean;
+  if (value === null || baseline === null) {
+    return null;
+  }
+  const { mean } = baseline;
   if (value < mean * 0.8) {
     return makeFlag(
       s,
-      'red',
+      "red",
       mean,
       HRV_BASIS,
-      `HRV ${value.toFixed(1)} ms is more than 20% below the ${mean.toFixed(1)} ms baseline.`,
+      `HRV ${value.toFixed(1)} ms is more than 20% below the ${mean.toFixed(1)} ms baseline.`
     );
   }
   if (value < mean * 0.9) {
     return makeFlag(
       s,
-      'yellow',
+      "yellow",
       mean,
       HRV_BASIS,
-      `HRV ${value.toFixed(1)} ms is more than 10% below the ${mean.toFixed(1)} ms baseline.`,
+      `HRV ${value.toFixed(1)} ms is more than 10% below the ${mean.toFixed(1)} ms baseline.`
     );
   }
   return null;
@@ -89,34 +95,40 @@ function evaluateHrv(s: MetricSnapshot): Flag | null {
 
 function evaluateSkinTemp(s: MetricSnapshot): Flag | null {
   const { value, baseline } = s;
-  if (value === null || baseline === null) return null;
+  if (value === null || baseline === null) {
+    return null;
+  }
   // Suppressed entirely until enough local history exists for the baseline
   // to be meaningful; the API returns NaN for it before then.
-  if (baseline.n < SKIN_TEMP_MIN_HISTORY_DAYS) return null;
-  const mean = baseline.mean;
+  if (baseline.n < SKIN_TEMP_MIN_HISTORY_DAYS) {
+    return null;
+  }
+  const { mean } = baseline;
   if (value > mean + 1.0) {
     return makeFlag(
       s,
-      'red',
+      "red",
       mean,
       SKIN_TEMP_BASIS,
-      `Nightly skin temperature ${value.toFixed(2)}C is ${(value - mean).toFixed(2)}C above the ${mean.toFixed(2)}C baseline (>1.0C).`,
+      `Nightly skin temperature ${value.toFixed(2)}C is ${(value - mean).toFixed(2)}C above the ${mean.toFixed(2)}C baseline (>1.0C).`
     );
   }
   if (value > mean + 0.5) {
     return makeFlag(
       s,
-      'yellow',
+      "yellow",
       mean,
       SKIN_TEMP_BASIS,
-      `Nightly skin temperature ${value.toFixed(2)}C is ${(value - mean).toFixed(2)}C above the ${mean.toFixed(2)}C baseline (>0.5C).`,
+      `Nightly skin temperature ${value.toFixed(2)}C is ${(value - mean).toFixed(2)}C above the ${mean.toFixed(2)}C baseline (>0.5C).`
     );
   }
   return null;
 }
 
 function isElevatedRespRate(s: MetricSnapshot): boolean {
-  return s.value !== null && s.baseline !== null && s.value > s.baseline.mean + 2;
+  return (
+    s.value !== null && s.baseline !== null && s.value > s.baseline.mean + 2
+  );
 }
 
 /**
@@ -126,11 +138,23 @@ function isElevatedRespRate(s: MetricSnapshot): boolean {
  * order. The "current" night is whichever has the latest date.
  */
 function evaluateRespRate(snaps: MetricSnapshot[]): Flag | null {
-  if (snaps.length === 0) return null;
+  if (snaps.length === 0) {
+    return null;
+  }
 
-  const sorted = [...snaps].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
-  const current = sorted[0];
-  if (!current || !isElevatedRespRate(current)) return null;
+  const sorted = [...snaps].sort((a, b) => {
+    if (a.date < b.date) {
+      return 1;
+    }
+    if (a.date > b.date) {
+      return -1;
+    }
+    return 0;
+  });
+  const [current] = sorted;
+  if (!(current && isElevatedRespRate(current))) {
+    return null;
+  }
 
   const prevDate = addDays(current.date, -1);
   const prev = sorted.find((s) => s.date === prevDate);
@@ -140,18 +164,18 @@ function evaluateRespRate(snaps: MetricSnapshot[]): Flag | null {
   if (prevElevated) {
     return makeFlag(
       current,
-      'red',
+      "red",
       mean,
       RESP_RATE_BASIS,
-      `Respiratory rate elevated >2 breaths/min above baseline for 2 consecutive nights.`,
+      "Respiratory rate elevated >2 breaths/min above baseline for 2 consecutive nights."
     );
   }
   return makeFlag(
     current,
-    'yellow',
+    "yellow",
     mean,
     RESP_RATE_BASIS,
-    `Respiratory rate elevated >2 breaths/min above baseline for 1 night.`,
+    "Respiratory rate elevated >2 breaths/min above baseline for 1 night."
   );
 }
 
@@ -165,7 +189,9 @@ export function evaluateFlags(snapshots: MetricSnapshot[]): Flag[] {
   const flags: Flag[] = [];
 
   for (const s of snapshots) {
-    if (s.metric === METRICS.respiratoryRate) continue;
+    if (s.metric === METRICS.respiratoryRate) {
+      continue;
+    }
     let flag: Flag | null = null;
     switch (s.metric) {
       case METRICS.restingHeartRate:
@@ -180,11 +206,17 @@ export function evaluateFlags(snapshots: MetricSnapshot[]): Flag[] {
       default:
         flag = null;
     }
-    if (flag) flags.push(flag);
+    if (flag) {
+      flags.push(flag);
+    }
   }
 
-  const respFlag = evaluateRespRate(snapshots.filter((s) => s.metric === METRICS.respiratoryRate));
-  if (respFlag) flags.push(respFlag);
+  const respFlag = evaluateRespRate(
+    snapshots.filter((s) => s.metric === METRICS.respiratoryRate)
+  );
+  if (respFlag) {
+    flags.push(respFlag);
+  }
 
   return flags;
 }

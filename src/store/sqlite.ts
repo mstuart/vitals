@@ -11,9 +11,10 @@
  * a different partial set of raw samples. See the ON CONFLICT clause on
  * `hrHourlyUpsert` below for the merge-vs-replace rule and rationale.
  */
-import Database from 'better-sqlite3';
-import { mkdirSync } from 'node:fs';
-import { dirname } from 'node:path';
+
+import { mkdirSync } from "node:fs";
+import { dirname } from "node:path";
+import Database from "better-sqlite3";
 import type {
   Checkin,
   DataTypeId,
@@ -28,23 +29,23 @@ import type {
   SleepStage,
   SleepStageType,
   SyncWatermark,
-} from '../types.js';
-import type { DailyValue, DateRange, Store } from './api.js';
-import { migrate } from './schema.js';
+} from "../types.js";
+import type { DailyValue, DateRange, Store } from "./api.js";
+import { migrate } from "./schema.js";
 
 // ---------------------------------------------------------------------------
 // Row shapes (snake_case, as returned by better-sqlite3)
 // ---------------------------------------------------------------------------
 
 interface ObservationRow {
+  date: string;
   metric: string;
   natural_key: string;
-  date: string;
-  ts: string | null;
-  value: number;
-  unit: string;
   platform: string | null;
   recording_method: string | null;
+  ts: string | null;
+  unit: string;
+  value: number;
 }
 
 interface DailyRow {
@@ -53,85 +54,85 @@ interface DailyRow {
 }
 
 interface SleepSessionRow {
-  natural_key: string;
-  date: string;
-  start_ts: string;
-  end_ts: string;
-  type: string | null;
-  total_minutes: number;
   asleep_minutes: number;
   awake_minutes: number;
+  date: string;
   deep_minutes: number;
-  rem_minutes: number;
-  light_minutes: number;
   efficiency: number | null;
+  end_ts: string;
+  light_minutes: number;
+  natural_key: string;
   platform: string | null;
+  rem_minutes: number;
+  start_ts: string;
+  total_minutes: number;
+  type: string | null;
 }
 
 interface SleepStageRow {
-  session_key: string;
-  idx: number;
-  type: string;
-  start_ts: string;
   end_ts: string;
+  idx: number;
   minutes: number;
+  session_key: string;
+  start_ts: string;
+  type: string;
 }
 
 interface ExerciseRow {
-  natural_key: string;
-  date: string;
-  start_ts: string;
-  end_ts: string | null;
-  display_name: string | null;
-  exercise_type: string | null;
-  intensity: string | null;
   avg_heart_rate: number | null;
   calories_burned: number | null;
+  date: string;
+  display_name: string | null;
+  end_ts: string | null;
+  exercise_type: string | null;
+  intensity: string | null;
+  natural_key: string;
   platform: string | null;
+  start_ts: string;
 }
 
 interface NutritionRow {
-  natural_key: string;
+  carbs_g: number | null;
   date: string;
-  ts: string;
+  energy_kcal: number | null;
+  fat_g: number | null;
   food_display_name: string | null;
   meal_type: string | null;
-  energy_kcal: number | null;
+  natural_key: string;
   protein_g: number | null;
-  carbs_g: number | null;
-  fat_g: number | null;
+  ts: string;
 }
 
 interface HydrationRow {
-  natural_key: string;
   date: string;
-  ts: string;
   milliliters: number;
+  natural_key: string;
+  ts: string;
 }
 
 interface HrHourlyRow {
-  natural_key: string;
+  avg_bpm: number;
   date: string;
   hour_ts: string;
-  min_bpm: number;
   max_bpm: number;
-  avg_bpm: number;
+  min_bpm: number;
+  natural_key: string;
   sample_count: number;
 }
 
 interface CheckinRow {
-  id: number;
   date: string;
-  ts: string;
+  id: number;
   mood: number;
   note: string | null;
   tags: string;
+  ts: string;
 }
 
 interface SyncStateRow {
   data_type: string;
-  newest_ts: string | null;
   last_synced_at: string;
+  newest_ts: string | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -140,111 +141,114 @@ interface SyncStateRow {
 
 function observationFromRow(r: ObservationRow): Observation {
   return {
-    metric: r.metric as MetricId,
     date: r.date,
-    ts: r.ts,
-    value: r.value,
-    unit: r.unit,
+    metric: r.metric as MetricId,
     naturalKey: r.natural_key,
     platform: r.platform,
     recordingMethod: r.recording_method,
+    ts: r.ts,
+    unit: r.unit,
+    value: r.value,
   };
 }
 
 function stageFromRow(r: SleepStageRow): SleepStage {
   return {
-    type: r.type as SleepStageType,
-    startTs: r.start_ts,
     endTs: r.end_ts,
     minutes: r.minutes,
+    startTs: r.start_ts,
+    type: r.type as SleepStageType,
   };
 }
 
-function sleepSessionFromRow(r: SleepSessionRow, stages: SleepStage[]): SleepSession {
+function sleepSessionFromRow(
+  r: SleepSessionRow,
+  stages: SleepStage[]
+): SleepSession {
   return {
-    naturalKey: r.natural_key,
-    date: r.date,
-    startTs: r.start_ts,
-    endTs: r.end_ts,
-    type: r.type,
-    totalMinutes: r.total_minutes,
     asleepMinutes: r.asleep_minutes,
     awakeMinutes: r.awake_minutes,
+    date: r.date,
     deepMinutes: r.deep_minutes,
-    remMinutes: r.rem_minutes,
-    lightMinutes: r.light_minutes,
     efficiency: r.efficiency,
-    stages,
+    endTs: r.end_ts,
+    lightMinutes: r.light_minutes,
+    naturalKey: r.natural_key,
     platform: r.platform,
+    remMinutes: r.rem_minutes,
+    stages,
+    startTs: r.start_ts,
+    totalMinutes: r.total_minutes,
+    type: r.type,
   };
 }
 
 function exerciseFromRow(r: ExerciseRow): ExerciseSession {
   return {
-    naturalKey: r.natural_key,
-    date: r.date,
-    startTs: r.start_ts,
-    endTs: r.end_ts,
-    displayName: r.display_name,
-    exerciseType: r.exercise_type,
-    intensity: r.intensity,
     avgHeartRate: r.avg_heart_rate,
     caloriesBurned: r.calories_burned,
+    date: r.date,
+    displayName: r.display_name,
+    endTs: r.end_ts,
+    exerciseType: r.exercise_type,
+    intensity: r.intensity,
+    naturalKey: r.natural_key,
     platform: r.platform,
+    startTs: r.start_ts,
   };
 }
 
 function nutritionFromRow(r: NutritionRow): NutritionEntry {
   return {
-    naturalKey: r.natural_key,
+    carbsG: r.carbs_g,
     date: r.date,
-    ts: r.ts,
+    energyKcal: r.energy_kcal,
+    fatG: r.fat_g,
     foodDisplayName: r.food_display_name,
     mealType: r.meal_type,
-    energyKcal: r.energy_kcal,
+    naturalKey: r.natural_key,
     proteinG: r.protein_g,
-    carbsG: r.carbs_g,
-    fatG: r.fat_g,
+    ts: r.ts,
   };
 }
 
 function hydrationFromRow(r: HydrationRow): HydrationEntry {
   return {
-    naturalKey: r.natural_key,
     date: r.date,
-    ts: r.ts,
     milliliters: r.milliliters,
+    naturalKey: r.natural_key,
+    ts: r.ts,
   };
 }
 
 function hrHourlyFromRow(r: HrHourlyRow): HeartRateHourly {
   return {
-    naturalKey: r.natural_key,
+    avgBpm: r.avg_bpm,
     date: r.date,
     hourTs: r.hour_ts,
-    minBpm: r.min_bpm,
     maxBpm: r.max_bpm,
-    avgBpm: r.avg_bpm,
+    minBpm: r.min_bpm,
+    naturalKey: r.natural_key,
     sampleCount: r.sample_count,
   };
 }
 
 function checkinFromRow(r: CheckinRow): Checkin {
   return {
-    id: r.id,
     date: r.date,
-    ts: r.ts,
+    id: r.id,
     mood: r.mood,
     note: r.note,
     tags: JSON.parse(r.tags) as string[],
+    ts: r.ts,
   };
 }
 
 function watermarkFromRow(r: SyncStateRow): SyncWatermark {
   return {
     dataType: r.data_type as DataTypeId,
-    newestTs: r.newest_ts,
     lastSyncedAt: r.last_synced_at,
+    newestTs: r.newest_ts,
   };
 }
 
@@ -253,13 +257,13 @@ function watermarkFromRow(r: SyncStateRow): SyncWatermark {
 // ---------------------------------------------------------------------------
 
 export function openStore(dbFile: string): Store {
-  if (dbFile !== ':memory:') {
+  if (dbFile !== ":memory:") {
     mkdirSync(dirname(dbFile), { recursive: true });
   }
 
   const db = new Database(dbFile);
-  db.pragma('journal_mode = WAL');
-  db.pragma('foreign_keys = ON');
+  db.pragma("journal_mode = WAL");
+  db.pragma("foreign_keys = ON");
   migrate(db);
 
   // -- upserts --------------------------------------------------------------
@@ -322,7 +326,9 @@ export function openStore(dbFile: string): Store {
       platform = excluded.platform
   `);
 
-  const deleteStages = db.prepare<[string]>(`DELETE FROM sleep_stages WHERE session_key = ?`);
+  const deleteStages = db.prepare<[string]>(
+    "DELETE FROM sleep_stages WHERE session_key = ?"
+  );
   const insertStage = db.prepare<{
     sessionKey: string;
     idx: number;
@@ -519,7 +525,10 @@ export function openStore(dbFile: string): Store {
     LIMIT 1
   `);
 
-  const observationsStmt = db.prepare<[string, string, string], ObservationRow>(`
+  const observationsStmt = db.prepare<
+    [string, string, string],
+    ObservationRow
+  >(`
     SELECT * FROM observations
     WHERE metric = ? AND date >= ? AND date <= ?
     ORDER BY date ASC, ts ASC
@@ -577,9 +586,14 @@ export function openStore(dbFile: string): Store {
     SELECT * FROM sync_state WHERE data_type = ?
   `);
 
-  const allWatermarksStmt = db.prepare<[], SyncStateRow>(`SELECT * FROM sync_state`);
+  const allWatermarksStmt = db.prepare<[], SyncStateRow>(
+    "SELECT * FROM sync_state"
+  );
 
-  const coverageStmt = db.prepare<[], { min_date: string | null; max_date: string | null }>(`
+  const coverageStmt = db.prepare<
+    [],
+    { min_date: string | null; max_date: string | null }
+  >(`
     SELECT MIN(d) as min_date, MAX(d) as max_date FROM (
       SELECT date as d FROM observations
       UNION ALL
@@ -589,115 +603,122 @@ export function openStore(dbFile: string): Store {
 
   // -- writeBatch ---------------------------------------------------------
 
+  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: One transaction must persist every normalized record kind atomically.
   const writeBatchTx = db.transaction((batch: ParsedBatch): number => {
     let rows = 0;
 
     for (const o of batch.observations) {
-      if (!Number.isFinite(o.value)) continue;
+      if (!Number.isFinite(o.value)) {
+        continue;
+      }
       upsertObservation.run({
+        date: o.date,
         metric: o.metric,
         naturalKey: o.naturalKey,
-        date: o.date,
-        ts: o.ts,
-        value: o.value,
-        unit: o.unit,
         platform: o.platform,
         recordingMethod: o.recordingMethod,
+        ts: o.ts,
+        unit: o.unit,
+        value: o.value,
       });
-      rows++;
+      rows += 1;
     }
 
     for (const s of batch.sleepSessions) {
       upsertSleepSession.run({
-        naturalKey: s.naturalKey,
-        date: s.date,
-        startTs: s.startTs,
-        endTs: s.endTs,
-        type: s.type,
-        totalMinutes: s.totalMinutes,
         asleepMinutes: s.asleepMinutes,
         awakeMinutes: s.awakeMinutes,
+        date: s.date,
         deepMinutes: s.deepMinutes,
-        remMinutes: s.remMinutes,
-        lightMinutes: s.lightMinutes,
         efficiency: s.efficiency,
+        endTs: s.endTs,
+        lightMinutes: s.lightMinutes,
+        naturalKey: s.naturalKey,
         platform: s.platform,
+        remMinutes: s.remMinutes,
+        startTs: s.startTs,
+        totalMinutes: s.totalMinutes,
+        type: s.type,
       });
       deleteStages.run(s.naturalKey);
       s.stages.forEach((stage, idx) => {
         insertStage.run({
-          sessionKey: s.naturalKey,
-          idx,
-          type: stage.type,
-          startTs: stage.startTs,
           endTs: stage.endTs,
+          idx,
           minutes: stage.minutes,
+          sessionKey: s.naturalKey,
+          startTs: stage.startTs,
+          type: stage.type,
         });
       });
-      rows++;
+      rows += 1;
     }
 
     for (const e of batch.exercises) {
       upsertExercise.run({
-        naturalKey: e.naturalKey,
-        date: e.date,
-        startTs: e.startTs,
-        endTs: e.endTs,
-        displayName: e.displayName,
-        exerciseType: e.exerciseType,
-        intensity: e.intensity,
         avgHeartRate: e.avgHeartRate,
         caloriesBurned: e.caloriesBurned,
+        date: e.date,
+        displayName: e.displayName,
+        endTs: e.endTs,
+        exerciseType: e.exerciseType,
+        intensity: e.intensity,
+        naturalKey: e.naturalKey,
         platform: e.platform,
+        startTs: e.startTs,
       });
-      rows++;
+      rows += 1;
     }
 
     for (const n of batch.nutrition) {
       upsertNutrition.run({
-        naturalKey: n.naturalKey,
+        carbsG: n.carbsG,
         date: n.date,
-        ts: n.ts,
+        energyKcal: n.energyKcal,
+        fatG: n.fatG,
         foodDisplayName: n.foodDisplayName,
         mealType: n.mealType,
-        energyKcal: n.energyKcal,
+        naturalKey: n.naturalKey,
         proteinG: n.proteinG,
-        carbsG: n.carbsG,
-        fatG: n.fatG,
+        ts: n.ts,
       });
-      rows++;
+      rows += 1;
     }
 
     for (const h of batch.hydration) {
-      if (!Number.isFinite(h.milliliters)) continue;
+      if (!Number.isFinite(h.milliliters)) {
+        continue;
+      }
       upsertHydration.run({
-        naturalKey: h.naturalKey,
         date: h.date,
-        ts: h.ts,
         milliliters: h.milliliters,
+        naturalKey: h.naturalKey,
+        ts: h.ts,
       });
-      rows++;
+      rows += 1;
     }
 
     for (const hr of batch.heartRateHourly) {
       if (
-        !Number.isFinite(hr.minBpm) ||
-        !Number.isFinite(hr.maxBpm) ||
-        !Number.isFinite(hr.avgBpm) ||
-        !Number.isFinite(hr.sampleCount)
+        !(
+          Number.isFinite(hr.minBpm) &&
+          Number.isFinite(hr.maxBpm) &&
+          Number.isFinite(hr.avgBpm) &&
+          Number.isFinite(hr.sampleCount)
+        )
       ) {
         continue;
       }
       upsertHrHourly.run({
-        naturalKey: hr.naturalKey,
+        avgBpm: hr.avgBpm,
         date: hr.date,
         hourTs: hr.hourTs,
-        minBpm: hr.minBpm,
         maxBpm: hr.maxBpm,
-        avgBpm: hr.avgBpm,
+        minBpm: hr.minBpm,
+        naturalKey: hr.naturalKey,
         sampleCount: hr.sampleCount,
       });
-      rows++;
+      rows += 1;
     }
 
     return rows;
@@ -706,12 +727,61 @@ export function openStore(dbFile: string): Store {
   // -- Store implementation -----------------------------------------------
 
   return {
-    writeBatch(batch: ParsedBatch): number {
-      return writeBatchTx(batch);
+    addCheckin(c: Omit<Checkin, "id">): Checkin {
+      const info = insertCheckinStmt.run({
+        date: c.date,
+        mood: c.mood,
+        note: c.note,
+        tags: JSON.stringify(c.tags),
+        ts: c.ts,
+      });
+      return { ...c, id: Number(info.lastInsertRowid) };
+    },
+
+    allWatermarks(): SyncWatermark[] {
+      return allWatermarksStmt.all().map(watermarkFromRow);
+    },
+
+    checkin(date: string): Checkin | null {
+      const r = checkinByDateStmt.get(date);
+      return r ? checkinFromRow(r) : null;
+    },
+
+    checkins(range: DateRange): Checkin[] {
+      return checkinsStmt.all(range.from, range.to).map(checkinFromRow);
+    },
+
+    close(): void {
+      db.close();
+    },
+
+    coverage(): DateRange | null {
+      const r = coverageStmt.get();
+      if (!r || r.min_date === null || r.max_date === null) {
+        return null;
+      }
+      return { from: r.min_date, to: r.max_date };
     },
 
     dailySeries(metric: MetricId, range: DateRange): DailyValue[] {
       return dailySeriesStmt.all(metric, range.from, range.to);
+    },
+
+    exercises(range: DateRange): ExerciseSession[] {
+      return exercisesStmt.all(range.from, range.to).map(exerciseFromRow);
+    },
+
+    getWatermark(dataType: DataTypeId): SyncWatermark | null {
+      const r = getWatermarkStmt.get(dataType);
+      return r ? watermarkFromRow(r) : null;
+    },
+
+    heartRateHourly(range: DateRange): HeartRateHourly[] {
+      return hrHourlyStmt.all(range.from, range.to).map(hrHourlyFromRow);
+    },
+
+    hydration(range: DateRange): HydrationEntry[] {
+      return hydrationStmt.all(range.from, range.to).map(hydrationFromRow);
     },
 
     latest(metric: MetricId, onOrBefore?: string): DailyValue | null {
@@ -722,82 +792,46 @@ export function openStore(dbFile: string): Store {
       return row ?? null;
     },
 
-    observations(metric: MetricId, range: DateRange): Observation[] {
-      return observationsStmt.all(metric, range.from, range.to).map(observationFromRow);
-    },
-
-    sleepSessions(range: DateRange): SleepSession[] {
-      const rows = sleepSessionsStmt.all(range.from, range.to);
-      return rows.map((r) => sleepSessionFromRow(r, stagesForSessionStmt.all(r.natural_key).map(stageFromRow)));
-    },
-
-    sleepSession(date: string): SleepSession | null {
-      const r = sleepSessionByDateStmt.get(date);
-      if (!r) return null;
-      return sleepSessionFromRow(r, stagesForSessionStmt.all(r.natural_key).map(stageFromRow));
-    },
-
-    exercises(range: DateRange): ExerciseSession[] {
-      return exercisesStmt.all(range.from, range.to).map(exerciseFromRow);
-    },
-
     nutrition(range: DateRange): NutritionEntry[] {
       return nutritionStmt.all(range.from, range.to).map(nutritionFromRow);
     },
 
-    hydration(range: DateRange): HydrationEntry[] {
-      return hydrationStmt.all(range.from, range.to).map(hydrationFromRow);
-    },
-
-    heartRateHourly(range: DateRange): HeartRateHourly[] {
-      return hrHourlyStmt.all(range.from, range.to).map(hrHourlyFromRow);
-    },
-
-    addCheckin(c: Omit<Checkin, 'id'>): Checkin {
-      const info = insertCheckinStmt.run({
-        date: c.date,
-        ts: c.ts,
-        mood: c.mood,
-        note: c.note,
-        tags: JSON.stringify(c.tags),
-      });
-      return { ...c, id: Number(info.lastInsertRowid) };
-    },
-
-    checkins(range: DateRange): Checkin[] {
-      return checkinsStmt.all(range.from, range.to).map(checkinFromRow);
-    },
-
-    checkin(date: string): Checkin | null {
-      const r = checkinByDateStmt.get(date);
-      return r ? checkinFromRow(r) : null;
-    },
-
-    getWatermark(dataType: DataTypeId): SyncWatermark | null {
-      const r = getWatermarkStmt.get(dataType);
-      return r ? watermarkFromRow(r) : null;
+    observations(metric: MetricId, range: DateRange): Observation[] {
+      return observationsStmt
+        .all(metric, range.from, range.to)
+        .map(observationFromRow);
     },
 
     setWatermark(w: SyncWatermark): void {
       upsertWatermarkStmt.run({
         dataType: w.dataType,
-        newestTs: w.newestTs,
         lastSyncedAt: w.lastSyncedAt,
+        newestTs: w.newestTs,
       });
     },
 
-    allWatermarks(): SyncWatermark[] {
-      return allWatermarksStmt.all().map(watermarkFromRow);
+    sleepSession(date: string): SleepSession | null {
+      const r = sleepSessionByDateStmt.get(date);
+      if (!r) {
+        return null;
+      }
+      return sleepSessionFromRow(
+        r,
+        stagesForSessionStmt.all(r.natural_key).map(stageFromRow)
+      );
     },
 
-    coverage(): DateRange | null {
-      const r = coverageStmt.get();
-      if (!r || r.min_date === null || r.max_date === null) return null;
-      return { from: r.min_date, to: r.max_date };
+    sleepSessions(range: DateRange): SleepSession[] {
+      const rows = sleepSessionsStmt.all(range.from, range.to);
+      return rows.map((r) =>
+        sleepSessionFromRow(
+          r,
+          stagesForSessionStmt.all(r.natural_key).map(stageFromRow)
+        )
+      );
     },
-
-    close(): void {
-      db.close();
+    writeBatch(batch: ParsedBatch): number {
+      return writeBatchTx(batch);
     },
   };
 }

@@ -20,33 +20,48 @@
  *   node scripts/record-fixtures.mjs                 # private, gitignored
  *   node scripts/make-fixtures.mjs                   # publishable, committed
  */
-import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
+import {
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  writeFileSync,
+} from "node:fs";
+import { join } from "node:path";
 
-const IN_DIR = join(import.meta.dirname, '..', 'test', 'fixtures', 'private');
-const OUT_DIR = join(import.meta.dirname, '..', 'test', 'fixtures', 'api');
+const IN_DIR = join(import.meta.dirname, "..", "test", "fixtures", "private");
+const OUT_DIR = join(import.meta.dirname, "..", "test", "fixtures", "api");
 
 /** All synthetic timestamps land near this instant, not the recording date. */
-const ANCHOR = Date.parse('2024-06-15T12:00:00Z');
+const ANCHOR = Date.parse("2024-06-15T12:00:00Z");
 /** Uniform offset for every fixture; not the recorder's real timezone. */
-const UTC_OFFSET_SECONDS = -18000;
+const UTC_OFFSET_SECONDS = -18_000;
 const UTC_OFFSET = `${UTC_OFFSET_SECONDS}s`;
 
 // Deterministic PRNG (mulberry32) — no Math.random, so output is reproducible.
 function rng(seed) {
+  // biome-ignore lint/suspicious/noBitwiseOperators: Mulberry32 requires 32-bit unsigned coercion.
   let a = seed >>> 0;
   return () => {
-    a = (a + 0x6d2b79f5) >>> 0;
+    // biome-ignore lint/suspicious/noBitwiseOperators: Mulberry32 requires 32-bit unsigned coercion.
+    a = (a + 0x6d_2b_79_f5) >>> 0;
+    // biome-ignore lint/suspicious/noBitwiseOperators: Mulberry32 requires bit mixing.
     let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    // biome-ignore lint/suspicious/noBitwiseOperators: Mulberry32 requires bit mixing.
+    t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
+    // biome-ignore lint/suspicious/noBitwiseOperators: Mulberry32 requires bit mixing and unsigned coercion.
+    return ((t ^ (t >>> 14)) >>> 0) / 4_294_967_296;
   };
 }
 
 /** Stable per-fixture seed so unrelated files don't shift when one changes. */
 function seedFor(name) {
-  let h = 2166136261;
-  for (const ch of name) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
+  let h = 2_166_136_261;
+  for (const ch of name) {
+    // biome-ignore lint/suspicious/noBitwiseOperators: FNV-1a hashing requires XOR mixing.
+    h = Math.imul(h ^ ch.charCodeAt(0), 16_777_619);
+  }
+  // biome-ignore lint/suspicious/noBitwiseOperators: FNV-1a returns an unsigned 32-bit seed.
   return h >>> 0;
 }
 
@@ -59,85 +74,97 @@ const round = (n, d) => Number(n.toFixed(d));
  * exist largely to handle exactly that.
  */
 function synthesize(key, original, rand) {
-  const wasString = typeof original === 'string';
+  const wasString = typeof original === "string";
   const num = (lo, hi, digits = 0) => {
     const v = round(lo + rand() * (hi - lo), digits);
     return wasString ? String(v) : v;
   };
 
   switch (key) {
-    case 'beatsPerMinute':
-    case 'nonRemHeartRateBeatsPerMinute':
-    case 'averageHeartRateBeatsPerMinute':
+    case "beatsPerMinute":
+    case "nonRemHeartRateBeatsPerMinute":
+    case "averageHeartRateBeatsPerMinute":
       return num(56, 78);
-    case 'averageHeartRateVariabilityMilliseconds':
-    case 'rootMeanSquareOfSuccessiveDifferencesMilliseconds':
+    case "averageHeartRateVariabilityMilliseconds":
+    case "rootMeanSquareOfSuccessiveDifferencesMilliseconds":
       return num(18, 46, 2);
-    case 'deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds':
+    case "deepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds":
       return num(12, 34, 1);
-    case 'entropy':
+    case "entropy":
       return num(2, 3.2, 3);
-    case 'averagePercentage':
+    case "averagePercentage":
       return num(94, 99, 1);
-    case 'lowerBoundPercentage':
+    case "lowerBoundPercentage":
       return num(92, 94, 1);
-    case 'upperBoundPercentage':
+    case "upperBoundPercentage":
       return num(99, 100, 1);
-    case 'breathsPerMinute':
+    case "breathsPerMinute":
       // 0 means "stage not detected" — parsers must skip it, so keep it 0.
       return original === 0 ? 0 : num(12, 18, 1);
-    case 'standardDeviation':
+    case "standardDeviation":
       return num(0.3, 1.4, 1);
-    case 'signalToNoise':
+    case "signalToNoise":
       return num(1, 8);
-    case 'nightlyTemperatureCelsius':
+    case "nightlyTemperatureCelsius":
       return num(32, 35, 6);
-    case 'baselineTemperatureCelsius':
+    case "baselineTemperatureCelsius":
       // NaN for the first 7-30 days of history; the parser must drop it.
       return Number.isNaN(Number(original)) ? original : num(32, 35, 6);
-    case 'relativeNightlyStddev30dCelsius':
+    case "relativeNightlyStddev30dCelsius":
       return num(0.2, 1.2, 6);
-    case 'weightGrams':
-      return num(58000, 96000);
-    case 'percentage':
+    case "weightGrams":
+      return num(58_000, 96_000);
+    case "percentage":
       return num(12, 30, 1);
-    case 'count':
+    case "count":
       return num(0, 180);
-    case 'millimeters':
-      return num(0, 160000);
-    case 'kcal':
+    case "millimeters":
+      return num(0, 160_000);
+    case "kcal":
       // A genuine 0 occurs when no active energy was burned in the interval;
       // the parser has to keep it rather than treat it as missing.
-      return original === 0 || original === '0' ? original : num(0.1, 6, 3);
-    case 'activeZoneMinutes':
+      return original === 0 || original === "0" ? original : num(0.1, 6, 3);
+    case "activeZoneMinutes":
       return num(1, 3);
-    case 'milliliters':
+    case "milliliters":
       return num(200, 950);
-    case 'energy':
+    case "energy":
       return original === 0 ? 0 : num(40, 820);
-    case 'grams':
+    case "grams":
       return num(0, 55, 1);
-    case 'caloriesBurned':
+    case "caloriesBurned":
       return num(40, 600);
     default:
-      return typeof original === 'number' ? num(1, 100, 2) : original;
+      return typeof original === "number" ? num(1, 100, 2) : original;
   }
 }
 
 const FOODS = [
-  'Oatmeal', 'Black Coffee', 'Turkey Sandwich', 'Greek Yogurt', 'Mixed Salad',
-  'Grilled Chicken', 'Brown Rice', 'Banana', 'Almonds', 'Vegetable Soup',
+  "Oatmeal",
+  "Black Coffee",
+  "Turkey Sandwich",
+  "Greek Yogurt",
+  "Mixed Salad",
+  "Grilled Chicken",
+  "Brown Rice",
+  "Banana",
+  "Almonds",
+  "Vegetable Soup",
 ];
 
 function pad2(n) {
-  return String(n).padStart(2, '0');
+  return String(n).padStart(2, "0");
 }
 
 /** Rebuild a civilTime block from an instant and the synthetic offset. */
 function civilFrom(instantMs) {
   const d = new Date(instantMs + UTC_OFFSET_SECONDS * 1000);
   return {
-    date: { year: d.getUTCFullYear(), month: d.getUTCMonth() + 1, day: d.getUTCDate() },
+    date: {
+      day: d.getUTCDate(),
+      month: d.getUTCMonth() + 1,
+      year: d.getUTCFullYear(),
+    },
     time: { hours: d.getUTCHours(), minutes: d.getUTCMinutes() },
   };
 }
@@ -146,66 +173,97 @@ function civilFrom(instantMs) {
  * Walk a value, replacing measurements, timestamps and identifiers.
  * `shiftMs` maps the recording's timeline onto the synthetic one.
  */
-function transform(value, shiftMs, rand, key = '') {
-  if (Array.isArray(value)) return value.map((v) => transform(v, shiftMs, rand, key));
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: Recursive fixture sanitization intentionally handles every supported API shape in one traversal.
+function transform(source, timelineShiftMs, rand, fieldKey = "") {
+  if (Array.isArray(source)) {
+    return source.map((v) => transform(v, timelineShiftMs, rand, fieldKey));
+  }
 
-  if (value && typeof value === 'object') {
+  if (source && typeof source === "object") {
     const out = {};
-    for (const [k, v] of Object.entries(value)) {
-      if (k === 'packageName') {
-        out[k] = 'com.example.health';
+    for (const [k, v] of Object.entries(source)) {
+      if (k === "packageName") {
+        out[k] = "com.example.health";
         continue;
       }
-      if (k === 'foodDisplayName') {
+      if (k === "foodDisplayName") {
         // Preserve the empty-name case; otherwise use a generic food.
-        out[k] = v === '' ? '' : FOODS[Math.floor(rand() * FOODS.length)];
+        out[k] = v === "" ? "" : FOODS[Math.floor(rand() * FOODS.length)];
         continue;
       }
-      if (k === 'name' && typeof v === 'string') {
+      if (k === "name" && typeof v === "string") {
         out[k] = v; // already scrubbed to FIXTURE_USER; empty trailing id kept
         continue;
       }
-      if (k.endsWith('UtcOffset') || k === 'utcOffset') {
+      if (k.endsWith("UtcOffset") || k === "utcOffset") {
         out[k] = UTC_OFFSET;
         continue;
       }
-      if (k === 'startTime' || k === 'endTime' || k === 'physicalTime') {
+      if (k === "startTime" || k === "endTime" || k === "physicalTime") {
         const ms = Date.parse(v);
-        out[k] = Number.isFinite(ms) ? new Date(ms + shiftMs).toISOString() : v;
+        out[k] = Number.isFinite(ms)
+          ? new Date(ms + timelineShiftMs).toISOString()
+          : v;
         continue;
       }
-      if (k === 'date' && v && typeof v === 'object' && 'year' in v) {
-        const ms = Date.parse(`${v.year}-${pad2(v.month)}-${pad2(v.day)}T00:00:00Z`) + shiftMs;
+      if (k === "date" && v && typeof v === "object" && "year" in v) {
+        const ms =
+          Date.parse(`${v.year}-${pad2(v.month)}-${pad2(v.day)}T00:00:00Z`) +
+          timelineShiftMs;
         const d = new Date(ms);
-        out[k] = { year: d.getUTCFullYear(), month: d.getUTCMonth() + 1, day: d.getUTCDate() };
+        out[k] = {
+          day: d.getUTCDate(),
+          month: d.getUTCMonth() + 1,
+          year: d.getUTCFullYear(),
+        };
         continue;
       }
-      out[k] = transform(v, shiftMs, rand, k);
+      out[k] = transform(v, timelineShiftMs, rand, k);
     }
 
     // Recompute civil times from the shifted instants so they stay consistent.
-    if (out.physicalTime && out.civilTime) out.civilTime = civilFrom(Date.parse(out.physicalTime));
-    if (out.startTime && out.civilStartTime) out.civilStartTime = civilFrom(Date.parse(out.startTime));
-    if (out.endTime && out.civilEndTime) out.civilEndTime = civilFrom(Date.parse(out.endTime));
+    if (out.physicalTime && out.civilTime) {
+      out.civilTime = civilFrom(Date.parse(out.physicalTime));
+    }
+    if (out.startTime && out.civilStartTime) {
+      out.civilStartTime = civilFrom(Date.parse(out.startTime));
+    }
+    if (out.endTime && out.civilEndTime) {
+      out.civilEndTime = civilFrom(Date.parse(out.endTime));
+    }
     return out;
   }
 
-  if (typeof value === 'number' || (typeof value === 'string' && value !== '' && Number.isFinite(Number(value)))) {
-    return synthesize(key, value, rand);
+  if (
+    typeof source === "number" ||
+    (typeof source === "string" &&
+      source !== "" &&
+      Number.isFinite(Number(source)))
+  ) {
+    return synthesize(fieldKey, source, rand);
   }
-  return value;
+  return source;
 }
 
 /** Newest instant in a document, used to anchor the whole set onto ANCHOR. */
-function newestInstant(node, best = -Infinity) {
-  if (Array.isArray(node)) return node.reduce((b, v) => newestInstant(v, b), best);
-  if (node && typeof node === 'object') {
+function newestInstant(node, best = Number.NEGATIVE_INFINITY) {
+  if (Array.isArray(node)) {
+    return node.reduce((b, v) => newestInstant(v, b), best);
+  }
+  if (node && typeof node === "object") {
     let b = best;
     for (const [k, v] of Object.entries(node)) {
-      if ((k === 'startTime' || k === 'endTime' || k === 'physicalTime') && typeof v === 'string') {
+      if (
+        (k === "startTime" || k === "endTime" || k === "physicalTime") &&
+        typeof v === "string"
+      ) {
         const ms = Date.parse(v);
-        if (Number.isFinite(ms) && ms > b) b = ms;
-      } else b = newestInstant(v, b);
+        if (Number.isFinite(ms) && ms > b) {
+          b = ms;
+        }
+      } else {
+        b = newestInstant(v, b);
+      }
     }
     return b;
   }
@@ -214,23 +272,36 @@ function newestInstant(node, best = -Infinity) {
 
 if (!existsSync(IN_DIR)) {
   console.error(`No private recording at ${IN_DIR}.`);
-  console.error('Run `node scripts/record-fixtures.mjs` first (its output is gitignored).');
+  console.error(
+    "Run `node scripts/record-fixtures.mjs` first (its output is gitignored)."
+  );
   process.exit(1);
 }
 
 mkdirSync(OUT_DIR, { recursive: true });
-const files = readdirSync(IN_DIR).filter((f) => f.endsWith('.json')).sort();
+const files = readdirSync(IN_DIR)
+  .filter((f) => f.endsWith(".json"))
+  .sort();
 
 // One shift for the whole set so cross-fixture date relationships stay coherent.
-let newest = -Infinity;
-for (const f of files) newest = newestInstant(JSON.parse(readFileSync(join(IN_DIR, f), 'utf8')), newest);
+let newest = Number.NEGATIVE_INFINITY;
+for (const f of files) {
+  newest = newestInstant(
+    JSON.parse(readFileSync(join(IN_DIR, f), "utf8")),
+    newest
+  );
+}
 const shiftMs = ANCHOR - newest;
 
 for (const f of files) {
-  const doc = JSON.parse(readFileSync(join(IN_DIR, f), 'utf8'));
+  const doc = JSON.parse(readFileSync(join(IN_DIR, f), "utf8"));
   const out = transform(doc, shiftMs, rng(seedFor(f)));
-  writeFileSync(join(OUT_DIR, f), JSON.stringify(out, null, 2) + '\n');
-  console.log(`${f.replace('.json', '').padEnd(38)} ${(out.dataPoints ?? []).length} points`);
+  writeFileSync(join(OUT_DIR, f), `${JSON.stringify(out, null, 2)}\n`);
+  console.log(
+    `${f.replace(".json", "").padEnd(38)} ${(out.dataPoints ?? []).length} points`
+  );
 }
 console.log(`\nSynthetic fixtures written to ${OUT_DIR}`);
-console.log(`Timeline shifted by ${Math.round(shiftMs / 86400000)} days; offset forced to ${UTC_OFFSET}.`);
+console.log(
+  `Timeline shifted by ${Math.round(shiftMs / 86_400_000)} days; offset forced to ${UTC_OFFSET}.`
+);

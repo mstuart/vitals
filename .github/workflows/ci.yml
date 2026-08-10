@@ -24,6 +24,8 @@ jobs:
           cache: npm
 
       - run: npm ci
+      - name: Ultracite check
+        run: npm run check
 
       # better-sqlite3 is a native addon. npm 11 defers install scripts, so the
       # prebuilt binary may not be fetched during `npm ci`.

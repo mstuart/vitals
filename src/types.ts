@@ -14,33 +14,33 @@
 
 /** The 18 data type ids vitals ingests. Values are URL path segments. */
 export const DATA_TYPE_IDS = [
-  'steps',
-  'distance',
-  'heart-rate',
-  'heart-rate-variability',
-  'daily-heart-rate-variability',
-  'daily-resting-heart-rate',
-  'daily-oxygen-saturation',
-  'sleep',
-  'daily-respiratory-rate',
-  'respiratory-rate-sleep-summary',
-  'daily-sleep-temperature-derivations',
-  'weight',
-  'body-fat',
-  'exercise',
-  'active-zone-minutes',
-  'active-energy-burned',
-  'nutrition-log',
-  'hydration-log',
+  "steps",
+  "distance",
+  "heart-rate",
+  "heart-rate-variability",
+  "daily-heart-rate-variability",
+  "daily-resting-heart-rate",
+  "daily-oxygen-saturation",
+  "sleep",
+  "daily-respiratory-rate",
+  "respiratory-rate-sleep-summary",
+  "daily-sleep-temperature-derivations",
+  "weight",
+  "body-fat",
+  "exercise",
+  "active-zone-minutes",
+  "active-energy-burned",
+  "nutrition-log",
+  "hydration-log",
 ] as const;
 
 export type DataTypeId = (typeof DATA_TYPE_IDS)[number];
 
 /** `{ year, month, day }` — month and day are 1-based. */
 export interface ApiDate {
-  year: number;
-  month: number;
   day: number;
+  month: number;
+  year: number;
 }
 
 export interface ApiCivilTime {
@@ -50,26 +50,26 @@ export interface ApiCivilTime {
 
 /** A point in time. `physicalTime` is ISO 8601 UTC. */
 export interface ApiSampleTime {
+  civilTime?: ApiCivilTime;
   physicalTime: string;
   utcOffset?: string;
-  civilTime?: ApiCivilTime;
 }
 
 /** A half-open interval [startTime, endTime). */
 export interface ApiInterval {
-  startTime: string;
-  endTime?: string;
-  startUtcOffset?: string;
-  endUtcOffset?: string;
-  civilStartTime?: ApiCivilTime;
   civilEndTime?: ApiCivilTime;
+  civilStartTime?: ApiCivilTime;
+  endTime?: string;
+  endUtcOffset?: string;
+  startTime: string;
+  startUtcOffset?: string;
 }
 
 export interface ApiDataSource {
-  recordingMethod?: string;
-  platform?: string;
-  device?: Record<string, unknown>;
   application?: { packageName?: string };
+  device?: Record<string, unknown>;
+  platform?: string;
+  recordingMethod?: string;
 }
 
 /**
@@ -81,8 +81,8 @@ export interface ApiDataSource {
  * timestamps instead — see `naturalKey` in the datatypes registry.
  */
 export interface ApiDataPoint {
-  name?: string;
   dataSource?: ApiDataSource;
+  name?: string;
   [payload: string]: unknown;
 }
 
@@ -101,30 +101,30 @@ export interface ApiDataPointsResponse {
  * the storage layer survives API renames.
  */
 export const METRICS = {
-  restingHeartRate: 'rhr',
-  hrvDailyAvg: 'hrv_daily_avg',
-  hrvDeepSleep: 'hrv_deep_sleep',
-  hrvSample: 'hrv_sample',
-  hrvEntropy: 'hrv_entropy',
-  nonRemHeartRate: 'non_rem_hr',
-  heartRateSample: 'hr_sample',
-  spo2Avg: 'spo2_avg',
-  spo2Lower: 'spo2_lower',
-  spo2Upper: 'spo2_upper',
-  respiratoryRate: 'resp_rate',
-  respRateDeepSleep: 'resp_rate_deep',
-  respRateRemSleep: 'resp_rate_rem',
-  respRateLightSleep: 'resp_rate_light',
-  respRateFullSleep: 'resp_rate_full',
-  skinTempNightly: 'skin_temp_nightly',
-  skinTempBaseline: 'skin_temp_baseline',
-  skinTempStddev30d: 'skin_temp_stddev_30d',
-  weightKg: 'weight_kg',
-  bodyFatPct: 'body_fat_pct',
-  steps: 'steps',
-  distanceM: 'distance_m',
-  activeEnergyKcal: 'active_energy_kcal',
-  activeZoneMinutes: 'azm',
+  activeEnergyKcal: "active_energy_kcal",
+  activeZoneMinutes: "azm",
+  bodyFatPct: "body_fat_pct",
+  distanceM: "distance_m",
+  heartRateSample: "hr_sample",
+  hrvDailyAvg: "hrv_daily_avg",
+  hrvDeepSleep: "hrv_deep_sleep",
+  hrvEntropy: "hrv_entropy",
+  hrvSample: "hrv_sample",
+  nonRemHeartRate: "non_rem_hr",
+  respiratoryRate: "resp_rate",
+  respRateDeepSleep: "resp_rate_deep",
+  respRateFullSleep: "resp_rate_full",
+  respRateLightSleep: "resp_rate_light",
+  respRateRemSleep: "resp_rate_rem",
+  restingHeartRate: "rhr",
+  skinTempBaseline: "skin_temp_baseline",
+  skinTempNightly: "skin_temp_nightly",
+  skinTempStddev30d: "skin_temp_stddev_30d",
+  spo2Avg: "spo2_avg",
+  spo2Lower: "spo2_lower",
+  spo2Upper: "spo2_upper",
+  steps: "steps",
+  weightKg: "weight_kg",
 } as const;
 
 export type MetricId = (typeof METRICS)[keyof typeof METRICS];
@@ -137,98 +137,98 @@ export type MetricId = (typeof METRICS)[keyof typeof METRICS];
  * `ts` is the ISO 8601 UTC instant, or null for whole-day aggregates.
  */
 export interface Observation {
-  metric: MetricId;
   date: string;
-  ts: string | null;
-  value: number;
-  unit: string;
+  metric: MetricId;
   /** Natural key for idempotent upsert: unique per (metric, naturalKey). */
   naturalKey: string;
   platform: string | null;
   recordingMethod: string | null;
+  ts: string | null;
+  unit: string;
+  value: number;
 }
 
-export type SleepStageType = 'AWAKE' | 'LIGHT' | 'DEEP' | 'REM';
+export type SleepStageType = "AWAKE" | "LIGHT" | "DEEP" | "REM";
 
 export interface SleepStage {
-  type: SleepStageType;
-  startTs: string;
   endTs: string;
   minutes: number;
+  startTs: string;
+  type: SleepStageType;
 }
 
 export interface SleepSession {
-  naturalKey: string;
-  /** Local calendar day the sleep session ENDS on — the "night of" waking. */
-  date: string;
-  startTs: string;
-  endTs: string;
-  type: string | null;
-  totalMinutes: number;
   asleepMinutes: number;
   awakeMinutes: number;
+  /** Local calendar day the sleep session ENDS on — the "night of" waking. */
+  date: string;
   deepMinutes: number;
-  remMinutes: number;
-  lightMinutes: number;
   /** asleepMinutes / totalMinutes, 0..1. Null when totalMinutes is 0. */
   efficiency: number | null;
-  stages: SleepStage[];
+  endTs: string;
+  lightMinutes: number;
+  naturalKey: string;
   platform: string | null;
+  remMinutes: number;
+  stages: SleepStage[];
+  startTs: string;
+  totalMinutes: number;
+  type: string | null;
 }
 
 export interface ExerciseSession {
-  naturalKey: string;
-  date: string;
-  startTs: string;
-  endTs: string | null;
-  displayName: string | null;
-  exerciseType: string | null;
-  intensity: string | null;
   avgHeartRate: number | null;
   caloriesBurned: number | null;
+  date: string;
+  displayName: string | null;
+  endTs: string | null;
+  exerciseType: string | null;
+  intensity: string | null;
+  naturalKey: string;
   platform: string | null;
+  startTs: string;
 }
 
 export interface NutritionEntry {
-  naturalKey: string;
+  carbsG: number | null;
   date: string;
-  ts: string;
+  energyKcal: number | null;
+  fatG: number | null;
   foodDisplayName: string | null;
   mealType: string | null;
-  energyKcal: number | null;
+  naturalKey: string;
   proteinG: number | null;
-  carbsG: number | null;
-  fatG: number | null;
+  ts: string;
 }
 
 export interface HydrationEntry {
-  naturalKey: string;
   date: string;
-  ts: string;
   milliliters: number;
+  naturalKey: string;
+  ts: string;
 }
 
 /** Hourly aggregate of raw heart rate. Raw ~1Hz samples are never stored. */
 export interface HeartRateHourly {
-  naturalKey: string;
+  avgBpm: number;
   date: string;
   /** ISO 8601 UTC, truncated to the hour. */
   hourTs: string;
-  minBpm: number;
   maxBpm: number;
-  avgBpm: number;
+  minBpm: number;
+  naturalKey: string;
   sampleCount: number;
 }
 
 /** Subjective check-in. The only user-mutable record type. */
 export interface Checkin {
-  id?: number;
   date: string;
-  ts: string;
+  id?: number;
   /** 1..10 */
   mood: number;
   note: string | null;
   tags: string[];
+  ts: string;
 }
 
 /**
@@ -236,22 +236,22 @@ export interface Checkin {
  * (e.g. daily-hrv produces multiple Observations per point).
  */
 export interface ParsedBatch {
+  exercises: ExerciseSession[];
+  heartRateHourly: HeartRateHourly[];
+  hydration: HydrationEntry[];
+  nutrition: NutritionEntry[];
   observations: Observation[];
   sleepSessions: SleepSession[];
-  exercises: ExerciseSession[];
-  nutrition: NutritionEntry[];
-  hydration: HydrationEntry[];
-  heartRateHourly: HeartRateHourly[];
 }
 
 export function emptyBatch(): ParsedBatch {
   return {
+    exercises: [],
+    heartRateHourly: [],
+    hydration: [],
+    nutrition: [],
     observations: [],
     sleepSessions: [],
-    exercises: [],
-    nutrition: [],
-    hydration: [],
-    heartRateHourly: [],
   };
 }
 
@@ -273,21 +273,21 @@ export function mergeBatches(batches: ParsedBatch[]): ParsedBatch {
 // ---------------------------------------------------------------------------
 
 export interface DataTypeSpec {
+  /** Field path used to build an AIP-160 filter, when supported. */
+  filterField?: string;
   id: DataTypeId;
+  /** Newest instant present in a page, for watermarking. Null if unknown. */
+  newestTimestamp: (points: ApiDataPoint[]) => string | null;
   /** Max records per page. sleep and exercise are hard-capped at 25. */
   pageSize: number;
+  /** Parse one API page into normalized records. Must be pure and total. */
+  parse: (points: ApiDataPoint[]) => ParsedBatch;
   /**
    * Whether the API accepts AIP-160 date filters on this type.
    * `heart-rate` and `heart-rate-variability` return 400
    * INVALID_DATA_POINT_FILTER_DATA_TYPE_RESTRICTION and must be false.
    */
   supportsDateFilter: boolean;
-  /** Field path used to build an AIP-160 filter, when supported. */
-  filterField?: string;
-  /** Parse one API page into normalized records. Must be pure and total. */
-  parse(points: ApiDataPoint[]): ParsedBatch;
-  /** Newest instant present in a page, for watermarking. Null if unknown. */
-  newestTimestamp(points: ApiDataPoint[]): string | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -296,88 +296,88 @@ export interface DataTypeSpec {
 
 export interface SyncWatermark {
   dataType: DataTypeId;
+  lastSyncedAt: string;
   /** ISO 8601 UTC of the newest point successfully persisted. */
   newestTs: string | null;
-  lastSyncedAt: string;
 }
 
 export interface SyncOptions {
-  since?: Date;
+  dataTypes?: DataTypeId[];
   /** Ignore watermarks and re-pull the full available window. */
   full?: boolean;
-  dataTypes?: DataTypeId[];
-  onProgress?(event: SyncProgress): void;
+  onProgress?: (event: SyncProgress) => void;
+  since?: Date;
 }
 
 export interface SyncProgress {
   dataType: DataTypeId;
+  done: boolean;
+  error?: string;
   pagesFetched: number;
   pointsParsed: number;
   rowsWritten: number;
-  done: boolean;
-  error?: string;
 }
 
 export interface SyncResult {
   dataType: DataTypeId;
+  error?: string;
   pagesFetched: number;
   pointsParsed: number;
   rowsWritten: number;
-  error?: string;
 }
 
 // ---------------------------------------------------------------------------
 // Analysis
 // ---------------------------------------------------------------------------
 
-export type TrendDirection = 'rising' | 'falling' | 'flat';
+export type TrendDirection = "rising" | "falling" | "flat";
 
 export interface Baseline {
-  metric: MetricId;
-  /** Rolling window length in days. */
-  windowDays: number;
   mean: number;
-  stddev: number;
+  metric: MetricId;
   /** Number of days that actually contributed. */
   n: number;
+  stddev: number;
+  /** Rolling window length in days. */
+  windowDays: number;
 }
 
 export interface MetricSnapshot {
-  metric: MetricId;
-  date: string;
-  value: number | null;
   baseline: Baseline | null;
+  date: string;
   /** value - baseline.mean. Null when either side is missing. */
   delta: number | null;
   /** Fractional change vs baseline mean. Null when baseline mean is 0. */
   deltaPct: number | null;
+  metric: MetricId;
   trend: TrendDirection | null;
+  value: number | null;
 }
 
-export type FlagLevel = 'yellow' | 'red';
+export type FlagLevel = "yellow" | "red";
 
 export interface Flag {
-  metric: MetricId;
-  level: FlagLevel;
-  message: string;
-  value: number;
   baselineMean: number;
   /** Published basis for the threshold, surfaced by `vitals --quiet`. */
   basis: string;
+  level: FlagLevel;
+  message: string;
+  metric: MetricId;
+  value: number;
 }
 
 export interface DailySummary {
-  date: string;
-  rhr: MetricSnapshot;
-  hrv: MetricSnapshot;
-  spo2: MetricSnapshot;
-  respRate: MetricSnapshot;
-  skinTemp: MetricSnapshot;
-  sleep: SleepSession | null;
   checkin: Checkin | null;
+  date: string;
   flags: Flag[];
+  hrv: MetricSnapshot;
   /** True when 2+ red flags agree, raising confidence to 80-90%. */
   multiMarker: boolean;
+  respRate: MetricSnapshot;
+  rhr: MetricSnapshot;
+  skinTemp: MetricSnapshot;
+  sleep: SleepSession | null;
+  spo2: MetricSnapshot;
 }
 
 // ---------------------------------------------------------------------------
@@ -385,13 +385,13 @@ export interface DailySummary {
 // ---------------------------------------------------------------------------
 
 export type VitalsErrorCode =
-  | 'AUTH_MISSING'
-  | 'AUTH_REFRESH_FAILED'
-  | 'API_HTTP'
-  | 'API_FILTER_UNSUPPORTED'
-  | 'DB'
-  | 'USAGE'
-  | 'NO_DATA';
+  | "AUTH_MISSING"
+  | "AUTH_REFRESH_FAILED"
+  | "API_HTTP"
+  | "API_FILTER_UNSUPPORTED"
+  | "DB"
+  | "USAGE"
+  | "NO_DATA";
 
 export class VitalsError extends Error {
   readonly code: VitalsErrorCode;
@@ -399,9 +399,13 @@ export class VitalsError extends Error {
   readonly hint?: string;
   override readonly cause?: unknown;
 
-  constructor(code: VitalsErrorCode, message: string, opts?: { hint?: string; cause?: unknown }) {
+  constructor(
+    code: VitalsErrorCode,
+    message: string,
+    opts?: { hint?: string; cause?: unknown }
+  ) {
     super(message);
-    this.name = 'VitalsError';
+    this.name = "VitalsError";
     this.code = code;
     this.hint = opts?.hint;
     this.cause = opts?.cause;
@@ -413,22 +417,22 @@ export class VitalsError extends Error {
 // ---------------------------------------------------------------------------
 
 export interface Paths {
-  dataDir: string;
-  dbFile: string;
-  /** Short-lived access tokens minted from a refresh token. */
-  tokenCacheFile: string;
   /** vitals' own OAuth credentials, written by `vitals auth`. */
   credentialsFile: string;
+  dataDir: string;
+  dbFile: string;
   /**
    * Optional external credential file supplied via `VITALS_GOOGLE_TOKEN`, for
    * reusing a refresh token another tool already holds. Read, never written:
    * the owning tool may refresh it concurrently.
    */
   externalCredentialsFile: string | null;
+  /** Short-lived access tokens minted from a refresh token. */
+  tokenCacheFile: string;
 }
 
 export interface AccessToken {
-  token: string;
   /** ISO 8601 UTC. */
   expiresAt: string;
+  token: string;
 }

@@ -3,12 +3,12 @@
  *
  * Pure orchestration over the Store interface — no direct SQLite, no network.
  */
-import type { Store } from '../store/api.js';
-import type { DailySummary } from '../types.js';
-import { METRICS } from '../types.js';
-import { addDays } from '../util/time.js';
-import { snapshot } from './baseline.js';
-import { evaluateFlags } from './flags.js';
+import type { Store } from "../store/api.js";
+import type { DailySummary } from "../types.js";
+import { METRICS } from "../types.js";
+import { addDays } from "../util/time.js";
+import { snapshot } from "./baseline.js";
+import { evaluateFlags } from "./flags.js";
 
 /**
  * Rolling window used for every baseline in the summary. Also the number of
@@ -28,14 +28,30 @@ export function dailySummary(store: Store, date: string): DailySummary {
   const skinTemp = snapshot(store, METRICS.skinTempNightly, date, WINDOW_DAYS);
 
   // Resp-rate's consecutive-night rule needs the prior night alongside today's.
-  const respRatePrev = snapshot(store, METRICS.respiratoryRate, addDays(date, -1), WINDOW_DAYS);
+  const respRatePrev = snapshot(
+    store,
+    METRICS.respiratoryRate,
+    addDays(date, -1),
+    WINDOW_DAYS
+  );
 
   const flags = evaluateFlags([rhr, hrv, skinTemp, respRate, respRatePrev]);
-  const redCount = flags.filter((f) => f.level === 'red').length;
+  const redCount = flags.filter((f) => f.level === "red").length;
   const multiMarker = redCount >= MULTI_MARKER_MIN_RED_FLAGS;
 
   const sleep = store.sleepSession(date);
   const checkin = store.checkin(date);
 
-  return { date, rhr, hrv, spo2, respRate, skinTemp, sleep, checkin, flags, multiMarker };
+  return {
+    checkin,
+    date,
+    flags,
+    hrv,
+    multiMarker,
+    respRate,
+    rhr,
+    skinTemp,
+    sleep,
+    spo2,
+  };
 }
