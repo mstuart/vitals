@@ -4,51 +4,51 @@
  * Each family module exports one `DataTypeSpec` per data type it owns. This
  * file is the only place that knows the full set; sync iterates it.
  */
-import type { DataTypeId, DataTypeSpec } from '../types.js';
-import { DATA_TYPE_IDS } from '../types.js';
+import type { DataTypeId, DataTypeSpec } from "../types.js";
+import { DATA_TYPE_IDS } from "../types.js";
 
 import {
   dailyHeartRateVariabilitySpec,
-  dailyRestingHeartRateSpec,
   dailyOxygenSaturationSpec,
   dailyRespiratoryRateSpec,
+  dailyRestingHeartRateSpec,
   dailySleepTemperatureDerivationsSpec,
   respiratoryRateSleepSummarySpec,
-} from './daily.js';
-import { sleepSpec, exerciseSpec } from './sleep.js';
+} from "./daily.js";
 import {
+  activeEnergyBurnedSpec,
+  activeZoneMinutesSpec,
+  distanceSpec,
+  stepsSpec,
+} from "./intervals.js";
+import { hydrationLogSpec, nutritionLogSpec } from "./logs.js";
+import {
+  bodyFatSpec,
   heartRateSpec,
   heartRateVariabilitySpec,
   weightSpec,
-  bodyFatSpec,
-} from './samples.js';
-import {
-  stepsSpec,
-  distanceSpec,
-  activeZoneMinutesSpec,
-  activeEnergyBurnedSpec,
-} from './intervals.js';
-import { nutritionLogSpec, hydrationLogSpec } from './logs.js';
+} from "./samples.js";
+import { exerciseSpec, sleepSpec } from "./sleep.js";
 
 export const REGISTRY: Record<DataTypeId, DataTypeSpec> = {
-  'steps': stepsSpec,
-  'distance': distanceSpec,
-  'heart-rate': heartRateSpec,
-  'heart-rate-variability': heartRateVariabilitySpec,
-  'daily-heart-rate-variability': dailyHeartRateVariabilitySpec,
-  'daily-resting-heart-rate': dailyRestingHeartRateSpec,
-  'daily-oxygen-saturation': dailyOxygenSaturationSpec,
-  'sleep': sleepSpec,
-  'daily-respiratory-rate': dailyRespiratoryRateSpec,
-  'respiratory-rate-sleep-summary': respiratoryRateSleepSummarySpec,
-  'daily-sleep-temperature-derivations': dailySleepTemperatureDerivationsSpec,
-  'weight': weightSpec,
-  'body-fat': bodyFatSpec,
-  'exercise': exerciseSpec,
-  'active-zone-minutes': activeZoneMinutesSpec,
-  'active-energy-burned': activeEnergyBurnedSpec,
-  'nutrition-log': nutritionLogSpec,
-  'hydration-log': hydrationLogSpec,
+  "active-energy-burned": activeEnergyBurnedSpec,
+  "active-zone-minutes": activeZoneMinutesSpec,
+  "body-fat": bodyFatSpec,
+  "daily-heart-rate-variability": dailyHeartRateVariabilitySpec,
+  "daily-oxygen-saturation": dailyOxygenSaturationSpec,
+  "daily-respiratory-rate": dailyRespiratoryRateSpec,
+  "daily-resting-heart-rate": dailyRestingHeartRateSpec,
+  "daily-sleep-temperature-derivations": dailySleepTemperatureDerivationsSpec,
+  distance: distanceSpec,
+  exercise: exerciseSpec,
+  "heart-rate": heartRateSpec,
+  "heart-rate-variability": heartRateVariabilitySpec,
+  "hydration-log": hydrationLogSpec,
+  "nutrition-log": nutritionLogSpec,
+  "respiratory-rate-sleep-summary": respiratoryRateSleepSummarySpec,
+  sleep: sleepSpec,
+  steps: stepsSpec,
+  weight: weightSpec,
 };
 
 export function specFor(id: DataTypeId): DataTypeSpec {

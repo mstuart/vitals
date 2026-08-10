@@ -16,7 +16,7 @@ import type {
   ParsedBatch,
   SleepSession,
   SyncWatermark,
-} from '../types.js';
+} from "../types.js";
 
 /** A metric value on a given local day. */
 export interface DailyValue {
@@ -32,12 +32,15 @@ export interface DateRange {
 }
 
 export interface Store {
-  /**
-   * Persist a parsed batch. Idempotent: re-applying the same batch must not
-   * change row counts or values. Returns the number of rows inserted or
-   * updated across all record kinds.
-   */
-  writeBatch(batch: ParsedBatch): number;
+  addCheckin: (c: Omit<Checkin, "id">) => Checkin;
+  allWatermarks: () => SyncWatermark[];
+  checkin: (date: string) => Checkin | null;
+  checkins: (range: DateRange) => Checkin[];
+
+  close: () => void;
+
+  /** Earliest and latest dates with any data. Null when the store is empty. */
+  coverage: () => DateRange | null;
 
   /**
    * One value per day for a metric, ascending by date.
@@ -46,31 +49,27 @@ export interface Store {
    * twice), the daily value is the mean. Days with no observation are absent
    * rather than zero-filled — callers must not treat a gap as a zero.
    */
-  dailySeries(metric: MetricId, range: DateRange): DailyValue[];
+  dailySeries: (metric: MetricId, range: DateRange) => DailyValue[];
+  exercises: (range: DateRange) => ExerciseSession[];
+
+  getWatermark: (dataType: DataTypeId) => SyncWatermark | null;
+  heartRateHourly: (range: DateRange) => HeartRateHourly[];
+  hydration: (range: DateRange) => HydrationEntry[];
 
   /** Most recent value for a metric at or before `onOrBefore`. */
-  latest(metric: MetricId, onOrBefore?: string): DailyValue | null;
+  latest: (metric: MetricId, onOrBefore?: string) => DailyValue | null;
+  nutrition: (range: DateRange) => NutritionEntry[];
 
   /** All raw observations for a metric in range, ascending by ts. */
-  observations(metric: MetricId, range: DateRange): Observation[];
+  observations: (metric: MetricId, range: DateRange) => Observation[];
+  setWatermark: (w: SyncWatermark) => void;
+  sleepSession: (date: string) => SleepSession | null;
 
-  sleepSessions(range: DateRange): SleepSession[];
-  sleepSession(date: string): SleepSession | null;
-  exercises(range: DateRange): ExerciseSession[];
-  nutrition(range: DateRange): NutritionEntry[];
-  hydration(range: DateRange): HydrationEntry[];
-  heartRateHourly(range: DateRange): HeartRateHourly[];
-
-  addCheckin(c: Omit<Checkin, 'id'>): Checkin;
-  checkins(range: DateRange): Checkin[];
-  checkin(date: string): Checkin | null;
-
-  getWatermark(dataType: DataTypeId): SyncWatermark | null;
-  setWatermark(w: SyncWatermark): void;
-  allWatermarks(): SyncWatermark[];
-
-  /** Earliest and latest dates with any data. Null when the store is empty. */
-  coverage(): DateRange | null;
-
-  close(): void;
+  sleepSessions: (range: DateRange) => SleepSession[];
+  /**
+   * Persist a parsed batch. Idempotent: re-applying the same batch must not
+   * change row counts or values. Returns the number of rows inserted or
+   * updated across all record kinds.
+   */
+  writeBatch: (batch: ParsedBatch) => number;
 }
