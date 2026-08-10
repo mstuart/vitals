@@ -20,6 +20,11 @@
  * it never aborts the rest of the run, and its watermark is left untouched
  * so the next run re-pulls from the same point.
  */
+
+import type { VitalsApiClient } from "../api/client.js";
+import { buildDateFilter } from "../api/client.js";
+import { allSpecs, specFor } from "../datatypes/index.js";
+import type { Store } from "../store/api.js";
 import type {
   ApiDataPointsResponse,
   DataTypeId,
@@ -27,40 +32,50 @@ import type {
   SyncOptions,
   SyncProgress,
   SyncResult,
-} from '../types.js';
-import { VitalsError } from '../types.js';
-import type { Store } from '../store/api.js';
-import type { VitalsApiClient } from '../api/client.js';
-import { buildDateFilter } from '../api/client.js';
-import { allSpecs, specFor } from '../datatypes/index.js';
+} from "../types.js";
+import { VitalsError } from "../types.js";
 
 const GRACE_MS = 2 * 60 * 60 * 1000;
 const DEFAULT_WINDOW_DAYS = 30;
 
 function defaultWindowStart(now: Date): Date {
-  return new Date(now.getTime() - DEFAULT_WINDOW_DAYS * 86400000);
+  return new Date(now.getTime() - DEFAULT_WINDOW_DAYS * 86_400_000);
 }
 
-function resolveSince(store: Store, dataType: DataTypeId, opts: SyncOptions, now: Date): Date {
-  if (opts.since) return opts.since;
+function resolveSince(
+  store: Store,
+  dataType: DataTypeId,
+  opts: SyncOptions,
+  now: Date
+): Date {
+  if (opts.since) {
+    return opts.since;
+  }
   if (!opts.full) {
     const watermark = store.getWatermark(dataType);
-    if (watermark?.newestTs) return new Date(watermark.newestTs);
+    if (watermark?.newestTs) {
+      return new Date(watermark.newestTs);
+    }
   }
   return defaultWindowStart(now);
 }
 
 function newerTimestamp(a: string | null, b: string | null): string | null {
-  if (a === null) return b;
-  if (b === null) return a;
+  if (a === null) {
+    return b;
+  }
+  if (b === null) {
+    return a;
+  }
   return Date.parse(b) > Date.parse(a) ? b : a;
 }
 
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: Filter fallback, progress, and watermark updates form one sync state machine.
 async function syncOne(
   store: Store,
   client: VitalsApiClient,
   spec: DataTypeSpec,
-  opts: SyncOptions,
+  opts: SyncOptions
 ): Promise<SyncResult> {
   const result: SyncResult = {
     dataType: spec.id,
@@ -71,24 +86,29 @@ async function syncOne(
   let newestPersisted: string | null = null;
 
   const emitProgress = (done: boolean, error?: string): void => {
-    if (!opts.onProgress) return;
+    if (!opts.onProgress) {
+      return;
+    }
     const event: SyncProgress = {
       dataType: spec.id,
+      done,
       pagesFetched: result.pagesFetched,
       pointsParsed: result.pointsParsed,
       rowsWritten: result.rowsWritten,
-      done,
-      ...(error !== undefined ? { error } : {}),
+      ...(error === undefined ? {} : { error }),
     };
     opts.onProgress(event);
   };
 
   const consumePage = (page: ApiDataPointsResponse): void => {
     const points = page.dataPoints ?? [];
-    result.pagesFetched++;
+    result.pagesFetched += 1;
     result.pointsParsed += points.length;
     result.rowsWritten += store.writeBatch(spec.parse(points));
-    newestPersisted = newerTimestamp(newestPersisted, spec.newestTimestamp(points));
+    newestPersisted = newerTimestamp(
+      newestPersisted,
+      spec.newestTimestamp(points)
+    );
     emitProgress(false);
   };
 
@@ -101,11 +121,17 @@ async function syncOne(
       usedFilter = true;
       try {
         const filter = buildDateFilter(spec.filterField, since, now);
-        for await (const page of client.pages(spec.id, { pageSize: spec.pageSize, filter })) {
+        for await (const page of client.pages(spec.id, {
+          filter,
+          pageSize: spec.pageSize,
+        })) {
           consumePage(page);
         }
       } catch (err) {
-        if (err instanceof VitalsError && err.code === 'API_FILTER_UNSUPPORTED') {
+        if (
+          err instanceof VitalsError &&
+          err.code === "API_FILTER_UNSUPPORTED"
+        ) {
           usedFilter = false;
         } else {
           throw err;
@@ -115,12 +141,16 @@ async function syncOne(
 
     if (!usedFilter) {
       const thresholdMs = since.getTime() - GRACE_MS;
-      for await (const page of client.pages(spec.id, { pageSize: spec.pageSize })) {
+      for await (const page of client.pages(spec.id, {
+        pageSize: spec.pageSize,
+      })) {
         const points = page.dataPoints ?? [];
         const newestInPage = spec.newestTimestamp(points);
         if (newestInPage !== null) {
           const newestMs = Date.parse(newestInPage);
-          if (Number.isFinite(newestMs) && newestMs < thresholdMs) break;
+          if (Number.isFinite(newestMs) && newestMs < thresholdMs) {
+            break;
+          }
         }
         consumePage(page);
       }
@@ -129,8 +159,8 @@ async function syncOne(
     if (newestPersisted !== null) {
       store.setWatermark({
         dataType: spec.id,
-        newestTs: newestPersisted,
         lastSyncedAt: now.toISOString(),
+        newestTs: newestPersisted,
       });
     }
 
@@ -147,11 +177,14 @@ async function syncOne(
 export async function syncAll(
   store: Store,
   client: VitalsApiClient,
-  opts: SyncOptions = {},
+  opts: SyncOptions = {}
 ): Promise<SyncResult[]> {
-  const specs = opts.dataTypes ? opts.dataTypes.map((id) => specFor(id)) : allSpecs();
+  const specs = opts.dataTypes
+    ? opts.dataTypes.map((id) => specFor(id))
+    : allSpecs();
   const results: SyncResult[] = [];
   for (const spec of specs) {
+    // biome-ignore lint/performance/noAwaitInLoops: Sync order is intentional so progress and store writes remain deterministic.
     results.push(await syncOne(store, client, spec, opts));
   }
   return results;

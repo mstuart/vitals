@@ -1,6 +1,6 @@
-import { resolvePaths } from '../../config/paths.js';
-import { runAuthFlow } from '../../auth/oauth.js';
-import { VitalsError } from '../../types.js';
+import { runAuthFlow } from "../../auth/oauth.js";
+import { resolvePaths } from "../../config/paths.js";
+import { VitalsError } from "../../types.js";
 
 export interface AuthOptions {
   clientId?: string;
@@ -8,17 +8,17 @@ export interface AuthOptions {
 }
 
 const SETUP_HINT = [
-  'vitals needs your own Google OAuth client, because the Health API grants',
-  'access per application. One-time setup:',
-  '',
-  '  1. Create a project at https://console.cloud.google.com/',
-  '  2. Enable the Health API for it',
+  "vitals needs your own Google OAuth client, because the Health API grants",
+  "access per application. One-time setup:",
+  "",
+  "  1. Create a project at https://console.cloud.google.com/",
+  "  2. Enable the Health API for it",
   '  3. Create an OAuth 2.0 Client ID of type "Desktop app"',
-  '  4. Re-run:',
-  '       vitals auth --client-id <id> --client-secret <secret>',
-  '',
-  'Or set GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET in your environment.',
-].join('\n');
+  "  4. Re-run:",
+  "       vitals auth --client-id <id> --client-secret <secret>",
+  "",
+  "Or set GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET in your environment.",
+].join("\n");
 
 /**
  * Connect vitals to a Google account.
@@ -31,8 +31,8 @@ export async function runAuth(opts: AuthOptions): Promise<string> {
   const clientId = opts.clientId ?? process.env.GOOGLE_CLIENT_ID;
   const clientSecret = opts.clientSecret ?? process.env.GOOGLE_CLIENT_SECRET;
 
-  if (!clientId || !clientSecret) {
-    throw new VitalsError('USAGE', 'Missing Google OAuth client credentials.', {
+  if (!(clientId && clientSecret)) {
+    throw new VitalsError("USAGE", "Missing Google OAuth client credentials.", {
       hint: SETUP_HINT,
     });
   }
@@ -43,7 +43,7 @@ export async function runAuth(opts: AuthOptions): Promise<string> {
   return [
     `Connected. Credentials saved to ${paths.credentialsFile}`,
     `Granted ${creds.scopes.length} read-only scopes.`,
-    '',
-    'Next: vitals pull --since 30d',
-  ].join('\n');
+    "",
+    "Next: vitals pull --since 30d",
+  ].join("\n");
 }

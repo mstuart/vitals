@@ -12,49 +12,68 @@ import type {
   ParsedBatch,
   SleepStage,
   SleepStageType,
-} from '../types.js';
-import { emptyBatch } from '../types.js';
-import { localDateOfIntervalEnd, minutesBetween, toNumber } from '../util/time.js';
+} from "../types.js";
+import { emptyBatch } from "../types.js";
+import {
+  localDateOfIntervalEnd,
+  minutesBetween,
+  toNumber,
+} from "../util/time.js";
 
 // ---------------------------------------------------------------------------
 // sleep
 // ---------------------------------------------------------------------------
 
 interface RawSleepStage {
-  type?: string;
-  startTime?: string;
   endTime?: string;
+  startTime?: string;
+  type?: string;
 }
 
 interface RawSleep {
   interval?: ApiInterval;
-  type?: string;
   stages?: RawSleepStage[];
+  type?: string;
 }
 
-const SLEEP_STAGE_TYPES: readonly SleepStageType[] = ['AWAKE', 'LIGHT', 'DEEP', 'REM'];
+const SLEEP_STAGE_TYPES: readonly SleepStageType[] = [
+  "AWAKE",
+  "LIGHT",
+  "DEEP",
+  "REM",
+];
 
 function isSleepStageType(v: string | undefined): v is SleepStageType {
-  return v !== undefined && (SLEEP_STAGE_TYPES as readonly string[]).includes(v);
+  return (
+    v !== undefined && (SLEEP_STAGE_TYPES as readonly string[]).includes(v)
+  );
 }
 
 /** Empty string -> null. Everything else passed through unchanged. */
 function nullIfEmpty(v: string | null | undefined): string | null {
-  if (v === undefined || v === null || v === '') return null;
+  if (v === undefined || v === null || v === "") {
+    return null;
+  }
   return v;
 }
 
 function parseSleepPoint(point: ApiDataPoint, batch: ParsedBatch): void {
-  const raw = point['sleep'] as RawSleep | undefined;
-  if (!raw) return;
+  const raw = point.sleep as RawSleep | undefined;
+  if (!raw) {
+    return;
+  }
 
-  const interval = raw.interval;
+  const { interval } = raw;
   const startTs = interval?.startTime;
   const endTs = interval?.endTime;
-  if (!interval || !startTs || !endTs) return;
+  if (!(interval && startTs && endTs)) {
+    return;
+  }
 
   const date = localDateOfIntervalEnd(interval);
-  if (!date) return;
+  if (!date) {
+    return;
+  }
 
   const totalMinutes = minutesBetween(startTs, endTs);
 
@@ -68,23 +87,32 @@ function parseSleepPoint(point: ApiDataPoint, batch: ParsedBatch): void {
     const stageType = rawStage.type;
     const stageStart = rawStage.startTime;
     const stageEnd = rawStage.endTime;
-    if (!isSleepStageType(stageType) || !stageStart || !stageEnd) continue;
+    if (!(isSleepStageType(stageType) && stageStart && stageEnd)) {
+      continue;
+    }
 
     const minutes = minutesBetween(stageStart, stageEnd);
-    stages.push({ type: stageType, startTs: stageStart, endTs: stageEnd, minutes });
+    stages.push({
+      endTs: stageEnd,
+      minutes,
+      startTs: stageStart,
+      type: stageType,
+    });
 
     switch (stageType) {
-      case 'DEEP':
+      case "DEEP":
         deepMinutes += minutes;
         break;
-      case 'REM':
+      case "REM":
         remMinutes += minutes;
         break;
-      case 'LIGHT':
+      case "LIGHT":
         lightMinutes += minutes;
         break;
-      case 'AWAKE':
+      case "AWAKE":
         awakeMinutes += minutes;
+        break;
+      default:
         break;
     }
   }
@@ -93,30 +121,45 @@ function parseSleepPoint(point: ApiDataPoint, batch: ParsedBatch): void {
   // A stage-less CLASSIC session has no basis for an efficiency figure at
   // all (not "0% asleep") — null it rather than reporting a false zero.
   const efficiency =
-    stages.length === 0 || totalMinutes === 0 ? null : asleepMinutes / totalMinutes;
+    stages.length === 0 || totalMinutes === 0
+      ? null
+      : asleepMinutes / totalMinutes;
 
   batch.sleepSessions.push({
-    naturalKey: startTs,
-    date,
-    startTs,
-    endTs,
-    type: nullIfEmpty(raw.type),
-    totalMinutes,
     asleepMinutes,
     awakeMinutes,
+    date,
     deepMinutes,
-    remMinutes,
-    lightMinutes,
     efficiency,
-    stages,
+    endTs,
+    lightMinutes,
+    naturalKey: startTs,
     platform: point.dataSource?.platform ?? null,
+    remMinutes,
+    stages,
+    startTs,
+    totalMinutes,
+    type: nullIfEmpty(raw.type),
   });
 }
 
 export const sleepSpec: DataTypeSpec = {
-  id: 'sleep',
+  id: "sleep",
+  newestTimestamp(points: ApiDataPoint[]): string | null {
+    let newest: string | null = null;
+    for (const point of points) {
+      const raw = point.sleep as RawSleep | undefined;
+      const end = raw?.interval?.endTime ?? raw?.interval?.startTime;
+      if (!end) {
+        continue;
+      }
+      if (newest === null || end > newest) {
+        newest = end;
+      }
+    }
+    return newest;
+  },
   pageSize: 25,
-  supportsDateFilter: false,
   parse(points: ApiDataPoint[]): ParsedBatch {
     const batch = emptyBatch();
     for (const point of points) {
@@ -128,16 +171,7 @@ export const sleepSpec: DataTypeSpec = {
     }
     return batch;
   },
-  newestTimestamp(points: ApiDataPoint[]): string | null {
-    let newest: string | null = null;
-    for (const point of points) {
-      const raw = point['sleep'] as RawSleep | undefined;
-      const end = raw?.interval?.endTime ?? raw?.interval?.startTime;
-      if (!end) continue;
-      if (newest === null || end > newest) newest = end;
-    }
-    return newest;
-  },
+  supportsDateFilter: false,
 };
 
 // ---------------------------------------------------------------------------
@@ -151,10 +185,10 @@ interface RawExerciseMetricsSummary {
 }
 
 interface RawExercise {
-  interval?: ApiInterval;
   displayName?: string;
   exerciseType?: string;
   intensity?: string;
+  interval?: ApiInterval;
   metricsSummary?: RawExerciseMetricsSummary;
 }
 
@@ -163,55 +197,82 @@ interface RawExercise {
  * a bare scalar (`caloriesKcal: 222`), a string scalar, or an object with a
  * kcal/energy field. Try the known shapes defensively.
  */
-function extractCaloriesBurned(summary: RawExerciseMetricsSummary | undefined): number | null {
-  if (!summary) return null;
+function extractCaloriesBurned(
+  summary: RawExerciseMetricsSummary | undefined
+): number | null {
+  if (!summary) {
+    return null;
+  }
 
   const direct = toNumber(summary.caloriesBurned);
-  if (direct !== null) return direct;
+  if (direct !== null) {
+    return direct;
+  }
 
-  if (summary.caloriesBurned && typeof summary.caloriesBurned === 'object') {
+  if (summary.caloriesBurned && typeof summary.caloriesBurned === "object") {
     const obj = summary.caloriesBurned as Record<string, unknown>;
-    const kcal = toNumber(obj['kcal'] ?? obj['energy'] ?? obj['value']);
-    if (kcal !== null) return kcal;
+    const kcal = toNumber(obj.kcal ?? obj.energy ?? obj.value);
+    if (kcal !== null) {
+      return kcal;
+    }
   }
 
   return toNumber(summary.caloriesKcal);
 }
 
 function parseExercisePoint(point: ApiDataPoint, batch: ParsedBatch): void {
-  const raw = point['exercise'] as RawExercise | undefined;
-  if (!raw) return;
+  const raw = point.exercise as RawExercise | undefined;
+  if (!raw) {
+    return;
+  }
 
-  const interval = raw.interval;
+  const { interval } = raw;
   const startTs = interval?.startTime;
-  if (!interval || !startTs) return;
+  if (!(interval && startTs)) {
+    return;
+  }
 
   const date = localDateOfIntervalEnd(interval);
-  if (!date) return;
+  if (!date) {
+    return;
+  }
 
   const endTs = interval.endTime ?? null;
   const summary = raw.metricsSummary;
 
   const session: ExerciseSession = {
-    naturalKey: startTs,
-    date,
-    startTs,
-    endTs,
-    displayName: nullIfEmpty(raw.displayName),
-    exerciseType: nullIfEmpty(raw.exerciseType),
-    intensity: nullIfEmpty(raw.intensity),
     avgHeartRate: toNumber(summary?.averageHeartRateBeatsPerMinute),
     caloriesBurned: extractCaloriesBurned(summary),
+    date,
+    displayName: nullIfEmpty(raw.displayName),
+    endTs,
+    exerciseType: nullIfEmpty(raw.exerciseType),
+    intensity: nullIfEmpty(raw.intensity),
+    naturalKey: startTs,
     platform: point.dataSource?.platform ?? null,
+    startTs,
   };
 
   batch.exercises.push(session);
 }
 
 export const exerciseSpec: DataTypeSpec = {
-  id: 'exercise',
+  id: "exercise",
+  newestTimestamp(points: ApiDataPoint[]): string | null {
+    let newest: string | null = null;
+    for (const point of points) {
+      const raw = point.exercise as RawExercise | undefined;
+      const ts = raw?.interval?.endTime ?? raw?.interval?.startTime;
+      if (!ts) {
+        continue;
+      }
+      if (newest === null || ts > newest) {
+        newest = ts;
+      }
+    }
+    return newest;
+  },
   pageSize: 25,
-  supportsDateFilter: false,
   parse(points: ApiDataPoint[]): ParsedBatch {
     const batch = emptyBatch();
     for (const point of points) {
@@ -223,14 +284,5 @@ export const exerciseSpec: DataTypeSpec = {
     }
     return batch;
   },
-  newestTimestamp(points: ApiDataPoint[]): string | null {
-    let newest: string | null = null;
-    for (const point of points) {
-      const raw = point['exercise'] as RawExercise | undefined;
-      const ts = raw?.interval?.endTime ?? raw?.interval?.startTime;
-      if (!ts) continue;
-      if (newest === null || ts > newest) newest = ts;
-    }
-    return newest;
-  },
+  supportsDateFilter: false,
 };

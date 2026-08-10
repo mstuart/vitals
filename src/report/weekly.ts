@@ -15,11 +15,17 @@
  * `.length` before computing an aggregate, and every per-day loop looks the
  * day up rather than assuming it is present.
  */
-import type { HydrationEntry, MetricId, NutritionEntry, TrendDirection } from '../types.js';
-import { METRICS } from '../types.js';
-import type { DateRange, Store } from '../store/api.js';
-import { addDays } from '../util/time.js';
-import { arrow, center, fmt, rule, bar, REPORT_WIDTH } from './render.js';
+
+import type { DateRange, Store } from "../store/api.js";
+import type {
+  HydrationEntry,
+  MetricId,
+  NutritionEntry,
+  TrendDirection,
+} from "../types.js";
+import { METRICS } from "../types.js";
+import { addDays } from "../util/time.js";
+import { arrow, bar, center, fmt, REPORT_WIDTH, rule } from "./render.js";
 
 export interface WeeklyReportOptions {
   /** Local calendar day (YYYY-MM-DD) the report is generated for. */
@@ -49,17 +55,17 @@ const LOW_HYDRATION_ML = 40 * 29.5735;
 const ML_PER_OZ = 29.5735;
 
 const ALCOHOL_KEYWORDS = [
-  'whiskey',
-  'bourbon',
-  'old fashioned',
-  'beer',
-  'wine',
-  'cocktail',
-  'alcohol',
-  'vodka',
-  'tequila',
-  'rum',
-  'gin',
+  "whiskey",
+  "bourbon",
+  "old fashioned",
+  "beer",
+  "wine",
+  "cocktail",
+  "alcohol",
+  "vodka",
+  "tequila",
+  "rum",
+  "gin",
 ];
 
 type Add = (line?: string) => void;
@@ -73,7 +79,9 @@ function mmdd(date: string): string {
 }
 
 function mean(values: number[]): number | null {
-  if (values.length === 0) return null;
+  if (values.length === 0) {
+    return null;
+  }
   return values.reduce((sum, v) => sum + v, 0) / values.length;
 }
 
@@ -85,7 +93,7 @@ function buildDateList(from: string, to: string): string[] {
   const dates: string[] = [];
   let d = from;
   let guard = 0;
-  while (d <= to && guard < 10000) {
+  while (d <= to && guard < 10_000) {
     dates.push(d);
     d = addDays(d, 1);
     guard += 1;
@@ -93,9 +101,15 @@ function buildDateList(from: string, to: string): string[] {
   return dates;
 }
 
-function seriesMap(store: Store, metric: MetricId, range: DateRange): Map<string, number> {
+function seriesMap(
+  store: Store,
+  metric: MetricId,
+  range: DateRange
+): Map<string, number> {
   const m = new Map<string, number>();
-  for (const dv of store.dailySeries(metric, range)) m.set(dv.date, dv.value);
+  for (const dv of store.dailySeries(metric, range)) {
+    m.set(dv.date, dv.value);
+  }
   return m;
 }
 
@@ -105,83 +119,117 @@ function seriesMap(store: Store, metric: MetricId, range: DateRange): Map<string
  * are never zero-filled — only days that actually have a value count.
  * Needs at least 4 contributing days on each side to be worth reporting.
  */
-function trendOverDates(dateList: string[], valueMap: Map<string, number>): TrendDirection | null {
+function trendOverDates(
+  dateList: string[],
+  valueMap: Map<string, number>
+): TrendDirection | null {
   const present = dateList.filter((d) => valueMap.has(d));
-  if (present.length < 4) return null;
+  if (present.length < 4) {
+    return null;
+  }
 
   const half = Math.floor(present.length / 2);
   const older = present.slice(0, half).map((d) => valueMap.get(d) as number);
-  const newer = present.slice(present.length - half).map((d) => valueMap.get(d) as number);
+  const newer = present
+    .slice(present.length - half)
+    .map((d) => valueMap.get(d) as number);
 
   const meanOlder = mean(older);
   const meanNewer = mean(newer);
-  if (meanOlder === null || meanNewer === null) return null;
+  if (meanOlder === null || meanNewer === null) {
+    return null;
+  }
 
   const delta = meanNewer - meanOlder;
   const threshold = Math.abs(meanOlder) * 0.02 || 0.01;
-  if (Math.abs(delta) < threshold) return 'flat';
-  return delta > 0 ? 'rising' : 'falling';
+  if (Math.abs(delta) < threshold) {
+    return "flat";
+  }
+  return delta > 0 ? "rising" : "falling";
 }
 
 function trendLabel(t: TrendDirection): string {
-  if (t === 'rising') return 'rising';
-  if (t === 'falling') return 'falling';
-  return 'stable';
+  if (t === "rising") {
+    return "rising";
+  }
+  if (t === "falling") {
+    return "falling";
+  }
+  return "stable";
 }
 
 function formatTime(ts: string): string {
   const ms = Date.parse(ts);
-  if (!Number.isFinite(ms)) return '';
+  if (!Number.isFinite(ms)) {
+    return "";
+  }
   const d = new Date(ms);
   let h = d.getUTCHours();
   const m = d.getUTCMinutes();
-  const ampm = h < 12 ? 'AM' : 'PM';
-  h = h % 12;
-  if (h === 0) h = 12;
-  return `${h}:${String(m).padStart(2, '0')}${ampm}`;
+  const ampm = h < 12 ? "AM" : "PM";
+  h %= 12;
+  if (h === 0) {
+    h = 12;
+  }
+  return `${h}:${String(m).padStart(2, "0")}${ampm}`;
 }
 
 function isAlcohol(foodDisplayName: string | null): boolean {
-  const food = (foodDisplayName ?? '').toLowerCase();
+  const food = (foodDisplayName ?? "").toLowerCase();
   return ALCOHOL_KEYWORDS.some((k) => food.includes(k));
 }
 
-function sumMillilitersByDate(hydration: HydrationEntry[]): Map<string, number> {
+function sumMillilitersByDate(
+  hydration: HydrationEntry[]
+): Map<string, number> {
   const byDate = new Map<string, number>();
-  for (const h of hydration) byDate.set(h.date, (byDate.get(h.date) ?? 0) + h.milliliters);
+  for (const h of hydration) {
+    byDate.set(h.date, (byDate.get(h.date) ?? 0) + h.milliliters);
+  }
   return byDate;
 }
 
 function noDataMessage(): string {
   return [
-    rule(REPORT_WIDTH, '='),
-    center('VITALS — WEEKLY HEALTH REPORT', REPORT_WIDTH),
-    rule(REPORT_WIDTH, '='),
-    '',
-    'No data available yet. Run `vitals sync` to pull data, then try again.',
-  ].join('\n');
+    rule(REPORT_WIDTH, "="),
+    center("VITALS — WEEKLY HEALTH REPORT", REPORT_WIDTH),
+    rule(REPORT_WIDTH, "="),
+    "",
+    "No data available yet. Run `vitals sync` to pull data, then try again.",
+  ].join("\n");
 }
 
 // ---------------------------------------------------------------------------
 // Sections
 // ---------------------------------------------------------------------------
 
-function renderHeader(asOf: string, from: string, days: number, add: Add): void {
-  add(rule(REPORT_WIDTH, '='));
-  add(center('VITALS — WEEKLY HEALTH REPORT', REPORT_WIDTH));
-  add(center(`Report generated: ${asOf}  (last ${days}d: ${from} to ${asOf})`, REPORT_WIDTH));
-  add(rule(REPORT_WIDTH, '='));
+function renderHeader(
+  asOf: string,
+  from: string,
+  days: number,
+  add: Add
+): void {
+  add(rule(REPORT_WIDTH, "="));
+  add(center("VITALS — WEEKLY HEALTH REPORT", REPORT_WIDTH));
+  add(
+    center(
+      `Report generated: ${asOf}  (last ${days}d: ${from} to ${asOf})`,
+      REPORT_WIDTH
+    )
+  );
+  add(rule(REPORT_WIDTH, "="));
 }
 
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: This renderer keeps one report section's conditional output in reading order.
 function renderHeartSection(
   store: Store,
   range: DateRange,
   dateList: string[],
-  add: Add,
+  add: Add
 ): void {
-  add('');
+  add("");
   add(rule(REPORT_WIDTH));
-  add(center('HEART', REPORT_WIDTH));
+  add(center("HEART", REPORT_WIDTH));
   add(rule(REPORT_WIDTH));
 
   const rhrMap = seriesMap(store, METRICS.restingHeartRate, range);
@@ -192,18 +240,20 @@ function renderHeartSection(
     const max = Math.max(...rhrValues);
     add(`RHR:  ${fmt(avg, 0)} bpm avg (${fmt(min, 0)}-${fmt(max, 0)} range)`);
     const t = trendOverDates(dateList, rhrMap);
-    if (t) add(`    Trend: ${arrow(t)} ${trendLabel(t)}`);
+    if (t) {
+      add(`    Trend: ${arrow(t)} ${trendLabel(t)}`);
+    }
   } else {
-    add('RHR:  no data for this period');
+    add("RHR:  no data for this period");
   }
 
   const hrvMap = seriesMap(store, METRICS.hrvDailyAvg, range);
   if (hrvMap.size > 0) {
     const avg = mean([...hrvMap.values()]) as number;
-    let peakDate = '';
-    let peakVal = -Infinity;
-    let lowDate = '';
-    let lowVal = Infinity;
+    let peakDate = "";
+    let peakVal = Number.NEGATIVE_INFINITY;
+    let lowDate = "";
+    let lowVal = Number.POSITIVE_INFINITY;
     for (const [d, v] of hrvMap) {
       if (v > peakVal) {
         peakVal = v;
@@ -215,11 +265,15 @@ function renderHeartSection(
       }
     }
     add(`HRV:  ${fmt(avg, 0)}ms avg RMSSD`);
-    add(`      Peak: ${fmt(peakVal, 0)}ms (${peakDate}) | Low: ${fmt(lowVal, 0)}ms (${lowDate})`);
+    add(
+      `      Peak: ${fmt(peakVal, 0)}ms (${peakDate}) | Low: ${fmt(lowVal, 0)}ms (${lowDate})`
+    );
     const t = trendOverDates(dateList, hrvMap);
-    if (t) add(`      Trend: ${arrow(t)} ${trendLabel(t)}`);
+    if (t) {
+      add(`      Trend: ${arrow(t)} ${trendLabel(t)}`);
+    }
   } else {
-    add('HRV:  no data for this period');
+    add("HRV:  no data for this period");
   }
 
   const hrRows = store.heartRateHourly(range);
@@ -230,12 +284,12 @@ function renderHeartSection(
     const over100 = (avgs.filter((v) => v >= 100).length / avgs.length) * 100;
     const sampleCount = hrRows.reduce((s, r) => s + r.sampleCount, 0);
     add(
-      `HR:   ${fmt(avgHr, 0)}bpm avg | <80: ${fmt(under80, 0)}% | >=100: ${fmt(over100, 0)}% | (${sampleCount} samples)`,
+      `HR:   ${fmt(avgHr, 0)}bpm avg | <80: ${fmt(under80, 0)}% | >=100: ${fmt(over100, 0)}% | (${sampleCount} samples)`
     );
   }
 
-  add('');
-  add('HRV Timeline:');
+  add("");
+  add("HRV Timeline:");
   for (const d of dateList) {
     const h = hrvMap.get(d);
     if (h === undefined) {
@@ -245,15 +299,21 @@ function renderHeartSection(
     }
     const b = bar(h, HRV_BAR_MAX_MS, HRV_BAR_WIDTH);
     const r = rhrMap.get(d);
-    const rhrLabel = r !== undefined ? ` RHR=${fmt(r, 0)}` : '';
+    const rhrLabel = r === undefined ? "" : ` RHR=${fmt(r, 0)}`;
     add(`  ${mmdd(d)}: ${b} ${fmt(h, 0)}ms${rhrLabel}`);
   }
 }
 
-function renderRecoverySection(store: Store, range: DateRange, dateList: string[], asOf: string, add: Add): void {
-  add('');
+function renderRecoverySection(
+  store: Store,
+  range: DateRange,
+  dateList: string[],
+  asOf: string,
+  add: Add
+): void {
+  add("");
   add(rule(REPORT_WIDTH));
-  add(center('RECOVERY', REPORT_WIDTH));
+  add(center("RECOVERY", REPORT_WIDTH));
   add(rule(REPORT_WIDTH));
 
   const sessions = store.sleepSessions(range);
@@ -262,48 +322,70 @@ function renderRecoverySection(store: Store, range: DateRange, dateList: string[
       .map((s) => s.efficiency)
       .filter((e): e is number => e !== null);
     if (effs.length > 0) {
-      add(`Sleep:  ${fmt(mean(effs.map((e) => e * 100)) as number, 0)}% avg efficiency`);
+      add(
+        `Sleep:  ${fmt(mean(effs.map((e) => e * 100)) as number, 0)}% avg efficiency`
+      );
     }
     const avgAsleep = mean(sessions.map((s) => s.asleepMinutes)) as number;
     add(`        ${fmt(avgAsleep, 0)}min avg (${fmt(avgAsleep / 60, 1)}h)`);
 
     const withStages = sessions.filter((s) => s.asleepMinutes > 0);
     if (withStages.length > 0) {
-      const deepPct = mean(withStages.map((s) => (s.deepMinutes / s.asleepMinutes) * 100)) as number;
-      const remPct = mean(withStages.map((s) => (s.remMinutes / s.asleepMinutes) * 100)) as number;
+      const deepPct = mean(
+        withStages.map((s) => (s.deepMinutes / s.asleepMinutes) * 100)
+      ) as number;
+      const remPct = mean(
+        withStages.map((s) => (s.remMinutes / s.asleepMinutes) * 100)
+      ) as number;
       add(`        Deep: ${fmt(deepPct, 0)}% | REM: ${fmt(remPct, 0)}%`);
     }
 
-    const withEff = sessions.filter((s): s is typeof s & { efficiency: number } => s.efficiency !== null);
+    const withEff = sessions.filter(
+      (s): s is typeof s & { efficiency: number } => s.efficiency !== null
+    );
     if (withEff.length > 0) {
-      const best = withEff.reduce((a, b) => (b.efficiency > a.efficiency ? b : a));
-      const worst = withEff.reduce((a, b) => (b.efficiency < a.efficiency ? b : a));
+      const best = withEff.reduce((a, b) =>
+        b.efficiency > a.efficiency ? b : a
+      );
+      const worst = withEff.reduce((a, b) =>
+        b.efficiency < a.efficiency ? b : a
+      );
       const stageStr = (s: (typeof withEff)[number]): string => {
-        if (s.asleepMinutes <= 0) return 'Deep=n/a  REM=n/a';
+        if (s.asleepMinutes <= 0) {
+          return "Deep=n/a  REM=n/a";
+        }
         const deep = (s.deepMinutes / s.asleepMinutes) * 100;
         const rem = (s.remMinutes / s.asleepMinutes) * 100;
         return `Deep=${fmt(deep, 1)}%  REM=${fmt(rem, 1)}%`;
       };
-      add(`Best:   ${best.date} — ${fmt(best.efficiency * 100, 1)}%eff  ${stageStr(best)}`);
-      add(`Worst:  ${worst.date} — ${fmt(worst.efficiency * 100, 1)}%eff  ${stageStr(worst)}`);
+      add(
+        `Best:   ${best.date} — ${fmt(best.efficiency * 100, 1)}%eff  ${stageStr(best)}`
+      );
+      add(
+        `Worst:  ${worst.date} — ${fmt(worst.efficiency * 100, 1)}%eff  ${stageStr(worst)}`
+      );
     }
   } else {
-    add('Sleep:  no data for this period');
+    add("Sleep:  no data for this period");
   }
 
-  add('');
-  add('RHR ↔ HRV Correlation:');
+  add("");
+  add("RHR ↔ HRV Correlation:");
   const rhrMap = seriesMap(store, METRICS.restingHeartRate, range);
   const hrvMap = seriesMap(store, METRICS.hrvDailyAvg, range);
   let anyCorrelation = false;
   for (const d of dateList) {
     const r = rhrMap.get(d);
     const h = hrvMap.get(d);
-    if (r === undefined || h === undefined) continue;
+    if (r === undefined || h === undefined) {
+      continue;
+    }
     anyCorrelation = true;
     add(`  ${mmdd(d)}: RHR=${fmt(r, 0)} HRV=${fmt(h, 0)}ms`);
   }
-  if (!anyCorrelation) add('  no overlapping RHR/HRV data for this period');
+  if (!anyCorrelation) {
+    add("  no overlapping RHR/HRV data for this period");
+  }
 
   const todayRhr = rhrMap.get(asOf);
   if (todayRhr !== undefined) {
@@ -313,9 +395,11 @@ function renderRecoverySection(store: Store, range: DateRange, dateList: string[
       .filter((v): v is number => v !== undefined);
     const baseline = mean(others);
     if (baseline !== null) {
-      add('');
+      add("");
       if (todayRhr > baseline + RHR_ELEVATED_DELTA) {
-        add(`⚠ TODAY: RHR=${fmt(todayRhr, 0)}bpm — above your ${fmt(baseline, 0)} avg. Consider easy day.`);
+        add(
+          `⚠ TODAY: RHR=${fmt(todayRhr, 0)}bpm — above your ${fmt(baseline, 0)} avg. Consider easy day.`
+        );
       } else {
         add(`✓ TODAY: RHR=${fmt(todayRhr, 0)}bpm — good recovery baseline.`);
       }
@@ -324,9 +408,9 @@ function renderRecoverySection(store: Store, range: DateRange, dateList: string[
 }
 
 function renderActivitySection(store: Store, range: DateRange, add: Add): void {
-  add('');
+  add("");
   add(rule(REPORT_WIDTH));
-  add(center('ACTIVITY', REPORT_WIDTH));
+  add(center("ACTIVITY", REPORT_WIDTH));
   add(rule(REPORT_WIDTH));
 
   const azmObs = store.observations(METRICS.activeZoneMinutes, range);
@@ -334,7 +418,7 @@ function renderActivitySection(store: Store, range: DateRange, add: Add): void {
     const total = azmObs.reduce((s, o) => s + o.value, 0);
     add(`AZM:    ${fmt(total, 0)} min this period`);
   } else {
-    add('AZM:    no data for this period');
+    add("AZM:    no data for this period");
   }
 
   const stepsObs = store.observations(METRICS.steps, range);
@@ -342,14 +426,15 @@ function renderActivitySection(store: Store, range: DateRange, add: Add): void {
     const total = stepsObs.reduce((s, o) => s + o.value, 0);
     add(`Steps:  ${fmt(total, 0)} total`);
   } else {
-    add('Steps:  no data for this period');
+    add("Steps:  no data for this period");
   }
 }
 
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: This renderer keeps one report section's conditional output in reading order.
 function renderFoodSection(store: Store, range: DateRange, add: Add): void {
-  add('');
+  add("");
   add(rule(REPORT_WIDTH));
-  add(center('FOOD & DRINK', REPORT_WIDTH));
+  add(center("FOOD & DRINK", REPORT_WIDTH));
   add(rule(REPORT_WIDTH));
 
   const entries = store.nutrition(range);
@@ -365,13 +450,13 @@ function renderFoodSection(store: Store, range: DateRange, add: Add): void {
       const dayEntries = byDate.get(d) ?? [];
       for (const e of dayEntries) {
         const time = formatTime(e.ts);
-        const cal = e.energyKcal !== null ? ` ${fmt(e.energyKcal, 0)}cal` : '';
-        const pro = e.proteinG !== null ? ` P=${fmt(e.proteinG, 0)}g` : '';
-        add(`    ${time}: ${e.foodDisplayName ?? '(unnamed)'}${cal}${pro}`);
+        const cal = e.energyKcal === null ? "" : ` ${fmt(e.energyKcal, 0)}cal`;
+        const pro = e.proteinG === null ? "" : ` P=${fmt(e.proteinG, 0)}g`;
+        add(`    ${time}: ${e.foodDisplayName ?? "(unnamed)"}${cal}${pro}`);
       }
     }
   } else {
-    add('  No food logs for this period.');
+    add("  No food logs for this period.");
   }
 
   const hydration = store.hydration(range);
@@ -382,27 +467,42 @@ function renderFoodSection(store: Store, range: DateRange, add: Add): void {
   }
 }
 
-function renderTemperatureSection(store: Store, range: DateRange, add: Add): void {
+function renderTemperatureSection(
+  store: Store,
+  range: DateRange,
+  add: Add
+): void {
   const nightly = seriesMap(store, METRICS.skinTempNightly, range);
   const baseline = seriesMap(store, METRICS.skinTempBaseline, range);
-  if (nightly.size === 0 && baseline.size === 0) return; // matches original: section is omitted entirely when empty
+  if (nightly.size === 0 && baseline.size === 0) {
+    return; // matches original: section is omitted entirely when empty
+  }
 
-  add('');
+  add("");
   add(rule(REPORT_WIDTH));
-  add(center('SLEEP TEMPERATURE', REPORT_WIDTH));
+  add(center("SLEEP TEMPERATURE", REPORT_WIDTH));
   add(rule(REPORT_WIDTH));
 
-  const dates = [...new Set([...nightly.keys(), ...baseline.keys()])].sort().slice(-3);
+  const dates = [...new Set([...nightly.keys(), ...baseline.keys()])]
+    .sort()
+    .slice(-3);
   for (const d of dates) {
     const b = baseline.get(d);
-    if (b === undefined) continue;
+    if (b === undefined) {
+      continue;
+    }
     const nl = nightly.get(d);
-    const nightStr = nl !== undefined ? `${fmt(cToF(nl), 1)}°F` : 'n/a';
+    const nightStr = nl === undefined ? "n/a" : `${fmt(cToF(nl), 1)}°F`;
     add(`  ${d}: Baseline ${fmt(cToF(b), 1)}°F → Sleep ${nightStr}`);
   }
 }
 
-function computeFlags(store: Store, range: DateRange, dateList: string[], asOf: string): string[] {
+function computeFlags(
+  store: Store,
+  range: DateRange,
+  dateList: string[],
+  asOf: string
+): string[] {
   const flags: string[] = [];
   const rhrMap = seriesMap(store, METRICS.restingHeartRate, range);
   const hrvMap = seriesMap(store, METRICS.hrvDailyAvg, range);
@@ -415,92 +515,123 @@ function computeFlags(store: Store, range: DateRange, dateList: string[], asOf: 
       .filter((v): v is number => v !== undefined);
     const baseline = mean(others);
     if (baseline !== null && todayRhr > baseline + RHR_ELEVATED_DELTA) {
-      flags.push(`⚠ RHR ${fmt(todayRhr, 0)}bpm today — above your ${fmt(baseline, 0)} avg. Consider rest.`);
+      flags.push(
+        `⚠ RHR ${fmt(todayRhr, 0)}bpm today — above your ${fmt(baseline, 0)} avg. Consider rest.`
+      );
     }
   }
 
   const hrvTrend = trendOverDates(dateList, hrvMap);
-  if (hrvTrend === 'falling') {
-    flags.push('↓ HRV declining this period. Check sleep and hydration.');
-  } else if (hrvTrend === 'rising') {
-    flags.push('↑ HRV improving this period. Keep doing what works.');
+  if (hrvTrend === "falling") {
+    flags.push("↓ HRV declining this period. Check sleep and hydration.");
+  } else if (hrvTrend === "rising") {
+    flags.push("↑ HRV improving this period. Keep doing what works.");
   }
 
   const nutrition = store.nutrition(range);
   const alcoholDates = new Set<string>();
   for (const e of nutrition) {
-    if (isAlcohol(e.foodDisplayName)) alcoholDates.add(e.date);
+    if (isAlcohol(e.foodDisplayName)) {
+      alcoholDates.add(e.date);
+    }
   }
   if (alcoholDates.size > 0) {
-    flags.push(`🥃 Alcohol logged on ${[...alcoholDates].sort().join(', ')}. Expect a 48h recovery tax.`);
+    flags.push(
+      `🥃 Alcohol logged on ${[...alcoholDates].sort().join(", ")}. Expect a 48h recovery tax.`
+    );
   }
 
   const hydration = store.hydration(range);
   if (hydration.length > 0) {
     const byDate = sumMillilitersByDate(hydration);
-    const lowDays = [...byDate.values()].filter((ml) => ml < LOW_HYDRATION_ML).length;
+    const lowDays = [...byDate.values()].filter(
+      (ml) => ml < LOW_HYDRATION_ML
+    ).length;
     if (lowDays > 0) {
-      flags.push(`💧 ${lowDays} day(s) with low water intake — hydration helps HRV.`);
+      flags.push(
+        `💧 ${lowDays} day(s) with low water intake — hydration helps HRV.`
+      );
     }
   }
 
   const sessions = store.sleepSessions(range);
   const highLightDates = sessions
     .filter((s) => s.asleepMinutes > 0)
-    .filter((s) => 100 - (s.deepMinutes / s.asleepMinutes) * 100 - (s.remMinutes / s.asleepMinutes) * 100 > HIGH_LIGHT_SLEEP_PCT)
+    .filter(
+      (s) =>
+        100 -
+          (s.deepMinutes / s.asleepMinutes) * 100 -
+          (s.remMinutes / s.asleepMinutes) * 100 >
+        HIGH_LIGHT_SLEEP_PCT
+    )
     .map((s) => s.date);
   if (highLightDates.length > 0) {
-    flags.push(`🛌 High light sleep (>${HIGH_LIGHT_SLEEP_PCT}%): ${highLightDates.join(', ')}.`);
+    flags.push(
+      `🛌 High light sleep (>${HIGH_LIGHT_SLEEP_PCT}%): ${highLightDates.join(", ")}.`
+    );
   }
 
-  if (flags.length === 0) flags.push('✓ No significant flags. Steady recovery.');
+  if (flags.length === 0) {
+    flags.push("✓ No significant flags. Steady recovery.");
+  }
 
   return flags;
 }
 
 function renderFlagsSection(flags: string[], add: Add): void {
-  add('');
+  add("");
   add(rule(REPORT_WIDTH));
-  add(center('FLAGS & TRENDS', REPORT_WIDTH));
+  add(center("FLAGS & TRENDS", REPORT_WIDTH));
   add(rule(REPORT_WIDTH));
-  for (const f of flags) add(`  ${f}`);
+  for (const f of flags) {
+    add(`  ${f}`);
+  }
 }
 
-function renderActionsSection(store: Store, range: DateRange, asOf: string, add: Add): void {
-  add('');
+function renderActionsSection(
+  store: Store,
+  range: DateRange,
+  asOf: string,
+  add: Add
+): void {
+  add("");
   add(rule(REPORT_WIDTH));
   add(center("THIS WEEK'S 3 ACTIONS", REPORT_WIDTH));
   add(rule(REPORT_WIDTH));
 
   const rhrMap = seriesMap(store, METRICS.restingHeartRate, range);
   const todayRhr = rhrMap.get(asOf);
-  add('');
-  add('1. WATCH YOUR RHR');
-  if (todayRhr !== undefined) {
-    add(`   Today's RHR is ${fmt(todayRhr, 0)}bpm. When it runs 3+ bpm above baseline, pull back.`);
+  add("");
+  add("1. WATCH YOUR RHR");
+  if (todayRhr === undefined) {
+    add("   Check your RHR first thing each morning.");
   } else {
-    add('   Check your RHR first thing each morning.');
+    add(
+      `   Today's RHR is ${fmt(todayRhr, 0)}bpm. When it runs 3+ bpm above baseline, pull back.`
+    );
   }
 
   const nutrition = store.nutrition(range);
   const hadAlcohol = nutrition.some((e) => isAlcohol(e.foodDisplayName));
-  add('');
-  add('2. ALCOHOL = 48-HOUR RECOVERY TAX');
+  add("");
+  add("2. ALCOHOL = 48-HOUR RECOVERY TAX");
   add(
     hadAlcohol
-      ? '   Alcohol detected this period. Each drink costs ~2 recovery nights.'
-      : '   No alcohol logged. Recovery data confirms what you see.',
+      ? "   Alcohol detected this period. Each drink costs ~2 recovery nights."
+      : "   No alcohol logged. Recovery data confirms what you see."
   );
 
   const hydration = store.hydration(range);
-  add('');
-  add('3. HYDRATION = HRV LEVERAGE');
+  add("");
+  add("3. HYDRATION = HRV LEVERAGE");
   if (hydration.length > 0) {
     const byDate = sumMillilitersByDate(hydration);
     const avgOz = (mean([...byDate.values()]) as number) / ML_PER_OZ;
-    add(`   Water logged: ${fmt(avgOz, 0)} oz/day. More water tends to lift HRV.`);
+    add(
+      `   Water logged: ${fmt(avgOz, 0)} oz/day. More water tends to lift HRV.`
+    );
   } else {
-    add('   No hydration logs for this period.');
+    add("   No hydration logs for this period.");
   }
 }
 
@@ -510,7 +641,7 @@ function renderActionsSection(store: Store, range: DateRange, asOf: string, add:
 
 export function weeklyReport(store: Store, opts: WeeklyReportOptions): string {
   const days = opts.days ?? DEFAULT_DAYS;
-  const asOf = opts.asOf;
+  const { asOf } = opts;
 
   if (store.coverage() === null) {
     return noDataMessage();
@@ -521,7 +652,7 @@ export function weeklyReport(store: Store, opts: WeeklyReportOptions): string {
   const dateList = buildDateList(from, asOf);
 
   const lines: string[] = [];
-  const add: Add = (line = '') => lines.push(line);
+  const add: Add = (line = "") => lines.push(line);
 
   renderHeader(asOf, from, days, add);
   renderHeartSection(store, range, dateList, add);
@@ -533,11 +664,11 @@ export function weeklyReport(store: Store, opts: WeeklyReportOptions): string {
   renderFlagsSection(flags, add);
   renderActionsSection(store, range, asOf, add);
 
-  add('');
+  add("");
   add(rule(REPORT_WIDTH));
   add(`Next report: ${addDays(asOf, 7)}`);
   add(`Data: vitals local store (${days}-day window)`);
   add(rule(REPORT_WIDTH));
 
-  return lines.join('\n');
+  return lines.join("\n");
 }
