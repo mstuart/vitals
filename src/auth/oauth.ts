@@ -87,7 +87,7 @@ async function startCallbackServer(
     const state = url.searchParams.get("state");
 
     if (error) {
-      reply(400, `Authorization failed: ${error}`);
+      reply(400, "Authorization failed");
       settle.reject(
         new VitalsError("AUTH_MISSING", `Authorization was denied: ${error}`)
       );
