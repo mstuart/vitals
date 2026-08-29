@@ -51,7 +51,7 @@ Requires **Node 22+**.
 ```bash
 git clone https://github.com/mstuart/vitals.git
 cd vitals
-npm install
+npm ci
 npm run build
 npm link          # optional, puts `vitals` on your PATH
 ```
