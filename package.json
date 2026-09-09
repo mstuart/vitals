@@ -54,7 +54,7 @@
     "@types/node": "^22.13.0",
     "typescript": "^5.7.0",
     "ultracite": "7.10.2",
-    "vitest": "^3.0.0"
+    "vitest": "^4.1.11"
   },
   "engines": {
     "node": ">=22"
