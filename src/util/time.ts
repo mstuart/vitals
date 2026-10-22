@@ -24,7 +24,7 @@ export function toNumber(v: unknown): number | null {
   if (typeof v === "number") {
     return Number.isFinite(v) ? v : null;
   }
-  if (typeof v === "string") {
+  if (typeof v === "string" && v.trim() !== "") {
     const n = Number(v);
     return Number.isFinite(n) ? n : null;
   }
@@ -53,16 +53,19 @@ function pad2(n: number): string {
 /** `{year:2026,month:8,day:5}` -> `"2026-08-05"`. */
 export function apiDateToIso(d: ApiDate | undefined | null): string | null {
   if (
-    !(
-      d &&
-      Number.isFinite(d.year) &&
-      Number.isFinite(d.month) &&
-      Number.isFinite(d.day)
-    )
+    !(d && Number.isInteger(d.year)) ||
+    d.year < 1 ||
+    d.year > 9999 ||
+    !Number.isInteger(d.month) ||
+    !Number.isInteger(d.day)
   ) {
     return null;
   }
-  return `${d.year}-${pad2(d.month)}-${pad2(d.day)}`;
+  const iso = `${String(d.year).padStart(4, "0")}-${pad2(d.month)}-${pad2(d.day)}`;
+  const ms = Date.parse(`${iso}T00:00:00Z`);
+  return Number.isFinite(ms) && new Date(ms).toISOString().slice(0, 10) === iso
+    ? iso
+    : null;
 }
 
 /**
@@ -200,12 +203,15 @@ export function parseSince(input: string, now: Date = new Date()): Date {
     } else if (rel[2] === "w") {
       days = n * 7;
     }
-    return new Date(now.getTime() - days * 86_400_000);
+    const result = new Date(now.getTime() - days * 86_400_000);
+    if (Number.isFinite(result.getTime())) {
+      return result;
+    }
   }
 
   if (ISO_DATE_RE.test(s)) {
     const ms = Date.parse(`${s}T00:00:00Z`);
-    if (Number.isFinite(ms)) {
+    if (Number.isFinite(ms) && new Date(ms).toISOString().slice(0, 10) === s) {
       return new Date(ms);
     }
   }
