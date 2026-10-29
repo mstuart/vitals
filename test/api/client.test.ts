@@ -90,9 +90,12 @@ describe("createClient", () => {
     });
 
     let count = 0;
-    for await (const _page of client.pages("steps")) {
-      count += 1;
-    }
+    const consume = async () => {
+      for await (const _page of client.pages("steps")) {
+        count += 1;
+      }
+    };
+    await expect(consume()).rejects.toMatchObject({ code: "API_HTTP" });
 
     expect(count).toBe(500);
     expect(fetchImpl).toHaveBeenCalledTimes(500);

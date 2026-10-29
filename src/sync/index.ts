@@ -160,7 +160,10 @@ async function syncOne(
       store.setWatermark({
         dataType: spec.id,
         lastSyncedAt: now.toISOString(),
-        newestTs: newestPersisted,
+        newestTs: newerTimestamp(
+          store.getWatermark(spec.id)?.newestTs ?? null,
+          newestPersisted
+        ),
       });
     }
 
