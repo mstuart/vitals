@@ -102,7 +102,9 @@ export const nutritionLogSpec: DataTypeSpec = {
           if (typeof nutrient !== "string") {
             continue;
           }
-          const field = NUTRIENT_FIELD[nutrient];
+          const field = Object.hasOwn(NUTRIENT_FIELD, nutrient)
+            ? NUTRIENT_FIELD[nutrient]
+            : undefined;
           if (!field) {
             continue;
           }

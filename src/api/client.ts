@@ -167,6 +167,11 @@ export function createClient(opts: CreateClientOptions): VitalsApiClient {
       }
       pageToken = response.nextPageToken;
     }
+
+    throw new VitalsError(
+      "API_HTTP",
+      `Reached pagination limit for ${id}; results are incomplete.`
+    );
   }
 
   return { listDataPoints, pages };

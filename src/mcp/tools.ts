@@ -85,7 +85,13 @@ function withHandler<T>(
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const dateField = z
   .string()
-  .regex(DATE_RE, "Expected date in YYYY-MM-DD format");
+  .regex(DATE_RE, "Expected date in YYYY-MM-DD format")
+  .refine((value) => {
+    const ms = Date.parse(`${value}T00:00:00Z`);
+    return (
+      Number.isFinite(ms) && new Date(ms).toISOString().slice(0, 10) === value
+    );
+  }, "Expected a valid calendar date");
 
 /** Default lookback window for range-shaped tools when no bounds are given. */
 const DEFAULT_RANGE_DAYS = 14;
@@ -101,6 +107,9 @@ type RangeInput = z.infer<typeof rangeInputSchema>;
 function resolveRange(input: RangeInput, defaultDays: number): DateRange {
   const to = input.to ?? today();
   const from = input.from ?? addDays(to, -((input.days ?? defaultDays) - 1));
+  if (from > to) {
+    throw new VitalsError("USAGE", "Range start must not be after range end.");
+  }
   return { from, to };
 }
 
